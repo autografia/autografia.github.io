@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Título de la página</title>
+  <title>Autografia</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v1.1.0/modern-normalize.min.css" rel="stylesheet">
@@ -24,6 +24,20 @@
 <body>
   <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
   <style>
+  	
+	@media (max-width: 768px) {
+	  .desktop-logo {		
+		max-width: 20%;
+		max-height: 10%;
+	  }
+	}
+	
+	@media (min-width: 769px) {
+	  .mobile-logo {
+		max-width: 90%;
+		max-height: 15%;
+	  }
+	}
     /* For best practice, move CSS below to an external CSS file. */
     @keyframes fadeinall {
     0% {
@@ -50,7 +64,10 @@
 </header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <img src="logo1.png" class="d-block mx-auto my-1" alt="Autografia Logo" style="max-width: 20%;max-height: 10%;"/>
+    <img src="logo1.png" class="d-block mx-auto my-1" alt="Autografia Logo" style=""/>
+	<img src="logo1.png" class="d-block mx-auto my-1 desktop-logo" alt="Autografia Logo">
+	<img src="logo1.png" class="d-block mx-auto my-1 mobile-logo" alt="Autografia Logo">
+
     <!-- Resto del código HTML -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
