@@ -21,25 +21,30 @@
   <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="" />
   <script>
-	// Seleccionamos todas las imágenes de la galería
-	var images = document.querySelectorAll('.gallery img');
+	
+	// Selecciona todas las imágenes de la galería
+	const galleryImages = document.querySelectorAll('.photo img');
 
-	// Para cada imagen, escuchamos el evento 'click'
-	images.forEach(function(image) {
-	  image.addEventListener('click', function() {
-		// Obtenemos la ruta de la imagen de alta calidad
-		var highresSrc = this.getAttribute('data-highres');
+	// Selecciona la ventana emergente y la imagen dentro de ella
+	const modal = document.querySelector('.modal');
+	const modalImg = document.querySelector('.modal-content');
 
-		// Creamos un nuevo elemento 'img'
-		var highresImg = document.createElement('img');
-
-		// Asignamos la ruta de la imagen de alta calidad al 'src' del nuevo elemento 'img'
-		highresImg.src = highresSrc;
-
-		// Reemplazamos la imagen de baja calidad por la imagen de alta calidad
-		this.parentNode.replaceChild(highresImg, this);
+	// Agrega un evento de clic a cada imagen
+	galleryImages.forEach(image => {
+	  image.addEventListener('click', () => {
+		// Muestra la ventana emergente y establece la imagen seleccionada como su fuente
+		modal.style.display = 'block';
+		modalImg.src = image.dataset.highres;
 	  });
 	});
+
+	// Agrega un evento de clic al botón de cerrar la ventana emergente
+	const closeBtn = document.querySelector('.close');
+	closeBtn.addEventListener('click', () => {
+	  // Oculta la ventana emergente al hacer clic en el botón de cerrar
+	  modal.style.display = 'none';
+	});
+	
   </script>
 </head>
 <body>
