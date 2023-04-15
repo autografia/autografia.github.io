@@ -20,6 +20,27 @@
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="" />
+  <script>
+	// Seleccionamos todas las imágenes de la galería
+	var images = document.querySelectorAll('.gallery img');
+
+	// Para cada imagen, escuchamos el evento 'click'
+	images.forEach(function(image) {
+	  image.addEventListener('click', function() {
+		// Obtenemos la ruta de la imagen de alta calidad
+		var highresSrc = this.getAttribute('data-highres');
+
+		// Creamos un nuevo elemento 'img'
+		var highresImg = document.createElement('img');
+
+		// Asignamos la ruta de la imagen de alta calidad al 'src' del nuevo elemento 'img'
+		highresImg.src = highresSrc;
+
+		// Reemplazamos la imagen de baja calidad por la imagen de alta calidad
+		this.parentNode.replaceChild(highresImg, this);
+	  });
+	});
+  </script>
 </head>
 <body>
   <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
@@ -133,24 +154,19 @@
         <div class="accordion-body">
 			<br/>Mensaje de prueba.<br/>
 			<div class="gallery">
-			  <div class="photo"><img src="/fotos/DSC_3312.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3314.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3319.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3324.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3326.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3348.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3352.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3361.jpg"></div>			  
-			  <div class="photo"><img src="/fotos/DSC_3362.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3365.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3369.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3370.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3374.jpg"></div>			  
-			  <div class="photo"><img src="/fotos/DSC_3386.jpg"></div>
-			  <div class="photo"><img src="/fotos/DSC_3389.jpg"></div>			  
-			  <div class="photo"><img src="/fotos/DSC_3398.jpg"></div>			  
-			  <div class="photo"><img src="/fotos/DSC_3401.jpg"></div>			  
-			  <div class="photo"><img src="/fotos/DSC_3402.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3312-min.jpg" data-highres="fotos/alta_calidad/DSC_3312.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3314-min.jpg" data-highres="fotos/alta_calidad/DSC_3314.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3319-min.jpg" data-highres="fotos/alta_calidad/DSC_3319.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3324-min.jpg" data-highres="fotos/alta_calidad/DSC_3324.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3326-min.jpg" data-highres="fotos/alta_calidad/DSC_3326.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3348-min.jpg" data-highres="fotos/alta_calidad/DSC_3348.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3352-min.jpg" data-highres="fotos/alta_calidad/DSC_3352.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3361-min.jpg" data-highres="fotos/alta_calidad/DSC_3361.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3362-min.jpg" data-highres="fotos/alta_calidad/DSC_3362.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3365-min.jpg" data-highres="fotos/alta_calidad/DSC_3365.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3369-min.jpg" data-highres="fotos/alta_calidad/DSC_3369.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3370-min.jpg" data-highres="fotos/alta_calidad/DSC_3370.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3374-min.jpg" data-highres="fotos/alta_calidad/DSC_3374.jpg"></div>
 			</div>
         </div>
       </div>
