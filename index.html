@@ -24,7 +24,9 @@
 <body>
   <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
   <style>
-  	
+  	.active {
+	  background-color: lightgrey;
+	}
 	@media (max-width: 768px) {
 	  .mobile-logo {		
 		max-width: 70%;
@@ -88,10 +90,13 @@
 	}
 
 	.modal-content {
+	  border-left: none;
+	  border-right: none;
 	  margin: auto;
 	  display: block;
-	  max-width: 80%;
-	  max-height: 80%;
+	  max-width: 100%;
+	  max-height: 80vh;
+	  object-fit: contain;
 	}
 
 	.close {
