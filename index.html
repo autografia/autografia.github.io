@@ -20,54 +20,6 @@
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="" />
-  <script>
-	
-	// Selecciona todas las imágenes de la galería
-	const galleryImages = document.querySelectorAll('.photo img');
-
-	// Selecciona la ventana emergente y la imagen dentro de ella
-	const modal = document.querySelector('.modal');
-	const modalImg = document.querySelector('.modal-content');
-
-	// Agrega un evento de clic a cada imagen
-	galleryImages.forEach(image => {
-	  image.addEventListener('click', () => {
-		// Muestra la ventana emergente y establece la imagen seleccionada como su fuente
-		modal.style.display = 'block';
-		modalImg.src = image.dataset.highres;
-	  });
-	});
-
-	// Agrega un evento de clic al botón de cerrar la ventana emergente
-	const closeBtn = document.querySelector('.close');
-	closeBtn.addEventListener('click', () => {
-	  // Oculta la ventana emergente al hacer clic en el botón de cerrar
-	  modal.style.display = 'none';
-	});
-
-	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	var images = document.querySelectorAll(".photo img");
-	var captionText = document.querySelector(".caption");
-
-	// Loop through all images and add the click event listener
-	for (var i = 0; i < images.length; i++) {
-	  images[i].addEventListener("click", function() {
-		modal.style.display = "block";
-		modalImg.src = this.dataset.highres;
-		captionText.innerHTML = this.alt;
-	  });
-	}
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on <span> (x), close the modal
-	span.addEventListener("click", function() {
-	  modal.style.display = "none";
-	});
-
-	
-  </script>
 </head>
 <body>
   <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
@@ -164,7 +116,7 @@
 </header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">    
-	<img src="/logos/logo1.png" class="d-block mx-auto my-1 desktop-logo mobile-logo" alt="Autografia Logo">
+	<img src="logos/logo1.png" class="d-block mx-auto my-1 desktop-logo mobile-logo" alt="Autografia Logo">
 
     <!-- Resto del código HTML -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -212,24 +164,24 @@
         <div class="accordion-body">
 			<br/>Mensaje de prueba.<br/>
 			<div class="gallery">
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3312-min.jpg" data-highres="fotos/alta_calidad/DSC_3312.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3314-min.jpg" data-highres="fotos/alta_calidad/DSC_3314.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3319-min.jpg" data-highres="fotos/alta_calidad/DSC_3319.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3324-min.jpg" data-highres="fotos/alta_calidad/DSC_3324.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3326-min.jpg" data-highres="fotos/alta_calidad/DSC_3326.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3348-min.jpg" data-highres="fotos/alta_calidad/DSC_3348.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3352-min.jpg" data-highres="fotos/alta_calidad/DSC_3352.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3361-min.jpg" data-highres="fotos/alta_calidad/DSC_3361.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3362-min.jpg" data-highres="fotos/alta_calidad/DSC_3362.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3365-min.jpg" data-highres="fotos/alta_calidad/DSC_3365.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3369-min.jpg" data-highres="fotos/alta_calidad/DSC_3369.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3370-min.jpg" data-highres="fotos/alta_calidad/DSC_3370.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3374-min.jpg" data-highres="fotos/alta_calidad/DSC_3374.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3386-min.jpg" data-highres="fotos/alta_calidad/DSC_3386.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3389-min.jpg" data-highres="fotos/alta_calidad/DSC_3389.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3398-min.jpg" data-highres="fotos/alta_calidad/DSC_3398.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3401-min.jpg" data-highres="fotos/alta_calidad/DSC_3401.jpg"></div>
-			  <div class="photo"><img src="fotos/baja_calidad/DSC_3402-min.jpg" data-highres="fotos/alta_calidad/DSC_3402.jpg"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3312-min.jpg" data-highres="fotos/alta_calidad/DSC_3312.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3314-min.jpg" data-highres="fotos/alta_calidad/DSC_3314.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3319-min.jpg" data-highres="fotos/alta_calidad/DSC_3319.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3324-min.jpg" data-highres="fotos/alta_calidad/DSC_3324.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3326-min.jpg" data-highres="fotos/alta_calidad/DSC_3326.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3348-min.jpg" data-highres="fotos/alta_calidad/DSC_3348.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3352-min.jpg" data-highres="fotos/alta_calidad/DSC_3352.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3361-min.jpg" data-highres="fotos/alta_calidad/DSC_3361.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3362-min.jpg" data-highres="fotos/alta_calidad/DSC_3362.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3365-min.jpg" data-highres="fotos/alta_calidad/DSC_3365.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3369-min.jpg" data-highres="fotos/alta_calidad/DSC_3369.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3370-min.jpg" data-highres="fotos/alta_calidad/DSC_3370.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3374-min.jpg" data-highres="fotos/alta_calidad/DSC_3374.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3386-min.jpg" data-highres="fotos/alta_calidad/DSC_3386.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3389-min.jpg" data-highres="fotos/alta_calidad/DSC_3389.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3398-min.jpg" data-highres="fotos/alta_calidad/DSC_3398.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3401-min.jpg" data-highres="fotos/alta_calidad/DSC_3401.jpg" alt="coche"></div>
+			  <div class="photo"><img src="fotos/baja_calidad/DSC_3402-min.jpg" data-highres="fotos/alta_calidad/DSC_3402.jpg" alt="coche"></div>
 			</div>
         </div>
       </div>
@@ -320,5 +272,56 @@
 		<span class="close">&times;</span>
 		<img class="modal-content" src="">
 	</div>
+	  <script>
+	
+	// Selecciona todas las imágenes de la galería
+	const galleryImages = document.querySelectorAll('.photo img');
+
+	// Selecciona la ventana emergente y la imagen dentro de ella
+	const modal = document.querySelector('.modal');
+	const modalImg = document.querySelector('.modal-content');
+
+	// Agrega un evento de clic a cada imagen
+	galleryImages.forEach(image => {
+	  image.addEventListener('click', () => {
+		// Muestra la ventana emergente y establece la imagen seleccionada como su fuente
+		modal.style.display = 'block';
+		modalImg.src = image.dataset.highres;
+	  });
+	});
+
+	// Agrega un evento de clic al botón de cerrar la ventana emergente
+	const closeBtn = document.querySelector('.close');
+	
+	if(closeBtn){
+		closeBtn.addEventListener('click', () => {
+		  // Oculta la ventana emergente al hacer clic en el botón de cerrar
+			modal.style.display = 'none';
+		});
+	}
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var images = document.querySelectorAll(".photo img");
+	var captionText = document.querySelector(".caption");
+
+	// Loop through all images and add the click event listener
+	for (var i = 0; i < images.length; i++) {
+	  images[i].addEventListener("click", function() {
+		modal.style.display = "block";
+		modalImg.src = this.dataset.highres;
+		//captionText.innerHTML = this.alt;
+	  });
+	}
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	if(span){
+		// When the user clicks on <span> (x), close the modal
+		span.addEventListener("click", function() {
+		  modal.style.display = "none";
+		});
+	}
+
+	
+  </script>
 </body>
 </html>
