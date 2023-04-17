@@ -66,8 +66,32 @@
 }
 
 
+p{
+	margin: 2%
+}
 
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 50px;
+  /* Agrega otros estilos que desees */
+}
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+ 
+.centrado {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+  } 
   
   
   
