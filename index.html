@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Autografia</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Descubre el fascinante mundo de la fotografía y la automoción con nuestra web. Explora nuestra colección de imágenes impresionantes que capturan la belleza y la emoción de los coches deportivos, coches de rallye y coches clásicos en su máxima expresión. Desde los motores ruidosos hasta las líneas aerodinámicas, cada foto cuenta una historia única que ilustra cómo el arte y la tecnología se combinan en estas máquinas de cuatro ruedas.
+  <meta name="description" content="Sumérgete en el apasionante mundo de la autografía, donde la fotografía y la automoción se fusionan en un arte único. Explora nuestra colección de imágenes impresionantes que capturan la belleza y la emoción de los coches deportivos, coches de rallye y coches clásicos en su máxima expresión. Desde los motores ruidosos hasta las líneas aerodinámicas, cada foto cuenta una historia única que ilustra cómo el arte y la tecnología se combinan en estas máquinas de cuatro ruedas.
 
 Nuestro equipo de fotógrafos expertos se dedica a capturar cada detalle y a crear imágenes que te dejarán sin aliento. Ya sea que seas un apasionado de la automoción o simplemente un amante del arte, estamos seguros de que encontrarás algo que te emocionará.
 
@@ -26,161 +26,10 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="" />-->
+  <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-  <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
-  <style>
-  
-  
-  .contenedor {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  background-color: #ddd;
-}
-
-.boton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #333;
-  padding: 10px 20px;
-  border: 2px solid #333;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.imagenes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-.imagen {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #333;
-  animation: aparecer 1s ease forwards;
-}
-
-@keyframes aparecer {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes desvanecer {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-  
-  
-  
-  
-  
-  
-	@media (max-width: 768px) {
-	  .mobile-logo {		
-		max-width: 70%;
-		max-height: 15%;
-	  }
-	}
-	
-	@media (min-width: 769px) {
-	  .desktop-logo {
-		max-width: 20%;
-		max-height: 15%;
-	  }
-	}
-    /* For best practice, move CSS below to an external CSS file. */
-    @keyframes fadeinall {
-    0% {
-      opacity: 1; }
-    97% {
-      opacity: 0; }
-    98% {
-      opacity: 0;
-      -webkit-transform: translateY(0);
-      transform: translateY(0); }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(-100%);
-      transform: translateY(-100%);
-      z-index: -1; } 
-	}
-	  
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		grid-gap: 20px;
-	}	  
-	.photo {
-		position: relative;
-		overflow: hidden;
-	}	  
-	.photo img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.2s;
-	}	  
-	.photo:hover img {
-		transform: scale(1.1);
-	}
-
-	.modal {
-	  display: none;
-	  position: fixed;
-	  z-index: 1;
-	  padding-top: 100px;
-	  left: 0;
-	  top: 0;
-	  width: 100%;
-	  height: 100%;
-	  overflow: auto;
-	  background-color: rgba(0,0,0,0.9);
-	}
-
-	.modal-content {
-	  border-left: none;
-	  border-right: none;
-	  margin: auto;
-	  display: block;
-	  max-width: 100%;
-	  max-height: 80vh;
-	  object-fit: contain;
-	}
-
-	.close {
-	  position: absolute;
-	  top: 10px;
-	  right: 25px;
-	  font-size: 35px;
-	  font-weight: bold;
-	  color: white;
-	  cursor: pointer;
-	}
-	  
-  </style>
-  
+  <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>  
   <div id="loader-wrapper" class="bg-white position-fixed z-3 w-100 h-100 text-center">
     <div class="spinner-border mt-5" role="status">
       <span class="visually-hidden">Loading...</span>
