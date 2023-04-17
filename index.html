@@ -34,15 +34,11 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
     <div class="spinner-border mt-5" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
-  </div>
-  <header>
+  </div>  
   <!-- <img src="/logos/logo_simple.png" class="d-block mx-auto my-3" alt="Autografia Logo" style="max-width: 5%;max-height: 10%;" style="max-width: 20%; style="max-width: 20%;max-height: 10%;"" />-->
-</header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">    
 	<img src="logos/logo1.png" class="d-block mx-auto my-1 desktop-logo mobile-logo" alt="Autografia Logo">
-
-    <!-- Resto del código HTML -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -72,9 +68,7 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
     </div>
   </nav>
   <hr id="random-bar">
-  <br/>
-  <br/>
-  <div class="separator-bar"></div>
+  <br/>   
   <p>Mensaje de prueba.</p>  
   <main>
     <section></section>
@@ -84,11 +78,12 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Evento 1
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <!--<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">-->
+	  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
 			<br/>Mensaje de prueba.<br/>
 			<div class="gallery">
@@ -176,11 +171,11 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
           Accordion Section Content 3		  		  		  	
 			<div id="slingshot">			  
 			  <div id="images">
-				<img src="hr_1.png" alt="Image 1">
-				<img src="hr_1.png" alt="Image 2">
+				<img src="hr/hr_1.png" alt="Image 1">
+				<img src="hr/hr_1.png" alt="Image 2">
 				<button id="launch">Launch!</button>
-				<img src="hr_1.png" alt="Image 3">
-				<img src="hr_1.png" alt="Image 4">
+				<img src="hr/hr_1.png" alt="Image 3">
+				<img src="hr/hr_1.png" alt="Image 4">
 			  </div>
 			</div>	 		  		  
         </div>
@@ -312,35 +307,11 @@ const launchButton = document.getElementById('launch');
 
 
 const randomBar = document.getElementById("random-bar");
-const fondos = ["hr_1.png", "hr_2.png", "hr_1.png"];
+const fondos = ["hr/hr_1.png", "hr/hr_2.png", "hr/hr_3.png", "hr/hr_4.png", "hr/hr_5.png", "hr/hr_6.png", "hr/hr_7.png", "hr/hr_8.png", "hr/hr_9.png", "hr/hr_10.png", "hr/hr_11.png"];
 
 const randomImage = fondos[Math.floor(Math.random() * fondos.length)];
 randomBar.style.backgroundImage = `url(${randomImage})`;
 
-
-
-
-const separatorBar = document.querySelector('.separator-bar');
-const randomImageIndex = Math.floor(Math.random() * fondos.length);
-const randomImages = fondos[randomImageIndex];
-
-const img = document.createElement('img');
-img.setAttribute('src', randomImages);
-separatorBar.appendChild(img);
-
-
-
-
-
-const imageness = ["hr_1.png", "hr_2.png", "hr_1.png"];
-const separator = document.getElementById("separator");
-
-for (let i = 0; i < 10; i++) {
-  const randomIndex = Math.floor(Math.random() * imageness.length);
-  const imag = document.createElement("img");
-  imag.src = "hr/" + imageness[randomIndex];
-  separator.appendChild(imag);
-}
 
 
 

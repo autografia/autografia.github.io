@@ -59,7 +59,7 @@
 #random-bar {
   border: none;
   height: 30px;
-  background-image: url("/hr/hr_1.png"), url("/hr/hr_2.png");
+  background-image: url("hr/hr_1.png"), url("hr/hr_2.png"), url("hr/hr_3.png"), url("hr/hr_4.png"), url("hr/hr_5.png"), url("hr/hr_6.png"), url("hr/hr_7.png"), url("hr/hr_8.png"), url("hr/hr_9.png"), url("hr/hr_10.png"), url("hr/hr_11.png");
   background-repeat: repeat-x;
   background-size: auto 100%;
   margin: 1%;
@@ -68,24 +68,6 @@
 
 
 
-
-
-
-.separator-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  width: 100%;
-  background-color: transparent;
-}
-
-.separator-bar img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-  
   
   
   
