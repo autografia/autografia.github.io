@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Animación de imágenes</title>
+    <style>
+      #slingshot {
+        position: relative;
+        width: 500px;
+        height: 500px;
+      }
+
+      .images {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+      }
+
+      .images img {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .images img:nth-child(1) {
+        transform-origin: top left;
+        transform: translate(-100%, -100%);
+        transition-delay: 0.05s;
+      }
+
+      .images img:nth-child(2) {
+        transform-origin: top right;
+        transform: translate(100%, -100%);
+        transition-delay: 0.1s;
+      }
+
+      .images img:nth-child(3) {
+        transform-origin: bottom left;
+        transform: translate(-100%, 100%);
+        transition-delay: 0.15s;
+      }
+
+      .images img:nth-child(4) {
+        transform-origin: bottom right;
+        transform: translate(100%, 100%);
+        transition-delay: 0.2s;
+      }
+
+      #launch {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+      }
+
+      #slingshot:hover .images {
+        opacity: 1;
+      }
+
+      #slingshot:hover .images img {
+        transform: translate(0, 0);
+      }
+      
+      #slingshot:hover .images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #slingshot:hover .images img:nth-child(3), #slingshot:hover .images img:nth-child(4) {
+        margin-top: 20px;
+      }
+	  
+	  
+	  .images:hover img {
+  animation: slingshot 1s linear forwards;
+}
+
+.images:hover #launch {
+  animation: slingshot-launch 1s linear forwards;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="slingshot">
+      <div class="images">
+        <img src="https://via.placeholder.com/100x100.png?text=Imagen+1" alt="Imagen 1">
+        <img src="https://via.placeholder.com/100x100.png?text=Imagen+2" alt="Imagen 2">
+	</div>
+	<button id="launch">Lanzar</button>
+	<div class="images">        
+        <img src="https://via.placeholder.com/100x100.png?text=Imagen+3" alt="Imagen 3">
+        <img src="https://via.placeholder.com/100x100.png?text=Imagen+4" alt="Imagen 4">
+      </div>
+    </div>
+  </body>
+</html>
