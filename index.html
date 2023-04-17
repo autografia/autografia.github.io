@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <title>Autografia</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+  <meta name="description" content="Descubre el fascinante mundo de la fotografía y la automoción con nuestra web. Explora nuestra colección de imágenes impresionantes que capturan la belleza y la emoción de los coches deportivos, coches de rallye y coches clásicos en su máxima expresión. Desde los motores ruidosos hasta las líneas aerodinámicas, cada foto cuenta una historia única que ilustra cómo el arte y la tecnología se combinan en estas máquinas de cuatro ruedas.
+
+Nuestro equipo de fotógrafos expertos se dedica a capturar cada detalle y a crear imágenes que te dejarán sin aliento. Ya sea que seas un apasionado de la automoción o simplemente un amante del arte, estamos seguros de que encontrarás algo que te emocionará.
+
+Además, en nuestra web encontrarás artículos interesantes y actualizados sobre las últimas tendencias en el mundo de los coches, así como información valiosa sobre la historia de la automoción y los eventos más importantes del calendario.
+
+No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el arte y la tecnología se unen en el mundo de los coches. ¡Te esperamos!"/>
   <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v1.1.0/modern-normalize.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <!--<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -12,18 +18,85 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">-->
   <meta name="theme-color" content="#bfbfbf">
-  <meta property="og:title" content="" />
+  <!--<meta property="og:title" content="" />
   <meta property="og:description" content="" />
   <meta property="og:image" content="" />
   <meta name="twitter:card" content="" />
   <meta name="twitter:site" content="" />
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="" />
+  <meta name="twitter:image" content="" />-->
 </head>
 <body>
   <div id="fadein" class="position-fixed w-100 h-100 bg-white" style="animation: fadeinall 1s normal 0.3s both;"></div>
   <style>
+  
+  
+  .contenedor {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #ddd;
+}
+
+.boton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imagenes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.imagen {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes desvanecer {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+  
+  
+  
+  
+  
+  
 	@media (max-width: 768px) {
 	  .mobile-logo {		
 		max-width: 70%;
@@ -125,27 +198,27 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Servicios</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Otros
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Contacto</a></li>
-              <li><a class="dropdown-item" href="#">SimRacing</a></li>
-              <li><a class="dropdown-item" href="#">Arduino</a></li>
-            </ul>
-          </li>
-        </ul>
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Galería</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Servicios</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			  Otros
+			</a>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#">Contacto</a></li>
+			  <li><a class="dropdown-item" href="#">SimRacing</a></li>
+			  <li><a class="dropdown-item" href="#">Arduino</a></li>
+			</ul>
+		  </li>
+		</ul>		  
       </div>
     </div>
   </nav>
@@ -248,6 +321,14 @@
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           Accordion Section Content 3
+		  
+		  <div class="contenedor">
+			<button class="boton">Haz click aquí para ver las imágenes</button>
+			<div class="imagenes">
+				<img src="circuito1.png" class="d-block w-20" style="display:none"></img>
+			</div>
+		  </div>
+		  
         </div>
       </div>
     </div>
@@ -322,6 +403,36 @@
 		  modal.style.display = "none";
 		});
 	}
+
+
+
+
+const contenedor = document.querySelector('.contenedor');
+const boton = document.querySelector('.boton');
+const imagenes = document.querySelector('.imagenes');
+
+boton.addEventListener('click', () => {
+  // Creamos las imágenes
+  for (let i = 0; i < 10; i++) {
+    const imagen = document.createElement('div');
+    imagen.classList.add('imagen');
+    imagen.style.top = Math.random() * 100 + '%';
+    imagen.style.left = Math.random() * 100 + '%';
+    imagenes.appendChild(imagen);
+  }
+
+  // Desvanecemos las imágenes después de un segundo
+  setTimeout(() => {
+    const imagenes = document.querySelectorAll('.imagen');
+    imagenes.forEach(imagen => {
+      imagen.style.animation = 'desvanecer 1s ease forwards';
+      imagen.addEventListener('animationend', () => {
+        imagen.remove();
+      });
+    });
+  }, 1000);
+});
+
 
 	
   </script>
