@@ -169,15 +169,16 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          Accordion Section Content 3
-		  
-		  <div class="contenedor">
-			<button class="boton">Haz click aquí para ver las imágenes</button>
-			<div class="imagenes">
-				<img src="circuito1.png" class="d-block w-20" style="display:none"></img>
-			</div>
-		  </div>
-		  
+          Accordion Section Content 3		  		  		  	
+			<div id="slingshot">
+			  <button id="launch">Launch!</button>
+			  <div id="images">
+				<img src="circuito1.png" alt="Image 1">
+				<img src="circuito1.png" alt="Image 2">
+				<img src="circuito1.png" alt="Image 3">
+				<img src="circuito1.png" alt="Image 4">
+			  </div>
+			</div>	 		  		  
         </div>
       </div>
     </div>
@@ -205,6 +206,42 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
 		<img class="modal-content" src="">
 	</div>
 	  <script>
+	  
+	  
+	  
+	  const launchButton = document.getElementById('launch');
+const imagesContainer = document.getElementById('images');
+const imagenes = document.querySelectorAll('#images img');
+
+launchButton.addEventListener('click', () => {
+  imagesContainer.style.opacity = 1;
+  imagenes[0].style.transform = 'translateY(-200px)';
+  imagenes[1].style.transform = 'translateY(200px)';
+  imagenes[2].style.transform = 'translateY(-200px)';
+  imagenes[3].style.transform = 'translateY(200px)';
+  setTimeout(() => {
+    imagesContainer.style.opacity = 0;
+  }, 1000);
+});
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	
 	// Selecciona todas las imágenes de la galería
 	const galleryImages = document.querySelectorAll('.photo img');
@@ -252,35 +289,6 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
 		  modal.style.display = "none";
 		});
 	}
-
-
-
-
-const contenedor = document.querySelector('.contenedor');
-const boton = document.querySelector('.boton');
-const imagenes = document.querySelector('.imagenes');
-
-boton.addEventListener('click', () => {
-  // Creamos las imágenes
-  for (let i = 0; i < 10; i++) {
-    const imagen = document.createElement('div');
-    imagen.classList.add('imagen');
-    imagen.style.top = Math.random() * 100 + '%';
-    imagen.style.left = Math.random() * 100 + '%';
-    imagenes.appendChild(imagen);
-  }
-
-  // Desvanecemos las imágenes después de un segundo
-  setTimeout(() => {
-    const imagenes = document.querySelectorAll('.imagen');
-    imagenes.forEach(imagen => {
-      imagen.style.animation = 'desvanecer 1s ease forwards';
-      imagen.addEventListener('animationend', () => {
-        imagen.remove();
-      });
-    });
-  }, 1000);
-});
 
 
 	
