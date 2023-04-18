@@ -52,17 +52,13 @@
 
 
 
-
-
-
-
 #random-bar {
   border: none;
   height: 30px;
   background-image: url("hr/hr_1.png");
   background-repeat: repeat-x;
   background-size: auto 100%;
-  margin: 1%;
+  margin: 0.5%;
 }
 
 
