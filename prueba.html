@@ -4,22 +4,27 @@
   <title>Mi sitio web semi-automático de eventos</title>
     <meta charset="UTF-8" />
   <script>
-    function cargarFotosEvento(evento) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "fotos/" + evento, true);
-      xhr.onload = function() {
-        if (xhr.status == 200) {
-          var imagenes = xhr.responseText.split("\n");
-          var galeria = document.getElementById("galeria");
-          for (var i = 0; i < imagenes.length; i++) {
-            var img = document.createElement("img");
-            img.src = "ruta/a/" + evento + "/" + imagenes[i];
-            galeria.appendChild(img);
-          }
+	
+	function cargarFotos() {
+  var rutaDirectorio = "fotos/baja_calidad";
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var nombresArchivos = JSON.parse(this.responseText);
+      var galeria = document.getElementById("galeria");
+      for (var i = 0; i < nombresArchivos.length; i++) {
+        var nombreArchivo = nombresArchivos[i];
+        if (nombreArchivo.startsWith("DSC_")) {
+          var img = document.createElement("img");
+          img.src = rutaDirectorio + "/" + nombreArchivo;
+          galeria.appendChild(img);
         }
       }
-      xhr.send();
     }
+  };
+  xmlhttp.open("GET", rutaDirectorio, true);
+  xmlhttp.send();
+}
   </script>
 </head>
 <body>
