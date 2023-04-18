@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi sitio web semi-automático de eventos</title>
+  <script>
+    function cargarFotosEvento(evento) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", + evento, true);
+      xhr.onload = function() {
+        if (xhr.status == 200) {
+          var imagenes = xhr.responseText.split("\n");
+          var galeria = document.getElementById("galeria");
+          for (var i = 0; i < imagenes.length; i++) {
+            var img = document.createElement("img");
+            img.src = "ruta/a/" + evento + "/" + imagenes[i];
+            galeria.appendChild(img);
+          }
+        }
+      }
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <h1>Mi sitio web semi-automático de eventos</h1>
+  <button onclick="cargarFotosEvento('hr/')">Cargar fotos del evento 1</button>
+  <button onclick="cargarFotosEvento('evento2')">Cargar fotos del evento 2</button>
+  <div id="galeria"></div>
+</body>
+</html>
