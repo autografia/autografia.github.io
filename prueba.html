@@ -3,7 +3,14 @@
 <head>
   <title>Mi sitio web semi-automático de eventos</title>
     <meta charset="UTF-8" />
-  <script>
+</head>
+<body>
+  <h1>Mi sitio web semi-automático de eventos</h1>
+  <button onclick="cargarFotos()">Cargar fotos del evento 1</button>
+  <button onclick="cargarFotosEvento('alta_calidad')">Cargar fotos del evento 2</button>
+  <div id="galeria"></div>
+  
+    <script>
 	
 	function cargarFotos() {
   var rutaDirectorio = "fotos/baja_calidad";
@@ -26,11 +33,5 @@
   xmlhttp.send();
 }
   </script>
-</head>
-<body>
-  <h1>Mi sitio web semi-automático de eventos</h1>
-  <button onclick="cargarFotos()">Cargar fotos del evento 1</button>
-  <button onclick="cargarFotosEvento('alta_calidad')">Cargar fotos del evento 2</button>
-  <div id="galeria"></div>
 </body>
 </html>
