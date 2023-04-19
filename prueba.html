@@ -12,26 +12,23 @@
   
     <script>
 	
-	function cargarFotos() {
-  var rutaDirectorio = "fotos/baja_calidad";
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var nombresArchivos = JSON.parse(this.responseText);
+function cargarFotos() {
+  var rutaDirectorio = "fotos/baja_calidad/";
+  fetch(rutaDirectorio)
+    .then(response => response.text())
+    .then(data => {
+      var nombresArchivos = data.split("\n").filter(nombre => nombre.endsWith(".jpg") || nombre.endsWith(".png"));
       var galeria = document.getElementById("galeria");
       for (var i = 0; i < nombresArchivos.length; i++) {
         var nombreArchivo = nombresArchivos[i];
-        if (nombreArchivo.startsWith("DSC_")) {
-          var img = document.createElement("img");
-          img.src = rutaDirectorio + "/" + nombreArchivo;
-          galeria.appendChild(img);
-        }
+        var img = document.createElement("img");
+        img.src = rutaDirectorio + nombreArchivo;
+        galeria.appendChild(img);
       }
-    }
-  };
-  xmlhttp.open("GET", rutaDirectorio, true);
-  xmlhttp.send();
+    })
+    .catch(error => console.log(error));
 }
+
   </script>
 </body>
 </html>
