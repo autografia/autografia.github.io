@@ -1,3 +1,8 @@
+/*
+/Get-ChildItem | Where-Object {$_.Name -like "DSC_*.jpg"} | Select-Object -ExpandProperty Name
+*/
+
+
 #slingshot {
   position: relative;
   width: 100%;
