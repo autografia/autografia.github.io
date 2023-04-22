@@ -1,43 +1,41 @@
-const launchButton = document.getElementById('launch');
+  const launchButton = document.getElementById('launch');
   const imagesContainer = document.getElementById('images');
   const imagenes = document.querySelectorAll('#images img');
 
   launchButton.addEventListener('mouseenter', () => {
-	// Restablecer la animación
-	imagesContainer.style.opacity = 0;
-	imagenes.forEach((imagen) => {
-	  imagen.style.transform = 'scale(0)';
-	});
+	  // Restablecer la animación
+	  imagesContainer.style.opacity = 0;
+    imagenes.forEach((imagen) => {
+      imagen.style.transform = 'scale(0)';
+    });
 
-	// Aplicar la animación
-	imagesContainer.style.opacity = 1;
-	imagenes[0].style.transform = 'scale(1)';
-	imagenes[1].style.transform = 'scale(1)';
-	imagenes[2].style.transform = 'scale(1)';
-	imagenes[3].style.transform = 'scale(1)';
+    // Aplicar la animación
+    imagesContainer.style.opacity = 1;
+    imagenes[0].style.transform = 'scale(1)';
+    imagenes[1].style.transform = 'scale(1)';
+    imagenes[2].style.transform = 'scale(1)';
+    imagenes[3].style.transform = 'scale(1)';
   });
 
   // Restablecer la animación cuando se sale del hover
   launchButton.addEventListener('mouseleave', () => {
-	imagesContainer.style.opacity = 0;
-	imagenes.forEach((imagen) => {
-	  imagen.style.transform = 'scale(0)';
-	});
+	  imagesContainer.style.opacity = 0;
+    imagenes.forEach((imagen) => {
+      imagen.style.transform = 'scale(0)';
+    });
   });
 
   // Restablecer la animación después de que termine la animación
   imagenes[0].addEventListener('transitionend', () => {
-	imagesContainer.style.opacity = 0;
-	imagenes.forEach((imagen) => {
-	  imagen.style.transform = 'scale(0)';
-	});
+  	imagesContainer.style.opacity = 0;
+    imagenes.forEach((imagen) => {
+      imagen.style.transform = 'scale(0)';
+    });
   });
 	  
 	  
 	  
-		  
-	  
-// JavaScript
+		  	  
 // Selecciona todas las imágenes de la galería
 const galleryImages = document.querySelectorAll('.photo img');
 
