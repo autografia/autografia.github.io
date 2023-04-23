@@ -1,5 +1,5 @@
 /*
-/Get-ChildItem | Where-Object {$_.Name -like "DSC_*.jpg"} | Select-Object -ExpandProperty Name
+Get-ChildItem | Where-Object {$_.Name -like "DSC_*.jpg"} | Select-Object -ExpandProperty Name
 */
 
 
