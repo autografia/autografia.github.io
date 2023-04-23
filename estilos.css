@@ -74,6 +74,16 @@ html, body {
   z-index: -1; } 
 }
 
+.download-button{
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;  
+}
+
 .moralet {
 	margin: 2%;
 	display: grid;
