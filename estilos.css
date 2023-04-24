@@ -142,3 +142,14 @@ html, body {
   color: white;
   cursor: pointer;
 }
+
+
+
+.borde-redondo-puntiagudo {
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 2px solid grey;
+  margin: 2%;
+}
