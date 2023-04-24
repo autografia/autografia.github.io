@@ -6,7 +6,7 @@ const galleryImages = document.querySelectorAll('.photo img');
 // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
 const modal = document.querySelector('.modal');
 const modalImg = document.querySelector('.modal-content');
-const modalDownloadButton = document.querySelector('.modal #download-button');
+const modalDownloadButton = document.querySelector('#download-button');
 
 // Agrega un evento de clic a cada imagen
 galleryImages.forEach(image => {
