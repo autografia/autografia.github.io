@@ -1,37 +1,33 @@
+ 
+		  	  
 // Selecciona todas las imágenes de la galería
-const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
-
+const galleryImages = document.querySelectorAll('.photo img');
 
 // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
 const modal = document.querySelector('.modal');
 const modalImg = document.querySelector('.modal-content');
 const modalDownloadButton = document.querySelector('#download-button');
 
-// Agrega el evento de clic al botón de descarga
-modalDownloadButton.addEventListener('click', () => {
-  window.location.href = modalDownloadButton.href;
-});
-
 // Agrega un evento de clic a cada imagen
-const gallery = document.getElementsByClassName('photo')[0];
-gallery.addEventListener('click', (event) => {
-  if (event.target.tagName === 'IMG') {
+galleryImages.forEach(image => {
+  image.addEventListener('click', () => {
+    // Muestra la ventana emergente y establece la imagen seleccionada como su fuente
     modal.style.display = 'block';
-    modalImg.src = event.target.dataset.highres;
-    modalDownloadButton.href = event.target.dataset.highres;
-    captionText.innerHTML = event.target.alt;
-  }
+    modalImg.src = image.dataset.highres;
+    
+    // Establece la URL de descarga del botón de descarga        
+    modalDownloadButton.href = image.dataset.highres;
+  });
 });
 
 // Agrega un evento de clic al botón de cerrar la ventana emergente
-const closeBtn = document.getElementsByClassName('close')[0];
-if (closeBtn) {
+const closeBtn = document.querySelector('.close');
+if(closeBtn){
   closeBtn.addEventListener('click', () => {
+    // Oculta la ventana emergente al hacer clic en el botón de cerrar
     modal.style.display = 'none';
   });
 }
-
-
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var images = document.querySelectorAll(".photo img");
 var captionText = document.querySelector(".caption");
@@ -41,18 +37,24 @@ for (var i = 0; i < images.length; i++) {
   images[i].addEventListener("click", function() {
     modal.style.display = "block";
     modalImg.src = this.dataset.highres;
-    modalDownloadButton.download = this.alt;
     modalDownloadButton.href = this.dataset.highres;
     captionText.innerHTML = this.alt;
   });
 }
 
-
+// Agrega el evento de clic al botón de descarga
+modalDownloadButton.addEventListener('click', () => {
+  // Descarga la imagen seleccionada
+  
+  window.location.href = modalDownloadButton.href;
+  modalDownloadButton.download = image.alt; // establece el nombre del archivo como el atributo download    
+  modalDownloadButton.href = image.dataset.highres;
+});
 
 // Agrega el evento de clic a la ventana emergente para cerrarla al hacer clic fuera de ella
 window.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 });
 
