@@ -7,7 +7,7 @@ Get-ChildItem | Where-Object {$_.Name -like "DSC_*.jpg"} | Select-Object -Expand
 #random-bar {
   border: none;
   height: 30px;
-  background-image: url("hr/hr_1.png");
+  background-image: url("logos/icono.ico");
   background-repeat: repeat-x;
   background-size: auto 100%;
   margin: 0.5%;
@@ -105,7 +105,7 @@ html, body {
 	height: 100%;
 	object-fit: cover;
 	transition: transform 0.2s;
-  border-radius: 40px 0;	
+  border-radius: 40px 0;
 }	  
 .photo:hover img {
 	transform: scale(1.1);
@@ -144,13 +144,21 @@ html, body {
   cursor: pointer;
 }
 
+/*
+.footer-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 40px 0 0 0;
+  border: 1px solid #ddd;
+}
 
-
-.borde-redondo-puntiagudo {
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border: 2px solid grey;
+/*
+small{
+  background-color: black;
+  color: white;
+  border-radius: 40px 0;
   margin: 2%;
 }
+footer{
+  margin: 0 10% 1% 1%;
+}*/
