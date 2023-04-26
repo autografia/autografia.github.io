@@ -74,16 +74,6 @@ html, body {
   z-index: -1; } 
 }
 
-.download-button{
-  background-color: #007bff;
-  border-color: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;  
-}
-
 .moralet {
 	margin: 2%;
 	display: grid;
@@ -121,7 +111,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
@@ -143,6 +133,17 @@ html, body {
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+/*Boton descargar*/
+.download-button{
+  background-color: #1c1c1c;
+  border-color: #1c1c1c;
+  color: #fefefe;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;  
 }
 
 /*
