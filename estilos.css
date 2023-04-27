@@ -102,6 +102,7 @@ html, body {
 	transform: scale(1.05);
 }
 
+
 .modal {
   display: none;
   position: fixed;
