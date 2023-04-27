@@ -88,7 +88,7 @@ html, body {
 }	  
 .photo {
 	position: relative;
-  /*cursor: pointer;*/
+  cursor: pointer;
 }	  
 .photo img {
 	width: 100%;
@@ -96,6 +96,7 @@ html, body {
 	object-fit: cover;
 	transition: transform 0.2s;
   border-radius: 40px 0;
+  max-height: 200px;
 }	  
 .photo:hover img {
 	transform: scale(1.05);
