@@ -1,41 +1,287 @@
 [
-    {
-      "nombre": "Foto 1"
-    },
-    {
-      "nombre": "Foto 2",
-      "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-      "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    },
-    {
-        "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
-    }
-  ]
-  
+  {
+    "nombre": "DSC_4585",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4585.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4585.webp"
+  },
+  {
+    "nombre": "DSC_4586",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4586.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4586.webp"
+  },
+  {
+    "nombre": "DSC_4587",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4587.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4587.webp"
+  },
+  {
+    "nombre": "DSC_4588",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4588.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4588.webp"
+  },
+  {
+    "nombre": "DSC_4589",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4589.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4589.webp"
+  },
+  {
+    "nombre": "DSC_4590",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4590.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4590.webp"
+  },
+  {
+    "nombre": "DSC_4591",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4591.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4591.webp"
+  },
+  {
+    "nombre": "DSC_4592",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4592.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4592.webp"
+  },
+  {
+    "nombre": "DSC_4593",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4593.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4593.webp"
+  },
+  {
+    "nombre": "DSC_4594",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4594.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4594.webp"
+  },
+  {
+    "nombre": "DSC_4595",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4595.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4595.webp"
+  },
+  {
+    "nombre": "DSC_4597",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4597.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4597.webp"
+  },
+  {
+    "nombre": "DSC_4598",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4598.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4598.webp"
+  },
+  {
+    "nombre": "DSC_4599",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4599.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4599.webp"
+  },
+  {
+    "nombre": "DSC_4602",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4602.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4602.webp"
+  },
+  {
+    "nombre": "DSC_4603",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4603.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4603.webp"
+  },
+  {
+    "nombre": "DSC_4604",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4604.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4604.webp"
+  },
+  {
+    "nombre": "DSC_4605",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4605.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4605.webp"
+  },
+  {
+    "nombre": "DSC_4606",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4606.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4606.webp"
+  },
+  {
+    "nombre": "DSC_4607",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4607.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4607.webp"
+  },
+  {
+    "nombre": "DSC_4608",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4608.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4608.webp"
+  },
+  {
+    "nombre": "DSC_4610",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4610.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4610.webp"
+  },
+  {
+    "nombre": "DSC_4611",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4611.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4611.webp"
+  },
+  {
+    "nombre": "DSC_4612",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4612.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4612.webp"
+  },
+  {
+    "nombre": "DSC_4613",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4613.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4613.webp"
+  },
+  {
+    "nombre": "DSC_4614",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4614.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4614.webp"
+  },
+  {
+    "nombre": "DSC_4615",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4615.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4615.webp"
+  },
+  {
+    "nombre": "DSC_4616",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4616.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4616.webp"
+  },
+  {
+    "nombre": "DSC_4617",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4617.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4617.webp"
+  },
+  {
+    "nombre": "DSC_4618",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4618.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4618.webp"
+  },
+  {
+    "nombre": "DSC_4622",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4622.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4622.webp"
+  },
+  {
+    "nombre": "DSC_4624",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4624.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4624.webp"
+  },
+  {
+    "nombre": "DSC_4625",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4625.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4625.webp"
+  },
+  {
+    "nombre": "DSC_4626",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4626.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4626.webp"
+  },
+  {
+    "nombre": "DSC_4627",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4627.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4627.webp"
+  },
+  {
+    "nombre": "DSC_4628",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4628.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4628.webp"
+  },
+  {
+    "nombre": "DSC_4629",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4629.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4629.webp"
+  },
+  {
+    "nombre": "DSC_4631",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4631.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4631.webp"
+  },
+  {
+    "nombre": "DSC_4632",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4632.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4632.webp"
+  },
+  {
+    "nombre": "DSC_4633",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4633.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4633.webp"
+  },
+  {
+    "nombre": "DSC_4634",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4634.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4634.webp"
+  },
+  {
+    "nombre": "DSC_4635",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4635.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4635.webp"
+  },
+  {
+    "nombre": "DSC_4636",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4636.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4636.webp"
+  },
+  {
+    "nombre": "DSC_4637",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4637.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4637.webp"
+  },
+  {
+    "nombre": "DSC_4638",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4638.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4638.webp"
+  },
+  {
+    "nombre": "DSC_4639",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4639.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4639.webp"
+  },
+  {
+    "nombre": "DSC_4640",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4640.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4640.webp"
+  },
+  {
+    "nombre": "DSC_4643",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4643.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4643.webp"
+  },
+  {
+    "nombre": "DSC_4644",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4644.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4644.webp"
+  },
+  {
+    "nombre": "DSC_4649",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4649.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4649.webp"
+  },
+  {
+    "nombre": "DSC_4652",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4652.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4652.webp"
+  },
+  {
+    "nombre": "DSC_4653",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4653.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4653.webp"
+  },
+  {
+    "nombre": "DSC_4655",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4655.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4655.webp"
+  },
+  {
+    "nombre": "DSC_4656",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4656.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4656.webp"
+  },
+  {
+    "nombre": "DSC_4657",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4657.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4657.webp"
+  },
+  {
+    "nombre": "DSC_4658",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4658.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4658.webp"
+  },
+  {
+    "nombre": "DSC_4659",
+    "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4659.webp",
+    "alta_calidad": "fotos/moralet_2023/alta_calidad/DSC_4659.webp"
+  }
+]
