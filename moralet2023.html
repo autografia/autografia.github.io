@@ -112,13 +112,6 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
       $("#loader-wrapper").fadeOut(700);
     });
   </script>
-  <script type="text/javascript" src="animaciones.js">
-    window.onload = function () {
-      setTimeout(function () {
-        document.getElementById("fadein").remove();
-      }, 1000);
-    };
-  </script>
   <script>
   fetch('/fotos/moralet_2023/fotos.json')
     .then(response => response.json())
@@ -150,6 +143,12 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
     return true;
   }
 </script>
+  <script type="text/javascript" src="animaciones.js">
+    window.onload = function () {
+      setTimeout(function () {
+        document.getElementById("fadein").remove();
+      }, 1000);
+    };
+  </script>
 </body>
-
 </html>
