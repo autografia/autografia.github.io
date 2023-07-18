@@ -113,35 +113,81 @@ No pierdas la oportunidad de explorar nuestro sitio web y descubrir cómo el art
     });
   </script>
   <script>
-  fetch('/fotos/moralet_2023/fotos.json')
-    .then(response => response.json())
-    .then(data => {
-      const galeria = document.getElementById('galeria');
+  window.onload = function() {
+    fetch('/fotos/moralet_2023/fotos.json')
+      .then(response => response.json())
+      .then(data => {
+        const galeria = document.getElementById('galeria');
 
-      data.forEach(foto => {
-        const div = document.createElement('div');
-        div.classList.add('photo');
+        data.forEach(foto => {
+          const div = document.createElement('div');
+          div.classList.add('photo');
 
-        const img = document.createElement('img');
-        img.src = foto.baja_calidad;
-        img.dataset.highres = foto.alta_calidad;
-        img.alt = foto.nombre;
-        img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+          const img = document.createElement('img');
+          img.src = foto.baja_calidad;
+          img.dataset.highres = foto.alta_calidad;
+          img.alt = foto.nombre;
+          img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
 
-        div.appendChild(img);
-        galeria.appendChild(div);
+          div.appendChild(img);
+          galeria.appendChild(div);
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar el archivo JSON:', error);
       });
-    })
-    .catch(error => {
-      console.error('Error al cargar el archivo JSON:', error);
-    });
 
-  // Agrega la función imgError
-  function imgError() {
-    this.onerror = "";
-    this.src = "/logos/error404.gif";
-    return true;
+    // Agrega la función imgError
+    function imgError() {
+      this.onerror = "";
+      this.src = "/logos/error404.gif";
+      return true;
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+// Crear un evento personalizado
+var imagesLoadedEvent = new Event('imagesLoaded');
+
+// Contar el número de imágenes que se deben cargar
+var totalImages = document.querySelectorAll('img').length;
+var imagesLoaded = 0;
+
+// Función para verificar si todas las imágenes se han cargado
+function checkImagesLoaded() {
+  imagesLoaded++;
+  if (imagesLoaded === totalImages) {
+    // Disparar el evento personalizado cuando todas las imágenes se hayan cargado
+    window.dispatchEvent(imagesLoadedEvent);
   }
+}
+
+// Agregar un listener para el evento personalizado
+window.addEventListener('imagesLoaded', function() {
+  // Aquí va el código que se ejecutará después de que todas las imágenes se hayan cargado
+  
+});
+
+// Agregar listeners individuales para cada imagen
+var images = document.querySelectorAll('img');
+for (var i = 0; i < images.length; i++) {
+  images[i].addEventListener('load', checkImagesLoaded);
+}
+
+
+
+
+
+
 </script>
   <script type="text/javascript" src="animaciones.js">
     window.onload = function () {
