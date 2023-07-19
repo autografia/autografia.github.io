@@ -1,35 +1,5 @@
-fetch('/fotos/moralet_2023/fotos.json')
-.then(response => response.json())
-.then(data => {
-  const galeria = document.getElementById('galeria');
-
-  data.forEach(foto => {
-    const div = document.createElement('div');
-    div.classList.add('photo');
-
-    const img = document.createElement('img');
-    img.src = foto.baja_calidad;
-    img.dataset.highres = foto.alta_calidad;
-    img.alt = foto.nombre;
-    img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-
-    div.appendChild(img);
-    galeria.appendChild(div);
-  });
-})
-.catch(error => {
-  console.error('Error al cargar el archivo JSON:', error);
-});
-
-// Agrega la función imgError
-function imgError() {
-this.onerror = "";
-this.src = "/logos/error404.gif";
-return true;
-}
-
-
-// Selecciona todas las imágenes de la galería
+const laFuncionQueSea = () => {
+ // Selecciona todas las imágenes de la galería
 const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
 
 
@@ -85,4 +55,37 @@ window.addEventListener('click', (event) => {
   if (event.target === modal) {
     modal.style.display = 'none';
   }
+}); 
+}
+
+fetch('/fotos/moralet_2023/fotos.json')
+.then(response => response.json())
+.then(data => {
+  const galeria = document.getElementById('galeria');
+
+  data.forEach(foto => {
+    const div = document.createElement('div');
+    div.classList.add('photo');
+
+    const img = document.createElement('img');
+    img.src = foto.baja_calidad;
+    img.dataset.highres = foto.alta_calidad;
+    img.alt = foto.nombre;
+    img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+
+    div.appendChild(img);
+    galeria.appendChild(div);
+    laFuncionQueSea()
+  });
+})
+.catch(error => {
+  console.error('Error al cargar el archivo JSON:', error);
 });
+
+// Agrega la función imgError
+function imgError() {
+this.onerror = "";
+this.src = "/logos/error404.gif";
+return true;
+}
+
