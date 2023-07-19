@@ -31,10 +31,18 @@ const laFuncionQueSea = () => {
   const modal = document.querySelector('.modal');
   const modalImg = document.querySelector('.modal-content');
   const modalDownloadButton = document.querySelector('#download-button');
+  const modalDownloadOriginalButton = document.querySelector('#download-button2');
+
 
   // Agrega el evento de clic al botón de descarga
   modalDownloadButton.addEventListener('click', () => {
     window.location.href = modalDownloadButton.href;
+  });
+
+  // Agrega el evento de clic al botón de descarga de calidad original
+  modalDownloadOriginalButton.addEventListener('click', () => {
+    // Descarga la imagen en calidad original
+    window.location.href = modalDownloadOriginalButton.href;
   });
 
   // Agrega un evento de clic al botón de cerrar la ventana emergente
@@ -55,6 +63,7 @@ const laFuncionQueSea = () => {
       modalImg.src = this.dataset.highres;
       modalDownloadButton.download = this.alt;
       modalDownloadButton.href = this.dataset.highres;
+      modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
       captionText.innerHTML = this.alt;
     });
   } 
