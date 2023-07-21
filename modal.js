@@ -1,6 +1,4 @@
 const laFuncionQueSea = () => {
-  // Selecciona todas las imágenes de la galería
-  const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
     // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
   const modal = document.querySelector('.modal');
   const modalImg = document.querySelector('.modal-content');
