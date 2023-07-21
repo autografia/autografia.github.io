@@ -123,6 +123,17 @@ html, body {
   object-fit: contain;
 }
 
+.modal-contenido {
+  position: relative;
+  border-left: none;
+  border-right: none;
+  margin: auto;
+  display: flex !important;
+  width: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
 /*Boton cerrar*/
 .close {
   position: absolute;
