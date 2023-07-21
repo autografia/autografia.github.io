@@ -46,6 +46,9 @@ const isInView = (element) => {
   );
 };
 
+// Selecciona todas las imágenes de la galería
+const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
+
 // Carga las imágenes en segundo plano a medida que se muestran en pantalla
 window.addEventListener('scroll', () => {
   galleryImages.forEach(image => {
