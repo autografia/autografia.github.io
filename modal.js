@@ -1,7 +1,7 @@
 const laFuncionQueSea = () => {
     // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
   const modal = document.querySelector('.modal');
-  const modalImg = document.querySelector('.modal-contenido');
+  const modalImg = document.querySelector('.imagen');
   const modalDownloadButton = document.querySelector('#download-button');
   const modalDownloadOriginalButton = document.querySelector('#download-button2');
 
