@@ -18,6 +18,18 @@ const laFuncionQueSea = () => {
   var images = document.querySelectorAll(".photo img");
   var captionText = document.querySelector(".caption");
 
+
+    // Agrega el evento de clic al botón de descarga
+  modalDownloadButton.addEventListener('click', () => {
+    window.location.href = modalDownloadButton.href;
+  });
+
+  // Agrega el evento de clic al botón de descarga de calidad original
+  modalDownloadOriginalButton.addEventListener('click', () => {
+    // Descarga la imagen en calidad original
+    window.location.href = modalDownloadOriginalButton.href;
+  });
+  
   // Agrega un evento de clic a cada imagen
   for (var i = 0; i < images.length; i++) {
     images[i].addEventListener("click", function() {
@@ -31,18 +43,6 @@ const laFuncionQueSea = () => {
     });
   } 
 }
-
-
-  // Agrega el evento de clic al botón de descarga
-  modalDownloadButton.addEventListener('click', () => {
-    window.location.href = modalDownloadButton.href;
-  });
-
-  // Agrega el evento de clic al botón de descarga de calidad original
-  modalDownloadOriginalButton.addEventListener('click', () => {
-    // Descarga la imagen en calidad original
-    window.location.href = modalDownloadOriginalButton.href;
-  });
 
 fetch('/fotos/moralet_2023/fotos.json')
 .then(response => response.json())
