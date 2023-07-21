@@ -124,7 +124,7 @@ html, body {
 }
 
 .modal-contenido {
-  position: relative;
+  position: absolute;
   border-left: none;
   border-right: none;
   margin: auto;
