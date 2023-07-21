@@ -35,8 +35,19 @@ const laFuncionQueSea = () => {
       modalImg.src = this.dataset.highres;
       modalDownloadButton.download = this.alt;
       modalDownloadButton.href = this.dataset.highres;
-      modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
-      modalDownloadOriginalButton.href = this.dataset.highres.replace("webp", "jpg");
+
+      // Obtenemos el enlace con alta calidad del dataset
+      const altaCalidadLink = modalDownloadOriginalButton.dataset.highres;
+
+      // Reemplazamos "alta_calidad" por "calidad_original"
+      const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");
+
+      // Reemplazamos ".webp" por ".jpg"
+      const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");
+      modalDownloadOriginalButton.href = jpgLink;
+
+      //modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
+      //modalDownloadOriginalButton.href = this.dataset.highres.replace("webp", "jpg");
       captionText.innerHTML = this.alt;
     });
   } 

@@ -127,8 +127,8 @@ html, body {
   position: absolute;
   border-left: none;
   border-right: none;
-  margin: auto;
-  display: flex !important;
+  margin: 5%;
+  display: flex;
   width: auto;
   max-height: 80vh;
   object-fit: contain;
