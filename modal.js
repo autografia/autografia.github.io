@@ -1,30 +1,4 @@
 const laFuncionQueSea = () => {
-
-  //Prueba de codigo redundado a eliminar  
-  // Agrega un evento de clic a cada imagen
-  /*const gallery = document.getElementsByClassName('photo')[0];
-  gallery.addEventListener('click', (event) => {
-    if (event.target.tagName === 'IMG') {
-      modal.style.display = 'block';
-      modalImg.src = event.target.dataset.highres;
-      modalDownloadButton.href = event.target.dataset.highres;
-      captionText.innerHTML = event.target.alt;
-    }
-  });
-  
-
-  //Prueba de codigo redundado a eliminar
-  // Agrega el evento de clic a la ventana emergente para cerrarla al hacer clic fuera de ella
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-  
-  */
-
-
   // Selecciona todas las imágenes de la galería
   const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
     // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
@@ -32,18 +6,6 @@ const laFuncionQueSea = () => {
   const modalImg = document.querySelector('.modal-content');
   const modalDownloadButton = document.querySelector('#download-button');
   const modalDownloadOriginalButton = document.querySelector('#download-button2');
-
-
-  // Agrega el evento de clic al botón de descarga
-  modalDownloadButton.addEventListener('click', () => {
-    window.location.href = modalDownloadButton.href;
-  });
-
-  // Agrega el evento de clic al botón de descarga de calidad original
-  modalDownloadOriginalButton.addEventListener('click', () => {
-    // Descarga la imagen en calidad original
-    window.location.href = modalDownloadOriginalButton.href;
-  });
 
   // Agrega un evento de clic al botón de cerrar la ventana emergente
   const closeBtn = document.getElementsByClassName('close')[0];
@@ -68,6 +30,18 @@ const laFuncionQueSea = () => {
     });
   } 
 }
+
+
+  // Agrega el evento de clic al botón de descarga
+  modalDownloadButton.addEventListener('click', () => {
+    window.location.href = modalDownloadButton.href;
+  });
+
+  // Agrega el evento de clic al botón de descarga de calidad original
+  modalDownloadOriginalButton.addEventListener('click', () => {
+    // Descarga la imagen en calidad original
+    window.location.href = modalDownloadOriginalButton.href;
+  });
 
 fetch('/fotos/moralet_2023/fotos.json')
 .then(response => response.json())
