@@ -232,3 +232,19 @@ footer{
   left: 5px;
   bottom: 5px
 }
+
+/*.div-fondo{
+  position: absolute;
+  z-index: -1;
+}
+
+.div-fondo:hover{
+  background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 255, 255) 17.8%, rgb(0, 0, 0) 100.2%);
+  filter: blur(15px);  
+}
+
+.div-fondo:active{
+  transform: scale(0.9) rotate(2deg);
+  background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 255, 255) 17.8%, rgb(0, 0, 0) 100.2%);
+  transition: 0.5s;
+}*/

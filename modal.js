@@ -37,13 +37,16 @@ const laFuncionQueSea = () => {
       modalDownloadButton.href = this.dataset.highres;
 
       // Obtenemos el enlace con alta calidad del dataset
-      const altaCalidadLink = modalDownloadOriginalButton.dataset.highres;
+      const altaCalidadLink = this.dataset.highres;
+      console.log('enlace calidad alta:' + altaCalidadLink)
 
       // Reemplazamos "alta_calidad" por "calidad_original"
       const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");
+      console.log('enlace calidad original:' + calidadOriginalLink)
 
       // Reemplazamos ".webp" por ".jpg"
       const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");
+      console.log('enlace calidad original con jpg:' + jpgLink)
       modalDownloadOriginalButton.href = jpgLink;
 
       //modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
