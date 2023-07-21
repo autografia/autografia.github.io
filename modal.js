@@ -26,6 +26,7 @@ const laFuncionQueSea = () => {
       modalDownloadButton.download = this.alt;
       modalDownloadButton.href = this.dataset.highres;
       modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
+      modalDownloadOriginalButton.href = this.dataset.highres.replace("webp", "jpg");
       captionText.innerHTML = this.alt;
     });
   } 
