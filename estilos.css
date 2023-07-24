@@ -70,7 +70,7 @@ html, body {
   z-index: -1; } 
 }
 
-.galeria {
+.moralet {
 	margin: 2%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
