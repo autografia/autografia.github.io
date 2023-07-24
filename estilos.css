@@ -70,7 +70,7 @@ html, body {
   z-index: -1; } 
 }
 
-.galeria {
+.moralet {
 	margin: 2%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -91,8 +91,9 @@ html, body {
 	height: 100%;
 	object-fit: cover;
 	transition: transform 0.2s;
-  border-radius: 40px 0;
-  max-height: 200px;
+  	border-radius: 40px 0;
+  	max-height: 200px;
+	box-shadow: 1px 1px 10px 1px rgba(160, 160, 160, 1);
 }	  
 .photo:hover img {
 	transform: scale(1.05);
