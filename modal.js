@@ -164,7 +164,7 @@ if (fileNameWithoutExtension === 'index') {
   json = '/fotos/'+fileNameWithoutExtension+'/fotos.json';
   if(fileNameWithoutExtension === 'moralet2023'){
     // Si no coincide con ninguna opción, maneja el caso por defecto aquí.  
-    json = '/fotos/moralet_2023/fotos.json';
+    json = '/fotos/moralet2023/fotos.json';
   }    
     const galeria = document.querySelector("#galeria");
     fetch(json)
