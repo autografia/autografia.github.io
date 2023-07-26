@@ -37,16 +37,13 @@ const laFuncionQueSea = () => {
       modalDownloadButton.href = this.dataset.highres;
 
       // Obtenemos el enlace con alta calidad del dataset
-      const altaCalidadLink = this.dataset.highres;
-      console.log('enlace calidad alta:' + altaCalidadLink)
+      const altaCalidadLink = this.dataset.highres;      
 
       // Reemplazamos "alta_calidad" por "calidad_original"
-      const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");
-      console.log('enlace calidad original:' + calidadOriginalLink)
+      const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");      
 
       // Reemplazamos ".webp" por ".jpg"
-      const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");
-      console.log('enlace calidad original con jpg:' + jpgLink)
+      const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");      
       modalDownloadOriginalButton.href = jpgLink;
       
       captionText.innerHTML = this.alt;
@@ -59,11 +56,10 @@ const laFuncionQueSea = () => {
 const currentFileName = window.location.pathname.split('/').pop();
 // Remueve la extensión .html del nombre del archivo actual
 var fileNameWithoutExtension = currentFileName.replace('.html', '');
-console.log(fileNameWithoutExtension)
 if(fileNameWithoutExtension===''){
   fileNameWithoutExtension='index'
 }
-console.log(fileNameWithoutExtension)
+
 
 if (fileNameWithoutExtension === 'index') {
     json = '/fotos/campello_enero_2023/fotos.json';
