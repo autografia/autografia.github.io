@@ -1,41 +1,88 @@
 [
     {
-      "nombre": "Foto 1"
-    },
-    {
       "nombre": "Foto 2",
-      "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-      "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+      "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp",
+      "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3312.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3314.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3319-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3319.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3324-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3324.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3326-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3326.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3352-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3352.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3361-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3361.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3362-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3362.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3365-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3365.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3369-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3369.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3370-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3370.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3374-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3374.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3386-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3386.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3389-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3389.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3398-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3398.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3401-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3401.webp"
+    },
+    {
+        "nombre": "Foto 2",
+        "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3402-min.webp",
+        "alta_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3402.webp"
     }
   ]
   

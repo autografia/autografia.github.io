@@ -45,7 +45,7 @@ const isInView = (element) => {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 };
-
+/*
 // Selecciona todas las imágenes de la galería
 const galleryImages = document.getElementsByClassName('photo')[0].getElementsByTagName('img');
 
@@ -57,3 +57,4 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+*/

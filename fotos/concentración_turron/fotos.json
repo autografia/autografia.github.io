@@ -1,41 +1,38 @@
 [
     {
-      "nombre": "Foto 1"
-    },
-    {
       "nombre": "Foto 2",
-      "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-      "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+      "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3143.webp",
+      "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3143.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3169.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3169.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3205.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3205.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3207.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3207.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3209.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3209.webp"
     },
     {
         "nombre": "Foto 1",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3211.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3211.webp"
     },
     {
         "nombre": "Foto 2",
-        "baja_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp",
-        "alta_calidad": "fotos/moralet_2023/baja_calidad/DSC_4668.webp"
+        "baja_calidad": "fotos/concentración_turron/baja_calidad/DSC_3214.webp",
+        "alta_calidad": "fotos/concentración_turron/baja_calidad/DSC_3214.webp"
     }
   ]
   

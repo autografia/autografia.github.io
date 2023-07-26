@@ -69,18 +69,12 @@ html, body {
   transform: translateY(-100%);
   z-index: -1; } 
 }
-
-.moralet {
-	margin: 2%;
+  
+.gallery {
+  margin: 2%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	grid-gap: 20px;
-}
-  
-.gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	grid-gap: 25px;
 }	  
 .photo {
 	position: relative;

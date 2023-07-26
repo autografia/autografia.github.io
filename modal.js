@@ -48,18 +48,123 @@ const laFuncionQueSea = () => {
       const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");
       console.log('enlace calidad original con jpg:' + jpgLink)
       modalDownloadOriginalButton.href = jpgLink;
-
-      //modalDownloadOriginalButton.href = this.dataset.highres.replace("alta_calidad", "calidad_original");
-      //modalDownloadOriginalButton.href = this.dataset.highres.replace("webp", "jpg");
+      
       captionText.innerHTML = this.alt;
     });
-  } 
+  }
+  
 }
 
-fetch('/fotos/moralet_2023/fotos.json')
+// Obtiene el nombre del archivo HTML actual
+const currentFileName = window.location.pathname.split('/').pop();
+// Remueve la extensión .html del nombre del archivo actual
+const fileNameWithoutExtension = currentFileName.replace('.html', '');
+
+if (fileNameWithoutExtension === 'index') {
+    json = '/fotos/campello_enero_2023/fotos.json';
+    const galeria = document.querySelectorAll(".galeria");
+    fetch(json)
+    .then(response => response.json())
+    .then(data => {    
+    
+      data.forEach(foto => {
+        const div = document.createElement('div');
+        div.classList.add('photo');
+    
+        const img = document.createElement('img');
+        img.src = foto.baja_calidad;
+        img.dataset.highres = foto.alta_calidad;
+        img.alt = foto.nombre;
+        img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+    
+        div.appendChild(img);
+        galeria[0].appendChild(div);
+        laFuncionQueSea()
+      });
+    })
+    .catch(error => {
+      console.error('Error al cargar el archivo JSON:', error);
+    });
+    
+    // Agrega la función imgError
+    function imgError() {
+      this.onerror = "";
+      this.src = "/logos/error404.gif";
+      return true;
+    }
+
+    //Primer acordeon
+    json = '/fotos/concentración_turron/fotos.json';
+      fetch(json)
+      .then(response => response.json())
+      .then(data => {    
+      
+        data.forEach(foto => {
+          const div = document.createElement('div');
+          div.classList.add('photo');
+      
+          const img = document.createElement('img');
+          img.src = foto.baja_calidad;
+          img.dataset.highres = foto.alta_calidad;
+          img.alt = foto.nombre;
+          img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+      
+          div.appendChild(img);
+          galeria[1].appendChild(div);
+          laFuncionQueSea()
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar el archivo JSON:', error);
+      });
+      
+      // Agrega la función imgError
+      function imgError() {
+        this.onerror = "";
+        this.src = "/logos/error404.gif";
+        return true;
+      }
+
+    //Segundo Acordeon  
+    json = '/fotos/volrace_gt_2022/fotos.json';
+      fetch(json)
+      .then(response => response.json())
+      .then(data => {    
+      
+        data.forEach(foto => {
+          const div = document.createElement('div');
+          div.classList.add('photo');
+      
+          const img = document.createElement('img');
+          img.src = foto.baja_calidad;
+          img.dataset.highres = foto.alta_calidad;
+          img.alt = foto.nombre;
+          img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+      
+          div.appendChild(img);
+          galeria[2].appendChild(div);
+          laFuncionQueSea()
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar el archivo JSON:', error);
+      });
+      
+      // Agrega la función imgError
+      function imgError() {
+        this.onerror = "";
+        this.src = "/logos/error404.gif";
+        return true;
+      }
+
+      //Tercer Acordeon  
+} else { 
+  // Si no coincide con ninguna opción, maneja el caso por defecto aquí.  
+  json = '/fotos/'+fileNameWithoutExtension+'/fotos.json';
+const galeria = document.querySelector("#galeria");
+fetch(json)
 .then(response => response.json())
-.then(data => {
-  const galeria = document.getElementById('galeria');
+.then(data => {    
 
   data.forEach(foto => {
     const div = document.createElement('div');
@@ -86,4 +191,4 @@ function imgError() {
   this.src = "/logos/error404.gif";
   return true;
 }
-
+}
