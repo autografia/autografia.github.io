@@ -58,7 +58,12 @@ const laFuncionQueSea = () => {
 // Obtiene el nombre del archivo HTML actual
 const currentFileName = window.location.pathname.split('/').pop();
 // Remueve la extensión .html del nombre del archivo actual
-const fileNameWithoutExtension = currentFileName.replace('.html', '');
+var fileNameWithoutExtension = currentFileName.replace('.html', '');
+console.log(fileNameWithoutExtension)
+if(fileNameWithoutExtension===''){
+  fileNameWithoutExtension='index'
+}
+console.log(fileNameWithoutExtension)
 
 if (fileNameWithoutExtension === 'index') {
     json = '/fotos/campello_enero_2023/fotos.json';
