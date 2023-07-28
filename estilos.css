@@ -40,14 +40,14 @@ html, body {
   
   
   
-@media (max-width: 768px) {
+@media (max-width: 919px) {
   .mobile-logo {		
 	max-width: 70%;
 	max-height: 15%;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 920px) {
   .desktop-logo {
 	max-width: 20%;
 	max-height: 15%;
