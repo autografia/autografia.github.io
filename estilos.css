@@ -3,12 +3,10 @@
   border: none;
   height: 30px;
   background-image: url("logos/icono.ico");
-  /*background-repeat: repeat-x;*/
   background-repeat: space;
   background-size: auto 100%;
   margin: 0.5%;
 }
-
 
 p{
 	margin: 2%
@@ -107,28 +105,6 @@ html, body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*.modal-content {
-  position: relative;
-  border-left: none;
-  border-right: none;
-  margin: auto;
-  display: flex !important;
-  width: auto;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.modal-contenido {
-  position: absolute;
-  border-left: none;
-  border-right: none;
-  margin: 5%;
-  display: flex;
-  width: auto;
-  max-height: 80vh;
-  object-fit: contain;
-}*/
-
 .modal-content {
   position: relative;
   border-left: none;
@@ -163,10 +139,6 @@ html, body {
   font-size: 1rem;
   cursor: pointer;
   margin: 15px;  
-}
-
-html{
-  scroll-behavior: smooth;
 }
 
 /*
@@ -243,3 +215,51 @@ footer{
   background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 255, 255) 17.8%, rgb(0, 0, 0) 100.2%);
   transition: 0.5s;
 }*/
+/* --------------------------------------- */
+/* ----- Contact ----- */
+/* --------------------------------------- */
+
+.contact__info {
+    max-width: var(--container-medium-width);
+}
+
+/* --------------------------------------- */
+/* ----- Footer ----- */
+/* --------------------------------------- */
+
+.footer {
+    text-align: center;
+    padding: var(--gutter-medium) 0 var(--gutter-normal);
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-normal) 0;
+    list-style: none;
+}
+
+.footer__social-link-item:not(:last-of-type) {
+    margin-right: var(--gutter-small);
+}
+
+.footer__social-image {
+    height: 4rem;
+}
+
+.footer__github-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__github-buttons iframe {
+    height: 2.5rem;
+    width: 84px;
+    transform: translateY(3px);
+}
+
+@media(max-width: 500px) {
+    .footer {
+        padding: var(--gutter-medium) 0;
+    } 
+}
