@@ -229,6 +229,7 @@ footer {
 
 .footer {
     text-align: center;
+    float: right;
     padding: var(--gutter-medium) 0 var(--gutter-normal);
 }
 
