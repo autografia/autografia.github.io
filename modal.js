@@ -174,7 +174,7 @@ if (fileNameWithoutExtension === 'index') {
         img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
     
         div.appendChild(img);
-        galeria[2].appendChild(div);
+        galeria[3].appendChild(div);
         laFuncionQueSea()
       });
     })
