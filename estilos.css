@@ -233,8 +233,10 @@ footer {
 .footer {
     text-align: center;
     padding: var(--gutter-medium) 0 var(--gutter-normal);
-    position:absolute;
+    /*position:absolute;*/
+    position: absolute;
     bottom:0;
+    width: 100%;
 }
 
 small {
@@ -254,17 +256,6 @@ small {
 
 .footer__social-image {
     height: 4rem;
-}
-
-.footer__github-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.footer__github-buttons iframe {
-    height: 2.5rem;
-    width: 84px;
-    transform: translateY(3px);
 }
 
 @media(max-width: 500px) {
