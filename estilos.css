@@ -233,6 +233,8 @@ footer {
 .footer {
     text-align: center;
     padding: var(--gutter-medium) 0 var(--gutter-normal);
+    position:absolute;
+    bottom:0;
 }
 
 small {
