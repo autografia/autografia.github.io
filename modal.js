@@ -157,7 +157,37 @@ if (fileNameWithoutExtension === 'index') {
         return true;
       }
 
-      //Tercer Acordeon  
+      //Tercer Acordeon          
+    json = '/fotos/sanjuan2023/fotos.json';
+    fetch(json)
+    .then(response => response.json())
+    .then(data => {    
+    
+      data.forEach(foto => {
+        const div = document.createElement('div');
+        div.classList.add('photo');
+    
+        const img = document.createElement('img');
+        img.src = foto.baja_calidad;
+        img.dataset.highres = foto.alta_calidad;
+        img.alt = foto.nombre;
+        img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+    
+        div.appendChild(img);
+        galeria[2].appendChild(div);
+        laFuncionQueSea()
+      });
+    })
+    .catch(error => {
+      console.error('Error al cargar el archivo JSON:', error);
+    });
+    
+    // Agrega la función imgError
+    function imgError() {
+      this.onerror = "";
+      this.src = "/logos/error404.gif";
+      return true;
+    }
 } else {   
   // Si no coincide con ninguna opción, maneja el caso por defecto aquí.  
   json = '/fotos/'+fileNameWithoutExtension+'/fotos.json';
