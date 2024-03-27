@@ -28,13 +28,11 @@ const laFuncionQueSea = () => {
     window.location.href = modalDownloadOriginalButton.href;
   });
   
-  let indexSelected = 0
   // Agrega un evento de clic a cada imagen
   for (var i = 0; i < images.length; i++) {
     images[i].addEventListener("click", function() {
-      indexSelected = i
       modal.style.display = "block";
-      modalImg.src = images[indexSelected].highres;
+      modalImg.src = images[i].highres;
       modalDownloadButton.download = this.alt;
       modalDownloadButton.href = this.dataset.highres;
 
@@ -43,12 +41,6 @@ const laFuncionQueSea = () => {
       // Reemplazamos "alta_calidad" por "calidad_original"
       const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");      
 
-      const arrow = document.createElement('div', { class: 'arrow' })
-      arrow.innerHTML = '>'
-      arrow.onclick = () => indexSelected++
-
-      const imageContainer = document.querySelector('.modal-content.imagen')
-      imageContainer.appendChild(arrow)
       // Reemplazamos ".webp" por ".jpg"
       const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");      
       modalDownloadOriginalButton.href = jpgLink;
@@ -133,7 +125,7 @@ if (fileNameWithoutExtension === 'index') {
       }
 
     //Segundo Acordeon  
-    json = '/fotos/volrace_gt_2022/fotos.json';
+    json = 'https://autografia.github.io/fotos/volrace_gt_2022/fotos.json';
       fetch(json)
       .then(response => response.json())
       .then(data => {    
@@ -147,7 +139,8 @@ if (fileNameWithoutExtension === 'index') {
           img.dataset.highres = foto.alta_calidad;
           img.alt = foto.nombre;
           img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-      
+          img.loading = imgLoading;
+
           div.appendChild(img);
           galeria[2].appendChild(div);
           laFuncionQueSea()
@@ -163,9 +156,15 @@ if (fileNameWithoutExtension === 'index') {
         this.src = "/logos/error404.gif";
         return true;
       }
+      // Agrega la función imgLoading
+      function imgLoading() {
+        this.onload = "";
+        this.src = "https://autografia.github.io/logos/logo_simple.png";
+        return true;
+      }
 
       //Tercer Acordeon          
-    json = '/fotos/sanjuan2023/fotos.json';
+    json = 'https://autografia.github.io/fotos/sanjuan2023/fotos.json';
     fetch(json)
     .then(response => response.json())
     .then(data => {    
