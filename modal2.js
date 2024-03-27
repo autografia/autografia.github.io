@@ -1,234 +1,103 @@
-const laFuncionQueSea = () => {
-    // Selecciona la ventana emergente, la imagen dentro de ella y el botón de descarga
+// Función para manejar errores de imagen y mostrar el logo durante la carga
+const imgError = (image) => {
+  const logo = document.createElement('img');
+  logo.src = 'logos/logo.png'; // Ruta a tu logo
+  logo.alt = 'Autografia Logo'; // Alt para accesibilidad
+  logo.classList.add('loading-logo'); // Agregar clase para estilos CSS
+  
+  // Reemplazar la imagen que falló con el logo
+  image.parentNode.replaceChild(logo, image);
+
+  // Si hay un error en la carga de la imagen, muestra un mensaje de error en la consola
+  console.error('Error al cargar la imagen:', image.src);
+};
+
+// Función para cargar fotos desde un JSON y agregarlas a una galería
+const cargarFotos = (json, galeria) => {
+  return fetch(json)
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(foto => {
+        const div = document.createElement('div');
+        div.classList.add('photo');
+
+        const img = document.createElement('img');
+        img.src = foto.baja_calidad; // Solo se carga la imagen de baja calidad inicialmente
+        img.dataset.highres = foto.alta_calidad.replace("-min.webp", ".webp"); // Almacenamos la URL de alta calidad sin el "-min"
+        img.alt = foto.nombre;
+        img.onerror = () => imgError(img); // Asignar la función imgError al evento onerror
+
+        div.appendChild(img);
+        galeria.appendChild(div);
+      });
+    })
+    .catch(error => {
+      console.error('Error al cargar el archivo JSON:', error);
+    });
+};
+
+// Función para configurar la funcionalidad de la ventana modal y los botones de descarga
+const configurarModal = () => {
   const modal = document.querySelector('.modal');
   const modalImg = document.querySelector('.imagen');
   const modalDownloadButton = document.querySelector('#download-button');
   const modalDownloadOriginalButton = document.querySelector('#download-button2');
+  const closeBtn = document.querySelector('.close');
 
-  // Agrega un evento de clic al botón de cerrar la ventana emergente
-  const closeBtn = document.getElementsByClassName('close')[0];
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
   }
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
-  var images = document.querySelectorAll(".photo img");
-  var captionText = document.querySelector(".caption");
 
-
-    // Agrega el evento de clic al botón de descarga
   modalDownloadButton.addEventListener('click', () => {
     window.location.href = modalDownloadButton.href;
   });
 
-  // Agrega el evento de clic al botón de descarga de calidad original
   modalDownloadOriginalButton.addEventListener('click', () => {
-    // Descarga la imagen en calidad original
     window.location.href = modalDownloadOriginalButton.href;
   });
-  
-  // Agrega un evento de clic a cada imagen
-  for (var i = 0; i < images.length; i++) {
-    images[i].addEventListener("click", function() {
-      modal.style.display = "block";
-      modalImg.src = images[i].highres;
-      modalDownloadButton.download = this.alt;
-      modalDownloadButton.href = this.dataset.highres;
 
-      // Obtenemos el enlace con alta calidad del dataset
-      const altaCalidadLink = this.dataset.highres;      
-      // Reemplazamos "alta_calidad" por "calidad_original"
-      const calidadOriginalLink = altaCalidadLink.replace("alta_calidad", "calidad_original");      
+  const acordeones = document.querySelectorAll('.accordion-item');
 
-      // Reemplazamos ".webp" por ".jpg"
-      const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");      
-      modalDownloadOriginalButton.href = jpgLink;
-      
-      captionText.innerHTML = this.alt;
-    });
-  }   
-}
+  acordeones.forEach(acordeon => {
+    acordeon.addEventListener('click', () => {
+      const images = acordeon.querySelectorAll(".photo img");
+      const captionText = acordeon.querySelector(".caption");
 
-// Obtiene el nombre del archivo HTML actual
-const currentFileName = window.location.pathname.split('/').pop();
-// Remueve la extensión .html del nombre del archivo actual
-var fileNameWithoutExtension = currentFileName.replace('.html', '');
-if(fileNameWithoutExtension===''){
-  fileNameWithoutExtension='index'
-}
+      images.forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.style.display = "block";
 
+          // Cargar la versión de alta calidad al hacer clic en la imagen
+          modalImg.src = this.dataset.highres; // Cambiamos la fuente de la imagen a la URL de alta calidad
+          modalDownloadButton.download = this.alt;
+          modalDownloadButton.href = this.dataset.highres;
 
-if (fileNameWithoutExtension === 'index') {
-    json = '/fotos/campello_enero_2023/fotos.json';
-    const galeria = document.querySelectorAll(".galeria");
-    fetch(json)
-    .then(response => response.json())
-    .then(data => {    
-    
-      data.forEach(foto => {
-        const div = document.createElement('div');
-        div.classList.add('photo');
-    
-        const img = document.createElement('img');
-        img.src = foto.baja_calidad;
-        img.dataset.highres = foto.alta_calidad;
-        img.alt = foto.nombre;
-        img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-    
-        div.appendChild(img);
-        galeria[0].appendChild(div);
-        laFuncionQueSea()
-      });
-    })
-    .catch(error => {
-      console.error('Error al cargar el archivo JSON:', error);
-    });
-    
-    // Agrega la función imgError
-    function imgError() {
-      this.onerror = "";
-      this.src = "/logos/error404.gif";
-      return true;
-    }
+          const altaCalidadLink = this.dataset.highres;
+          const calidadOriginalLink = altaCalidadLink.replace("-min.webp", ".webp"); // Reemplazamos "-min.webp" por ".webp" para obtener el enlace de alta calidad
+          const jpgLink = calidadOriginalLink.replace(".webp", ".jpg");
+          modalDownloadOriginalButton.href = jpgLink;
 
-    //Primer acordeon
-    json = '/fotos/concentración_turron/fotos.json';
-      fetch(json)
-      .then(response => response.json())
-      .then(data => {    
-      
-        data.forEach(foto => {
-          const div = document.createElement('div');
-          div.classList.add('photo');
-      
-          const img = document.createElement('img');
-          img.src = foto.baja_calidad;
-          img.dataset.highres = foto.alta_calidad;
-          img.alt = foto.nombre;
-          img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-      
-          div.appendChild(img);
-          galeria[1].appendChild(div);
-          laFuncionQueSea()
+          captionText.innerHTML = this.alt;
         });
-      })
-      .catch(error => {
-        console.error('Error al cargar el archivo JSON:', error);
       });
-      
-      // Agrega la función imgError
-      function imgError() {
-        this.onerror = "";
-        this.src = "/logos/error404.gif";
-        return true;
-      }
-
-    //Segundo Acordeon  
-    json = 'https://autografia.github.io/fotos/volrace_gt_2022/fotos.json';
-      fetch(json)
-      .then(response => response.json())
-      .then(data => {    
-      
-        data.forEach(foto => {
-          const div = document.createElement('div');
-          div.classList.add('photo');
-      
-          const img = document.createElement('img');
-          img.src = foto.baja_calidad;
-          img.dataset.highres = foto.alta_calidad;
-          img.alt = foto.nombre;
-          img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-          img.loading = imgLoading;
-
-          div.appendChild(img);
-          galeria[2].appendChild(div);
-          laFuncionQueSea()
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar el archivo JSON:', error);
-      });
-      
-      // Agrega la función imgError
-      function imgError() {
-        this.onerror = "";
-        this.src = "/logos/error404.gif";
-        return true;
-      }
-      // Agrega la función imgLoading
-      function imgLoading() {
-        this.onload = "";
-        this.src = "https://autografia.github.io/logos/logo_simple.png";
-        return true;
-      }
-
-      //Tercer Acordeon          
-    json = 'https://autografia.github.io/fotos/sanjuan2023/fotos.json';
-    fetch(json)
-    .then(response => response.json())
-    .then(data => {    
-    
-      data.forEach(foto => {
-        const div = document.createElement('div');
-        div.classList.add('photo');
-    
-        const img = document.createElement('img');
-        img.src = foto.baja_calidad;
-        img.dataset.highres = foto.alta_calidad;
-        img.alt = foto.nombre;
-        img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
-    
-        div.appendChild(img);
-        galeria[3].appendChild(div);
-        laFuncionQueSea()
-      });
-    })
-    .catch(error => {
-      console.error('Error al cargar el archivo JSON:', error);
     });
-    
-    // Agrega la función imgError
-    function imgError() {
-      this.onerror = "";
-      this.src = "/logos/error404.gif";
-      return true;
-    }
-} else {   
-  // Si no coincide con ninguna opción, maneja el caso por defecto aquí.  
-  json = '/fotos/'+fileNameWithoutExtension+'/fotos.json';
-  if(fileNameWithoutExtension === 'moralet2023'){
-    // Si no coincide con ninguna opción, maneja el caso por defecto aquí.  
-    json = '/fotos/moralet2023/fotos.json';
-  }    
-    const galeria = document.querySelector("#galeria");
-    fetch(json)
-    .then(response => response.json())
-    .then(data => {    
+  });
+};
 
-    data.forEach(foto => {
-      const div = document.createElement('div');
-      div.classList.add('photo');
 
-      const img = document.createElement('img');
-      img.src = foto.baja_calidad;
-      img.dataset.highres = foto.alta_calidad;
-      img.alt = foto.nombre;
-      img.onerror = imgError; // Agrega esta línea para asignar la función imgError al evento onerror
+// Llamada a la función para cargar fotos
+const json1 = 'https://autografia.github.io/fotos/campello_enero_2023/fotos.json';
+const galeria1 = document.querySelectorAll(".galeria")[0];
+const json2 = 'https://autografia.github.io/fotos/concentración_turron/fotos.json';
+const galeria2 = document.querySelectorAll(".galeria")[1];
+const json3 = 'https://autografia.github.io/fotos/volrace_gt_2022/fotos.json';
+const galeria3 = document.querySelectorAll(".galeria")[2];
+const json4 = 'https://autografia.github.io/fotos/sanjuan2023/fotos.json';
+const galeria4 = document.querySelectorAll(".galeria")[3];
 
-      div.appendChild(img);
-      galeria.appendChild(div);
-      laFuncionQueSea()
-    });
-    })
-    .catch(error => {
-    console.error('Error al cargar el archivo JSON:', error);
-    });
-
-    // Agrega la función imgError
-    function imgError() {
-    this.onerror = "";
-    this.src = "/logos/error404.gif";
-    return true;
-    }
-}
+cargarFotos(json1, galeria1).then(configurarModal);
+cargarFotos(json2, galeria2).then(configurarModal);
+cargarFotos(json3, galeria3).then(configurarModal);
+cargarFotos(json4, galeria4).then(configurarModal);
