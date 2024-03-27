@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /privado/
-Sitemap: https://https://autografia.github.io/sitemap.xml
+Sitemap: https://autografia.github.io/sitemap.xml
