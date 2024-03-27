@@ -378,3 +378,11 @@ body:not(.user-is-tabbing) a:focus {
     font-family: sans-serif;
 }
 
+.nav-icon {
+  max-width: 24px;
+  height: auto; 
+}
+
+.navbar{
+  background: linear-gradient(to top, #ffffff 25%, #e6e6e6 100%);
+}
