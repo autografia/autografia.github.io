@@ -1,11 +1,6 @@
 [
     {
       "nombre": "Foto 2",
-      "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3333-min.webp",
-      "alta_calidad": "fotos/campello_enero_2023/alta_calidad/DSC_3333.webp"
-    },
-    {
-      "nombre": "Foto 2",
       "baja_calidad": "fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp",
       "alta_calidad": "fotos/campello_enero_2023/alta_calidad/DSC_3312.webp"
     },
