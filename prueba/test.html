@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carpeta de Google Drive</title>
+  <style>
+    /* Estilo del contenedor antes de cargar el iframe */
+    .lazy-load {
+      width: 100%;
+      height: 600px;
+      background-color: #f3f3f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Imágenes de Google Drive</h1>
+
+  <!-- Contenedor para el iframe de la carpeta -->
+  <div id="imageContainer" class="lazy-load">
+    Cargando imágenes...
+  </div>
+
+  <script>
+    // ID de la carpeta de Google Drive (cambia este valor según la carpeta)
+    const folderID = '18jhjvxDmQPz950v4wpaghI78Zfl3DHUt';  // Cambia este ID por el de la carpeta correspondiente
+
+    // Función para crear el iframe solo cuando sea necesario
+    function loadIframe() {
+      const imageContainer = document.getElementById('imageContainer');
+
+      // Comprobamos si el iframe ya está cargado para evitar duplicados
+      if (!imageContainer.querySelector('iframe')) {
+        // Creamos el iframe solo cuando el contenedor esté visible
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
+        iframe.width = '100%';
+        iframe.height = '90%';
+        iframe.frameBorder = '0';
+
+        // Limpiamos el texto de carga y añadimos el iframe
+        imageContainer.innerHTML = '';
+        imageContainer.appendChild(iframe);
+      }
+    }
+
+    // Configuramos el Intersection Observer para la carga diferida
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Cuando el contenedor está en la vista del usuario, cargamos el iframe
+          loadIframe();
+          // Dejamos de observar una vez que se ha cargado
+          observer.disconnect();
+        }
+      });
+    });
+
+    // Seleccionamos el contenedor que queremos observar
+    const target = document.getElementById('imageContainer');
+    observer.observe(target);
+  </script>
+</body>
+</html>
+
+

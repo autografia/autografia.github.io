@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Fotografía</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al CSS separado -->
+    <style>
+        .hidden {
+            display: none; /* Clase para ocultar el iframe al cargar otro */
+        }
+
+        .iframe-container {
+            margin-top: 20px; /* Espacio entre la card y el iframe */
+            width: 100%; /* Asegura que el iframe ocupe todo el ancho */
+            display: none; /* Inicialmente oculto */
+            overflow: hidden; /* Evita el desbordamiento del iframe */
+        }
+
+        iframe {
+            width: 100%; /* Asegura que el iframe ocupe todo el ancho */
+            height: 90vh; /* Altura del iframe para que ocupe el espacio */
+            border: none; /* Sin borde */
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="ruta/a/tu/logo.jpg" alt="Logo" style="height: 40px;"></a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary" onclick="toggleTheme()">Cambiar Tema</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="galeria" class="container my-5">
+        <div class="row" id="eventosContainer"></div>
+        <div class="row" id="iframeContainer">
+            <div class="col-12">
+                <div class="iframe-container" id="iframeContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="text-center py-4 bg-dark text-light">
+        <p>Contacto: miemail@dominio.com</p>
+        <div class="social-icons mt-2">
+            <a href="https://www.facebook.com/tu-perfil" target="_blank" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/tu-perfil" target="_blank" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p class="mt-2">&copy;<script>document.write(new Date().getFullYear())</script> Autografia. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Array de IDs de carpetas de Google Drive
+        const eventIDs = [
+            '18jhjvxDmQPz950v4wpaghI78Zfl3DHUt',
+            '1XYZabcdEFGH1234567890ijklmnopq',
+            '2mnopQRStuvWXYZ1234567890abcdefg',
+            '3abcdefghiJKL4567890123mnopQRSTUV',
+            '4ghijklMNOpqRSTUVW1234567890abcd',
+            '5ijklmnopQRStuvWXYZ0123456789abcd'
+        ];
+
+        const eventosContainer = document.getElementById('eventosContainer');
+
+        // Generador de eventos
+        eventIDs.forEach((id, index) => {
+            const eventHTML = `
+                <div class="col-md-4 mb-4 event-container">
+                    <div class="card">
+                        <img src="miniatura_evento${index + 1}.jpg" class="card-img-top" alt="Evento ${index + 1}">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento ${index + 1}</h5>
+                            <button class="load-button" onclick="loadIframe('${id}')">Ver Fotos</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            eventosContainer.innerHTML += eventHTML;
+        });
+
+        function loadIframe(folderID) {
+            // Preparar el contenedor del iframe
+            const iframeContent = document.getElementById('iframeContent');
+            iframeContent.innerHTML = ''; // Limpiar el contenedor del iframe
+
+            // Crear el iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
+
+            // Añadir el evento onload al iframe
+            iframe.onload = () => {
+                iframeContent.style.display = 'block'; // Mostrar el contenedor del iframe
+            };
+
+            // Añadir el iframe al contenedor
+            iframeContent.appendChild(iframe);
+
+            // Ocultar todos los eventos
+            const allEventContainers = document.querySelectorAll('.event-container');
+            allEventContainers.forEach(container => {
+                container.style.display = 'none'; // Ocultamos los otros eventos
+            });
+        }
+
+        // Función para alternar entre temas
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
