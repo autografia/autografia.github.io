@@ -1,76 +1,51 @@
-/* Variables de tema */
-:root {
-    --bg-color: #121212; /* Color de fondo oscuro */
-    --text-color: #ffffff; /* Color de texto blanco */
-    --header-bg: linear-gradient(135deg, #262626, #121212); /* Fondo de cabecera oscuro */
-    --button-bg: #e84545; /* Color de fondo del botón */
-    --button-hover-bg: #d13737; /* Color de fondo al pasar el mouse sobre el botón */
-    --footer-bg: #1f1f1f; /* Fondo del pie de página */
-}
-
-body.light-theme {
-    --bg-color: #ffffff; /* Color de fondo claro */
-    --text-color: #121212; /* Color de texto oscuro */
-    --header-bg: linear-gradient(135deg, #fafafa, #f0f0f0); /* Fondo de cabecera claro */
-    --button-bg: #333333; /* Color de fondo del botón claro */
-    --button-hover-bg: #444444; /* Color de fondo al pasar el mouse sobre el botón claro */
-    --footer-bg: #f0f0f0; /* Fondo del pie de página claro */
-}
-
-/* Estilos globales */
+/* General */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-header {
-    background: var(--header-bg);
-    transition: background 0.3s;
-}
-
-/* Estilo del contenedor del evento */
-.event-container {
-    /* Otros estilos */
-    transition: all 0.3s ease; /* Para suavizar la animación */
-}
-
-.event-container.expanded {
-    /* Tamaño de la card expandida */
-    height: 500px; /* Ajusta según sea necesario */
-    transform: scale(1.05); /* Aumenta el tamaño ligeramente */
-    position: relative; /* Asegura que el iframe ocupe el ancho completo */
-    z-index: 1; /* Lleva la card a la parte superior */
-}
-
-
-/* Estilo del título del evento */
-.event-container h2 {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    padding: 0.75rem;
-    background: var(--button-bg);
-    transition: background 0.3s;
     margin: 0;
-    text-align: left; /* Alineación a la izquierda */
-    display: inline-block; /* Para que el botón esté al lado */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Estilo del contenedor del iframe */
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-light {
+    background-color: #f8f9fa;
+}
+
+.navbar-dark {
+    background-color: #1f1f1f;
+}
+
+.theme-icon {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Cards de eventos */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Iframe */
 .iframe-container {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 0 0 8px 8px;
-    background-color: transparent;
-    margin-top: 20px; /* Espacio entre la card y el iframe */
-    width: 100%; /* Asegura que el iframe ocupe todo el ancho */
-    /*display: none; /* Inicialmente oculto */
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-/* Estilo del iframe */
 .iframe-container iframe {
     position: absolute;
     top: 0;
@@ -78,74 +53,15 @@ header {
     width: 100%;
     height: 100%;
     border: none;
-    opacity: 0;
-    transition: opacity 0.5s;
 }
 
-/* Estilo del ícono de carga */
-.loading-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--button-bg);
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
+/* Tema claro y oscuro */
+.light-theme {
+    background-color: #ffffff;
+    color: #333;
 }
 
-/* Estilo del botón de cargar */
-.load-button {
-    background-color: var(--button-bg);
+.dark-theme {
+    background-color: #333;
     color: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 10px; /* Espaciado entre el título y el botón */
-}
-
-/* Cambia el color del botón al pasar el mouse */
-.load-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
-/* Estilo del pie de página */
-footer {
-    font-size: 1rem;
-    background-color: var(--footer-bg);
-    transition: background-color 0.3s;
-}
-
-/* Estilo para el contenedor de rejillas */
-.wide-frame {
-    width: 90%; /* Ocupa el 90% del ancho */
-    max-width: 90%;
-    margin: 0 auto; /* Centramos el contenedor */
-}
-
-/* Estilo para los iconos de redes sociales */
-.social-icons {
-    display: flex;
-    justify-content: center; /* Centra los iconos */
-    gap: 15px; /* Espaciado entre los iconos */
-}
-
-/* Estilo de cada icono social */
-.social-icon {
-    color: #ffffff; /* Color de los iconos */
-    font-size: 1.5rem; /* Tamaño de los iconos */
-    transition: color 0.3s;
-}
-
-/* Cambia de color al pasar el mouse sobre el icono */
-.social-icon:hover {
-    color: #e84545; /* Cambia de color al pasar el mouse */
-}    
-
-
-
-.hidden {
-    display: none; /* Clase para ocultar el iframe al cargar otro */
 }
