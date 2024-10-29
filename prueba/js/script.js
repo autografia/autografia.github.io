@@ -58,72 +58,54 @@ const events = [
 
 document.addEventListener("DOMContentLoaded", () => {
     const eventosContainer = document.getElementById('eventosContainer');
+    const fragment = document.createDocumentFragment();
 
     events.forEach((event, index) => {
-        const eventHTML = `
-            <div class="col-md-3 mb-3 event-container">
-                <div class="card" 
-                     onmouseenter="startCarousel(this, ${index})" 
-                     onmouseleave="stopCarousel(this)" 
-                     onclick="toggleCarouselMobile(this, ${index})">
-                    <img src="${event.thumbnail}" data-original-src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${event.name}</h5>
-                        <button class="load-button" onclick="loadIframe('${event.id}')">
-                            <i class="fas fa-camera"></i> Ver Fotos
-                        </button>
-                    </div>
+        const eventCard = document.createElement('div');
+        eventCard.className = 'col-md-3 mb-3 event-container';
+        eventCard.innerHTML = `
+            <div class="card" 
+                 data-index="${index}">
+                <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${event.name}</h5>
+                    <button class="load-button">
+                        <i class="fas fa-camera"></i> Ver Fotos
+                    </button>
                 </div>
             </div>
         `;
-        eventosContainer.innerHTML += eventHTML;
+        fragment.appendChild(eventCard);
+    });
+
+    eventosContainer.appendChild(fragment);
+
+    // Delegar eventos
+    eventosContainer.addEventListener('mouseenter', (event) => {
+        if (event.target.closest('.card')) {
+            const index = event.target.closest('.card').getAttribute('data-index');
+            startCarousel(event.target.closest('.card'), index);
+        }
+    }, true);
+
+    eventosContainer.addEventListener('mouseleave', (event) => {
+        if (event.target.closest('.card')) {
+            stopCarousel(event.target.closest('.card'));
+        }
+    }, true);
+
+    eventosContainer.addEventListener('click', (event) => {
+        const card = event.target.closest('.card');
+        if (card) {
+            const index = card.getAttribute('data-index');
+            toggleCarouselMobile(card, index);
+            if (event.target.classList.contains('load-button')) {
+                loadIframe(events[index].id);
+            }
+        }
     });
 });
 
-let carouselInterval;
-
-function startCarousel(card, eventIndex) {
-    if (isMobile()) return; // No hace nada si está en móvil
-
-    const images = events[eventIndex].additionalImages;
-    if (images.length === 0) return;
-
-    let index = 0;
-    const imgElement = card.querySelector("img");
-
-    carouselInterval = setInterval(() => {
-        imgElement.src = images[index];
-        index = (index + 1) % images.length;
-    }, 1000); // Cambia cada segundo
-}
-
-function stopCarousel(card) {
-    clearInterval(carouselInterval);
-    const imgElement = card.querySelector("img");
-    imgElement.src = imgElement.getAttribute("data-original-src");
-}
-
-function toggleCarouselMobile(card, eventIndex) {
-    if (!isMobile()) return; // No hace nada si no está en móvil
-
-    if (carouselInterval) {
-        // Si el carrusel está activo, detén el carrusel
-        stopCarousel(card);
-        carouselInterval = null;
-    } else {
-        // Inicia el carrusel
-        startCarousel(card, eventIndex);
-    }
-}
-
-// Función para detectar si es un dispositivo móvil
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-
-
-// Función para cargar el iframe
 function loadIframe(folderID) {
     const iframeContent = document.getElementById('iframeContent');
     const iframe = document.getElementById('iframe');
@@ -131,12 +113,18 @@ function loadIframe(folderID) {
 
     loadingSpinner.style.display = 'block';
     iframe.style.display = 'none';
-
+    iframe.style.opacity = 0; // Iniciar en opacidad 0
     iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
 
     iframe.onload = () => {
         loadingSpinner.style.display = 'none';
         iframe.style.display = 'block';
+
+        // Efecto de desvanecimiento
+        iframe.style.transition = 'opacity 0.5s ease'; // Agregar transición
+        setTimeout(() => {
+            iframe.style.opacity = 1;
+        }, 100);
 
         if (window.innerWidth < 768) {
             document.getElementById('navbar').style.display = 'none';
@@ -147,22 +135,4 @@ function loadIframe(folderID) {
     document.querySelectorAll('.event-container').forEach(container => {
         container.style.display = 'none';
     });
-}
-
-// Volver a la galería
-function backToGallery() {
-    document.getElementById('iframeContent').style.display = 'none';
-    document.querySelectorAll('.event-container').forEach(container => {
-        container.style.display = 'block';
-    });
-    document.getElementById('navbar').style.display = 'flex';
-}
-
-// Cambiar tema
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
-    const themeIcon = document.getElementById('themeToggle').querySelector('.theme-icon');
-    themeIcon.classList.toggle('fa-sun');
-    themeIcon.classList.toggle('fa-moon');
 }
