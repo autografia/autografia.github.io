@@ -29,15 +29,18 @@ body {
     color: #333;
 }
 
-/* Cards de eventos */
+/* Cards de eventos con esquinas redondeadas específicas */
 .card {
+    border-radius: 1.5rem 0 1.5rem 0; /* Redondea solo las esquinas superiores izquierda e inferior derecha */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Iframe */
 .iframe-container {
@@ -64,4 +67,44 @@ body {
 .dark-theme {
     background-color: #333;
     color: #ffffff;
+}
+
+.load-button {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #3498db; /* Cambia según el tema */
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.load-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.navbar .btn {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-weight: bold;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.navbar .btn:hover {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #555; /* Color por defecto */
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-icon:hover {
+    color: #3498db;
+    transform: scale(1.2);
 }
