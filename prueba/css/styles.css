@@ -32,22 +32,21 @@ body {
 
 /* Cards de eventos con esquinas redondeadas específicas */
 .card {
-    width: 250px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
-    background-color: transparent;
+    /* Eliminamos el width fijo y usamos un ancho responsive */
+    flex: 1; /* Permitir que la tarjeta crezca */
+    height: 70%;
+    margin: 10px; /* Espacio entre tarjetas */
+    max-width: 250px; /* Ancho máximo para evitar que se estiren demasiado */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
 }
 
-.slide-in {
-    transform: translateX(100%); /* Iniciar fuera de la vista a la derecha */
-}
-
-.slide-out {
-    transform: translateX(-100%); /* Deslizar a la izquierda */
+/* Media query opcional para tamaños de pantalla más pequeños */
+@media (max-width: 576px) {
+    .card {
+        /* Ancho completo en pantallas muy pequeñas */
+        max-width: 100%; 
+    }
 }
 
 .card img {

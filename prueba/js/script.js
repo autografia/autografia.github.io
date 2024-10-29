@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     events.forEach((event, index) => {
         const eventCard = document.createElement('div');
-        eventCard.className = 'col-md-3 mb-3 event-container';
+        eventCard.className = 'col-md-3 col-sm-6 event-container';
         eventCard.innerHTML = `
             <div class="card" 
                  data-index="${index}">
