@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Generador de eventos
     events.forEach((event) => {
         const eventHTML = `
-            <div class="col-md-4 mb-4 event-container">
+            <div class="col-md-3 mb-3 event-container">
                 <div class="card">
                     <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
                     <div class="card-body">
