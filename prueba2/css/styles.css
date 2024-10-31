@@ -27,15 +27,33 @@ body {
   }
   
   .card img {
-    max-height: 200px;
-    object-fit: cover;
+    width: 100%;
+    height: 200px; /* Limita la altura de la imagen */
+    object-fit: cover; /* Recorta y centra la imagen */
+  }
+  
+  .card {
+    height: 100%; /* Asegura que las tarjetas sean del mismo tamaño */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    height: 2.4rem; /* Limita el título a dos líneas */
+    overflow: hidden; /* Oculta el texto que exceda el límite */
+    text-overflow: ellipsis;
   }
 
-/* Cards */
-.card {
-    margin-bottom: 1rem;
-    transition: transform 0.2s;
-}
+
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
 .card:hover {
     transform: scale(1.05);
