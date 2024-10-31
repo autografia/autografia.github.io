@@ -1,45 +1,28 @@
-/* Variables de tema */
-:root {
-    --bs-body-bg: #fff;
-    --bs-body-color: #000;
-    --theme-dark-bg: #222;
-    --theme-dark-color: #ddd;
+.container {
+    flex: 1;
 }
 
-body.light-mode {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
-}
-
-body.dark-mode {
-    background-color: var(--theme-dark-bg);
-    color: var(--theme-dark-color);
-}
-
-/* Navbar */
-.navbar {
-    transition: background-color 0.3s;
-}
-
-body {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-  
-  .card img {
+/* Cards de eventos */
+.card img {
     width: 100%;
     height: 200px; /* Limita la altura de la imagen */
     object-fit: cover; /* Recorta y centra la imagen */
-  }
-  
-  .card {
+    border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
+    padding: 4%;
+}
+
+.card {
     height: 100%; /* Asegura que las tarjetas sean del mismo tamaño */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     justify-content: space-between;
-  }
-  
-  .card-title {
+    border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
+}
+
+.card-title {
     font-size: 1.1rem;
     line-height: 1.2rem;
     height: 2.4rem; /* Limita el título a dos líneas */
@@ -56,19 +39,100 @@ body {
   }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor de iframe */
+/* Botón "Volver a la Galería" */
+#backButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+/* Iframe */
 .iframe-container {
     display: none;
     position: relative;
-    padding: 1rem;
-    background-color: var(--bs-body-bg);
+    width: 100%;
+    padding-top: 56.25%;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw;
+    margin: 0 auto;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 500px;
+    height: 100%;
+    max-width: 100%; /* Asegura que se mantenga dentro del contenedor */
     border: none;
+}
+
+/* Botón de carga */
+.load-button {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.load-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Íconos de redes sociales */
+.social-icon {
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-icon:hover {
+    color: #3498db;
+    transform: scale(1.2);
+}
+
+/*CAMBIO DE TEMA*/
+
+/* Tema claro y oscuro */
+.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Transición suave para cambio de tema */
+body, .navbar, .card, .footer, .iframe-container {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Animación de cambio de tema */
+@keyframes themeFade {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.theme-dark .content, .theme-light .content {
+    animation: themeFade 0.6s ease;
 }

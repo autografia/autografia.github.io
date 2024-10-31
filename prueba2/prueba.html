@@ -40,8 +40,11 @@
 
     <!-- Contenedor de iframe con botón de regreso -->
     <div class="iframe-container" id="iframeContainer">
-        <button class="btn btn-secondary my-3" onclick="hideIframe()">Volver a la Galería</button>
-        <div id="iframeContent"></div>
+        <div id="iframeContent">
+            <button class="btn btn-secondary my-3" id="backButton" onclick="hideIframe()">Volver a la Galería</button>
+            <iframe src="" id="iframe"></iframe>
+            <div id="loadingSpinner" class="text-center">Cargando...</div>
+        </div>
     </div>
 
     <!-- Footer -->

@@ -72,12 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const col = document.createElement('div');        
         col.className = 'col-6 col-md-4 col-lg-2'; // 2 columnas en móvil, 3 en tablets, 5-6 en pantalla grande
         col.innerHTML = `
-        <div class="card" data-index="${index}">
+        <div class="card event-container" data-index="${index}">
             <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
             <div class="card-body">
                 <h5 class="card-title">${event.name}</h5>
-                <button class="btn btn-primary" onclick="loadIframe(${event.id})">Ver Fotos</button>
-            </div>
+                <button class="btn btn-primary load-button" onclick="loadIframe('${event.id}')">Ver Fotos</button>
+            </div> 
         </div>
         `;
         gallery.appendChild(col);
@@ -113,32 +113,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadIframe(folderID) {
-    const iframeContent = document.getElementById('iframeContent');
     const iframe = document.getElementById('iframe');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-
-    loadingSpinner.style.display = 'block';
-    iframe.style.display = 'none';
-    iframe.style.opacity = 0; // Iniciar en opacidad 0
+    iframe.src = folderID;
+    document.getElementById('iframeContainer').style.display = 'block';
+    document.getElementById('loadingSpinner').style.display = 'block';
+    
+    // Ocultar eventos
+    document.querySelectorAll('.event-container').forEach(container => {
+        container.style.display = 'none';
+    });
+    //Ocultar NavBar
+    document.getElementById('navbar').style.display = 'none';
+    
     iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
 
+    // Al cargar el iframe, ocultar el spinner de carga
     iframe.onload = () => {
-        loadingSpinner.style.display = 'none';
-        iframe.style.display = 'block';
-
+        gallery.style.display = 'none';
+        iframe.style.display = 'flex';
+        document.getElementById('loadingSpinner').style.display = 'none';
         // Efecto de desvanecimiento
         iframe.style.transition = 'opacity 0.5s ease'; // Agregar transición
         setTimeout(() => {
             iframe.style.opacity = 1;
         }, 100);
-
-        if (window.innerWidth < 768) {
-            document.getElementById('navbar').style.display = 'none';
-        }
-    };
-
-    iframeContent.style.display = 'block';
-    document.querySelectorAll('.event-container').forEach(container => {
-        container.style.display = 'none';
-    });
+    };    
 }
