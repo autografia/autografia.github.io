@@ -1,0 +1,46 @@
+/* Variables de tema */
+:root {
+    --bs-body-bg: #fff;
+    --bs-body-color: #000;
+    --theme-dark-bg: #222;
+    --theme-dark-color: #ddd;
+}
+
+body.light-mode {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+body.dark-mode {
+    background-color: var(--theme-dark-bg);
+    color: var(--theme-dark-color);
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color 0.3s;
+}
+
+/* Cards */
+.card {
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedor de iframe */
+.iframe-container {
+    display: none;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--bs-body-bg);
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
