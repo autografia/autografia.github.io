@@ -21,6 +21,16 @@ body.dark-mode {
     transition: background-color 0.3s;
 }
 
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
 /* Cards */
 .card {
     margin-bottom: 1rem;

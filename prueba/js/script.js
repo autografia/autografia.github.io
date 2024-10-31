@@ -49,6 +49,12 @@ const events = [
         additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
     },
     {
+        id: '1mfRnLZcKk7-1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
+        name: 'R5 Bimotor',
+        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
+        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+    },
+    {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
         name: 'Moralet 2023',
         thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4946.webp',

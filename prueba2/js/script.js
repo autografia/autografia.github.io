@@ -49,6 +49,12 @@ const events = [
         additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
     },
     {
+        id: '1mfRnLZcKk7-1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
+        name: 'R5 Bimotor',
+        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
+        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+    },
+    {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
         name: 'Moralet 2023',
         thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4946.webp',
@@ -60,23 +66,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const eventosContainer = document.getElementById('gallery');
     const fragment = document.createDocumentFragment();
 
+    const gallery = document.getElementById('gallery');
+
     events.forEach((event, index) => {
-        const eventCard = document.createElement('div');
-        eventCard.className = 'col-md-3 col-sm-6 event-container';
-        eventCard.innerHTML = `
-            <div class="card" 
-                 data-index="${index}">
-                <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${event.name}</h5>
-                    <button class="load-button">
-                        <i class="fas fa-camera"></i> Ver Fotos
-                    </button>
-                </div>
+        const col = document.createElement('div');        
+        col.className = 'col-6 col-md-4 col-lg-2'; // 2 columnas en móvil, 3 en tablets, 5-6 en pantalla grande
+        col.innerHTML = `
+        <div class="card" data-index="${index}">
+            <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
+            <div class="card-body">
+                <h5 class="card-title">${event.name}</h5>
+                <button class="btn btn-primary" onclick="loadIframe(${event.id})">Ver Fotos</button>
             </div>
+        </div>
         `;
-        fragment.appendChild(eventCard);
-    });
+        gallery.appendChild(col);
+    });    
+
 
     eventosContainer.appendChild(fragment);
 
