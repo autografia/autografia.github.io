@@ -57,7 +57,7 @@ const events = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const eventosContainer = document.getElementById('eventosContainer');
+    const eventosContainer = document.getElementById('gallery');
     const fragment = document.createDocumentFragment();
 
     events.forEach((event, index) => {
