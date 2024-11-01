@@ -110,12 +110,12 @@
 
 /* Tema claro y oscuro */
 .light-theme {
-    background-color: #ffffff;
+    background-color: #dddddd;
     color: #333;
 }
 
 .dark-theme {
-    background-color: #333;
+    background-color: #333333;
     color: #ffffff;
 }
 
