@@ -57,15 +57,6 @@ function isMobile() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-function hideIframe() {
-    document.getElementById('iframeContent').style.display = 'none';
-    document.querySelectorAll('.event-container').forEach(container => {
-        container.style.display = 'block';
-    });
-    document.getElementById('navbar').style.display = 'flex';
-    document.getElementById('gallery').style.display = 'flex';
-}
-
 // Eventos para mouseenter y mouseleave
 document.getElementById('gallery').addEventListener('mouseenter', (event) => {
     const card = event.target.closest('.card');

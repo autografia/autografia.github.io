@@ -62,80 +62,106 @@ const events = [
     }
 ];
 
+const navbar = document.getElementById('navbar');
+const iframeContent = document.getElementById('iframeContent');
+const iframeContainer = document.getElementById('iframeContainer');
+const iframe = document.getElementById('iframe');
+const gallery = document.getElementById('gallery');
+const loadingSpinner = document.getElementById('loadingSpinner');
+
+// Funciones auxiliares para mostrar y ocultar
+function showElement(element) {
+    element.classList.remove('hidden');
+}
+function hideElement(element) {
+    element.classList.add('hidden');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const eventosContainer = document.getElementById('gallery');
     const fragment = document.createDocumentFragment();
 
-    const gallery = document.getElementById('gallery');
-
+    // Crear eventos dinámicamente
     events.forEach((event, index) => {
         const col = document.createElement('div');        
         col.className = 'col-6 col-md-4 col-lg-2'; // 2 columnas en móvil, 3 en tablets, 5-6 en pantalla grande
         col.innerHTML = `
-        <div class="card event-container" data-index="${index}">
-            <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
-            <div class="card-body">
-                <h5 class="card-title">${event.name}</h5>
-                <button class="btn btn-primary load-button" onclick="loadIframe('${event.id}')">Ver Fotos</button>
-            </div> 
-        </div>
+            <div class="card event-container" data-index="${index}">
+                <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${event.name}</h5>
+                    <button class="btn btn-primary load-button bi-camera-fill">&nbsp;Ver Fotos</button>
+                </div> 
+            </div>
         `;
-        gallery.appendChild(col);
-    });    
-
-
-    eventosContainer.appendChild(fragment);
-
-    // Delegar eventos
-    eventosContainer.addEventListener('mouseenter', (event) => {
-        if (event.target.closest('.card')) {
-            const index = event.target.closest('.card').getAttribute('data-index');
-            startCarousel(event.target.closest('.card'), index);
-        }
-    }, true);
-
-    eventosContainer.addEventListener('mouseleave', (event) => {
-        if (event.target.closest('.card')) {
-            stopCarousel(event.target.closest('.card'));
-        }
-    }, true);
-
-    eventosContainer.addEventListener('click', (event) => {
-        const card = event.target.closest('.card');
-        if (card) {
-            const index = card.getAttribute('data-index');
-            toggleCarouselMobile(card, index);
-            if (event.target.classList.contains('load-button')) {
-                loadIframe(events[index].id);
-            }
-        }
+        fragment.appendChild(col);
     });
+    
+    eventosContainer.appendChild(fragment);
+    // Delegación de eventos para toda la galería
+    eventosContainer.addEventListener('click', handleGalleryClick);
+    eventosContainer.addEventListener('mouseenter', handleGalleryMouseEnter, true);
+    eventosContainer.addEventListener('mouseleave', handleGalleryMouseLeave, true);
+    hideElement(iframe);
+    hideElement(iframeContent);
+    hideElement(iframeContainer);
 });
 
-function loadIframe(folderID) {
-    const iframe = document.getElementById('iframe');
-    iframe.src = folderID;
-    document.getElementById('iframeContainer').style.display = 'block';
-    document.getElementById('loadingSpinner').style.display = 'block';
-    
-    // Ocultar eventos
-    document.querySelectorAll('.event-container').forEach(container => {
-        container.style.display = 'none';
-    });
-    //Ocultar NavBar
-    document.getElementById('navbar').style.display = 'none';
-    
-    iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
+// Manejo de eventos en la galería
+function handleGalleryClick(event) {
+    const card = event.target.closest('.card');
+    if (card) {
+        const index = card.getAttribute('data-index');
+        toggleCarouselMobile(card, index);
+        if (event.target.classList.contains('load-button')) {
+            loadIframe(events[index].id);
+        }
+    }
+}
 
-    // Al cargar el iframe, ocultar el spinner de carga
+function handleGalleryMouseEnter(event) {
+    const card = event.target.closest('.card');
+    if (card) {
+        const index = card.getAttribute('data-index');
+        startCarousel(card, index);
+    }
+}
+
+function handleGalleryMouseLeave(event) {
+    const card = event.target.closest('.card');
+    if (card) {
+        stopCarousel(card);
+    }
+}
+
+// Función de ocultar el iframe y mostrar galería
+function hideIframe() {
+    hideElement(iframeContent);
+    hideElement(iframeContainer);
+    navbar.classList.remove('hidden');
+    gallery.classList.remove('hidden');
+    document.querySelectorAll('.event-container').forEach(container => {
+        container.classList.remove('hidden');
+    });
+}
+
+// Función de cargar el iframe
+function loadIframe(folderID) {
+    iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
+    showElement(iframe);
+    showElement(iframeContent);
+    showElement(iframeContainer);
+    showElement(loadingSpinner);
+
+    document.querySelectorAll('.event-container').forEach(container => {
+        container.classList.add('hidden');
+    });
+    navbar.classList.add('hidden');
+    gallery.classList.add('hidden');
+    
+    // Ocultar spinner al cargar iframe
     iframe.onload = () => {
-        gallery.style.display = 'none';
-        iframe.style.display = 'flex';
-        document.getElementById('loadingSpinner').style.display = 'none';
-        // Efecto de desvanecimiento
-        iframe.style.transition = 'opacity 0.5s ease'; // Agregar transición
-        setTimeout(() => {
-            iframe.style.opacity = 1;
-        }, 100);
-    };    
+        loadingSpinner.classList.add('hidden');
+        iframe.style.opacity = 1;
+    };
 }
