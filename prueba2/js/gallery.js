@@ -2,8 +2,6 @@ let carouselInterval;
 let isCarouselRunning = false; // Estado del carrusel
 
 function startCarousel(card, eventIndex) {
-    if (isMobile()) return; // No hace nada si está en móvil
-
     const images = events[eventIndex].additionalImages;
     if (!images || images.length === 0) return; // Verifica que hay imágenes
 
@@ -40,22 +38,13 @@ function stopCarousel(card) {
     }
 }
 
-function toggleCarouselMobile(card, eventIndex) {
-    if (!isMobile()) return; // No hace nada si no está en móvil
-
-    if (isCarouselRunning) {
-        // Si el carrusel está activo, detén el carrusel
-        stopCarousel(card);
-    } else {
-        // Inicia el carrusel
+document.getElementById('gallery').addEventListener('click', (event) => {
+    const card = event.target.closest('.card');
+    if (card) {
+        const eventIndex = card.getAttribute('data-index'); // Asegúrate de tener el índice
         startCarousel(card, eventIndex);
     }
-}
-
-// Función para detectar si es un dispositivo móvil
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
+}, true);
 
 // Eventos para mouseenter y mouseleave
 document.getElementById('gallery').addEventListener('mouseenter', (event) => {
