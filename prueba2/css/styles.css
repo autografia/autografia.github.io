@@ -24,6 +24,17 @@
     flex-direction: column;    
     justify-content: space-between;
     border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
+    border-width: 2px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde */
+}
+
+/* Borde de las cards por tema */
+.light-theme .card {
+    border-color: #2980b9; /* Color del borde para el tema claro */
+}
+
+.dark-theme .card {
+    border-color: #3498db; /* Color del borde para el tema oscuro */
 }
 
 .card-title {
@@ -33,15 +44,14 @@
     overflow: hidden; /* Oculta el texto que exceda el límite */
     text-overflow: ellipsis;
     text-align: center;
-  }
+}
 
-
-  .card-body {
+.card-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
 
 .card:hover {
     transform: scale(1.03);
@@ -82,17 +92,10 @@
 .load-button {
     border: none;
     border-radius: 20px;
-    padding: 8px 16px;
-    background-color: #e74c3c;
-    color: #ffffff;
+    padding: 8px 16px;        
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s ease;
-}
-
-.load-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
 }
 
 /* Íconos de redes sociales */
@@ -122,24 +125,30 @@
 
 .light-theme .navbar,
 .light-theme .nav-link,
-.light-theme .card,
 .light-theme .footer {
     color: #2c3e50; /* Color de texto para el tema claro */
 }
 
-.light-theme .card {
-    border-color: #2980b9; /* Color del borde para el tema claro */
-}
-
 .dark-theme .navbar,
 .dark-theme .nav-link,
-.dark-theme .card,
 .dark-theme .footer {
     color: #ecf0f1; /* Color de texto para el tema oscuro */
 }
 
-.dark-theme .card {
-    border-color: #3498db; /* Color del borde para el tema oscuro */
+/* Colores del botón de carga por tema */
+.light-theme .load-button {
+    background-color: #e74c3c; /* Fondo para tema claro */
+    color: #ffffff; /* Color de texto para tema claro */
+}
+
+.dark-theme .load-button {
+    background-color: #2980b9; /* Fondo para tema oscuro */
+    color: #ffffff; /* Color de texto para tema oscuro */
+}
+
+.load-button:hover {
+    background-color: #7a7a7a;
+    transform: translateY(-2px);
 }
 
 /* Transición suave para cambio de tema */
@@ -163,9 +172,7 @@ body, .navbar, .card, .footer, .iframe-container {
     animation: themeFade 0.6s ease;
 }
 
-
-
-/*Ajustes para lso dispositivos moviles y el iframe*/
+/*Ajustes para los dispositivos móviles y el iframe*/
 @media (max-width: 768px) {
     .iframe-container {
         height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
