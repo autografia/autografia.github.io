@@ -29,9 +29,10 @@
 .card-title {
     font-size: 1.1rem;
     line-height: 1.2rem;
-    height: 2.4rem; /* Limita el título a dos líneas */
+    height: 1.4rem; /* Limita el título a dos líneas */
     overflow: hidden; /* Oculta el texto que exceda el límite */
     text-overflow: ellipsis;
+    text-align: center;
   }
 
 
@@ -82,7 +83,7 @@
     border: none;
     border-radius: 20px;
     padding: 8px 16px;
-    background-color: #3498db;
+    background-color: #e74c3c;
     color: #ffffff;
     font-size: 1rem;
     cursor: pointer;
@@ -110,13 +111,35 @@
 
 /* Tema claro y oscuro */
 .light-theme {
-    background-color: #dddddd;
-    color: #333;
+    background-color: #f0f4f8;
+    color: #2c3e50;
 }
 
 .dark-theme {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.light-theme .navbar,
+.light-theme .nav-link,
+.light-theme .card,
+.light-theme .footer {
+    color: #2c3e50; /* Color de texto para el tema claro */
+}
+
+.light-theme .card {
+    border-color: #2980b9; /* Color del borde para el tema claro */
+}
+
+.dark-theme .navbar,
+.dark-theme .nav-link,
+.dark-theme .card,
+.dark-theme .footer {
+    color: #ecf0f1; /* Color de texto para el tema oscuro */
+}
+
+.dark-theme .card {
+    border-color: #3498db; /* Color del borde para el tema oscuro */
 }
 
 /* Transición suave para cambio de tema */
@@ -142,6 +165,7 @@ body, .navbar, .card, .footer, .iframe-container {
 
 
 
+/*Ajustes para lso dispositivos moviles y el iframe*/
 @media (max-width: 768px) {
     .iframe-container {
         height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
