@@ -112,7 +112,6 @@ function handleGalleryClick(event) {
     const card = event.target.closest('.card');
     if (card) {
         const index = card.getAttribute('data-index');
-        toggleCarouselMobile(card, index);
         if (event.target.classList.contains('load-button')) {
             loadIframe(events[index].id);
         }
