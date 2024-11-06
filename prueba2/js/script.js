@@ -17,7 +17,7 @@ function hideElement(element) {
 function hideIframe() {
     hideElement(iframeContent);
     hideElement(iframeContainer);
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1100) {
         navbar.classList.remove('hidden');
     }
     gallery.classList.remove('hidden');
@@ -37,7 +37,7 @@ function loadIframe(folderID) {
     document.querySelectorAll('.event-container').forEach(container => {
         container.classList.add('hidden');
     });
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1100) {
         navbar.classList.add('hidden');
     }
     gallery.classList.add('hidden');
