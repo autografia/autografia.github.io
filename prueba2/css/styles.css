@@ -171,10 +171,18 @@
     }
 
     #navbarNav .nav-item:nth-child(2) {
-        text-align: center;
+        text-align: left;
     }
 
     #navbarNav .nav-item:nth-child(3) {
+        text-align: center;
+    }
+
+    #navbarNav .nav-item:nth-child(4) {
+        text-align: right;
+    }
+
+    #navbarNav .nav-item:nth-child(5) {
         text-align: right;
     }
 }
