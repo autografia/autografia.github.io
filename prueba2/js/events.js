@@ -47,7 +47,7 @@ const events = [
         name: 'Moralet 2022 normales',
         thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
         additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
-    },    
+    },
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
         name: 'R5 Bimotor',
@@ -61,84 +61,3 @@ const events = [
         additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
     }
 ];
-
-document.addEventListener("DOMContentLoaded", () => {
-    const eventosContainer = document.getElementById('eventosContainer');
-    const fragment = document.createDocumentFragment();
-
-    events.forEach((event, index) => {
-        const eventCard = document.createElement('div');
-        eventCard.className = 'col-md-3 col-sm-6 event-container';
-        eventCard.innerHTML = `
-            <div class="card" 
-                 data-index="${index}">
-                <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${event.name}</h5>
-                    <button class="load-button">
-                        <i class="fas fa-camera"></i> Ver Fotos
-                    </button>
-                </div>
-            </div>
-        `;
-        fragment.appendChild(eventCard);
-    });
-
-    eventosContainer.appendChild(fragment);
-
-    // Delegar eventos
-    eventosContainer.addEventListener('mouseenter', (event) => {
-        if (event.target.closest('.card')) {
-            const index = event.target.closest('.card').getAttribute('data-index');
-            startCarousel(event.target.closest('.card'), index);
-        }
-    }, true);
-
-    eventosContainer.addEventListener('mouseleave', (event) => {
-        if (event.target.closest('.card')) {
-            stopCarousel(event.target.closest('.card'));
-        }
-    }, true);
-
-    eventosContainer.addEventListener('click', (event) => {
-        const card = event.target.closest('.card');
-        if (card) {
-            const index = card.getAttribute('data-index');
-            toggleCarouselMobile(card, index);
-            if (event.target.classList.contains('load-button')) {
-                loadIframe(events[index].id);
-            }
-        }
-    });
-});
-
-function loadIframe(folderID) {
-    const iframeContent = document.getElementById('iframeContent');
-    const iframe = document.getElementById('iframe');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-
-    loadingSpinner.style.display = 'block';
-    iframe.style.display = 'none';
-    iframe.style.opacity = 0; // Iniciar en opacidad 0
-    iframe.src = `https://drive.google.com/embeddedfolderview?id=${folderID}#grid`;
-
-    iframe.onload = () => {
-        loadingSpinner.style.display = 'none';
-        iframe.style.display = 'block';
-
-        // Efecto de desvanecimiento
-        iframe.style.transition = 'opacity 0.5s ease'; // Agregar transición
-        setTimeout(() => {
-            iframe.style.opacity = 1;
-        }, 100);
-
-        if (window.innerWidth < 768) {
-            document.getElementById('navbar').style.display = 'none';
-        }
-    };
-
-    iframeContent.style.display = 'block';
-    document.querySelectorAll('.event-container').forEach(container => {
-        container.style.display = 'none';
-    });
-}
