@@ -28,15 +28,6 @@
     border-style: solid; /* Estilo del borde */
 }
 
-/* Borde de las cards por tema */
-.light-theme .card {
-    border-color: #2980b9; /* Color del borde para el tema claro */
-}
-
-.dark-theme .card {
-    border-color: #3498db; /* Color del borde para el tema oscuro */
-}
-
 .card-title {
     font-size: 1.1rem;
     line-height: 1.2rem;
@@ -123,6 +114,16 @@
     color: #ecf0f1;
 }
 
+/* Borde de las cards por tema */
+.light-theme .card {
+    border-color: #2980b9; /* Color del borde para el tema claro */
+}
+
+.dark-theme .card {
+    border-color: #3498db; /* Color del borde para el tema oscuro */
+}
+
+
 .light-theme .navbar,
 .light-theme .nav-link,
 .light-theme .card,
@@ -204,6 +205,7 @@ body, .navbar, .card, .footer, .iframe-container {
     }
 }
 
+/*Ajuste para menu en moviles*/
 @media (max-width: 992px) {
     /* Alineación de los botones del menú en modo móvil */
     #navbarNav .navbar-nav {
