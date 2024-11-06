@@ -185,3 +185,30 @@ body, .navbar, .card, .footer, .iframe-container {
         height: calc(100vh - 56px); /* Calcula el 100% de la pantalla menos el espacio del botón o cualquier margen */
     }
 }
+
+@media (max-width: 992px) {
+    /* Alineación de los botones del menú en modo móvil */
+    #navbarNav .navbar-nav {
+        flex-direction: row;
+        justify-content: space-between; /* Distribuye los botones en los extremos */
+        width: 100%; /* Asegura que ocupen todo el ancho */
+    }
+    
+    #navbarNav .nav-item {
+        flex: 1; /* Cada elemento toma la misma cantidad de espacio */
+        text-align: center; /* Centra el contenido dentro de cada elemento */
+    }
+
+    /* Alineación específica para el primer, segundo y tercer botón */
+    #navbarNav .nav-item:nth-child(1) {
+        text-align: left;
+    }
+
+    #navbarNav .nav-item:nth-child(2) {
+        text-align: center;
+    }
+
+    #navbarNav .nav-item:nth-child(3) {
+        text-align: right;
+    }
+}
