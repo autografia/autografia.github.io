@@ -27,6 +27,14 @@
     color: #ecf0f1;
 }
 
+.light-theme .navbar{
+    background-color: #cfa29d;
+}
+
+.dark-theme .navbar{
+    background-color: #486685;
+}
+
 /* Colores de texto */
 .light-theme .navbar, 
 .light-theme .nav-link, 
@@ -95,3 +103,25 @@ body, .navbar, .card, .footer, .iframe-container {
 .theme-dark .content, .theme-light .content {
     animation: themeFade 0.6s ease;
 }
+
+.light-theme .gradient-custom {
+    /* fallback for old browsers */
+    background: #ff9a9e;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(255,154,158,0.5), rgba(250,208,196,0.5));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(255,154,158,0.5), rgba(250,208,196,0.5))
+  }
+
+  .dark-theme .gradient-custom {
+    /* fallback for old browsers */
+    background: #48c6ef;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(72,198,239,0.5), rgba(111,134,214,0.5));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(72,198,239,0.5), rgba(111,134,214,0.5))
+  }
