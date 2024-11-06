@@ -137,6 +137,15 @@
     color: #ecf0f1; /* Color de texto para el tema oscuro */
 }
 
+.logo {
+    filter: invert(0); /* Logo normal para el tema claro */
+}
+
+/* Estilo del logo para el tema oscuro */
+.dark-theme .logo {
+    filter: invert(1); /* Invertir colores para el tema oscuro */
+}
+
 /* Colores del botón de carga por tema */
 .light-theme .load-button {
     background-color: #e74c3c; /* Fondo para tema claro */
@@ -151,6 +160,15 @@
 .load-button:hover {
     background-color: #7a7a7a;
     transform: translateY(-2px);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilos para el tema oscuro */
+.dark-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Transición suave para cambio de tema */
