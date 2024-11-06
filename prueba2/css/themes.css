@@ -12,29 +12,35 @@
 }
 
 /* Borde de las cards por tema */
+.card {
+    border-width: 2px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde */
+}
+
 .light-theme .card {
     border-color: #2980b9; /* Color del borde para el tema claro */
+    color: #2c3e50;
 }
 
 .dark-theme .card {
     border-color: #3498db; /* Color del borde para el tema oscuro */
+    color: #ecf0f1;
 }
 
-
-.light-theme .navbar,
-.light-theme .nav-link,
-.light-theme .card,
+/* Colores de texto */
+.light-theme .navbar, 
+.light-theme .nav-link, 
 .light-theme .footer {
     color: #2c3e50; /* Color de texto para el tema claro */
 }
 
 .dark-theme .navbar,
 .dark-theme .nav-link,
-.dark-theme .card,
 .dark-theme .footer {
     color: #ecf0f1; /* Color de texto para el tema oscuro */
 }
 
+/* Estilo del logo */
 .logo {
     filter: invert(0); /* Logo normal para el tema claro */
 }
