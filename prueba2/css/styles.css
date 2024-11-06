@@ -13,6 +13,7 @@
     object-fit: cover; /* Recorta y centra la imagen */
     border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
     padding: 4%;
+    padding-bottom: 0%;
 }
 
 .card {
@@ -29,11 +30,14 @@
 
 .card-title {
     font-size: 1.1rem;
-    line-height: 1.2rem;
+    /*line-height: 1.2rem;
     height: 1.4rem; /* Limita el título a dos líneas */
     overflow: hidden; /* Oculta el texto que exceda el límite */
     text-overflow: ellipsis;
     text-align: center;
+    font-size: 1.2rem; /* Usamos rem para que el tamaño sea relativo */
+    line-height: 1.4; /* Ajusta el interlineado relativo */
+    margin-bottom: 0.5rem;
 }
 
 .card-body {
@@ -41,11 +45,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    padding-top: 0%;
 }
 
 .card:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de carga */
+.load-button {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    padding: 0.5rem 1rem; /* Reduce el padding relativo */
+    font-size: 1rem; /* Tamaño de fuente relativo */
+    margin-top: 0.5rem;
 }
 
 /* Botón "Volver a la Galería" */
@@ -77,16 +95,6 @@
     border: none;
 }
 
-/* Botón de carga */
-.load-button {
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;        
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s ease;
-}
-
 /* Íconos de redes sociales */
 .social-icon {
     font-size: 1.5rem;
@@ -108,6 +116,38 @@
 
     .iframe-container iframe {
         height: calc(100vh - 56px); /* Calcula el 100% de la pantalla menos el espacio del botón o cualquier margen */
+    }
+    .card-body {
+        padding: 0.8rem 1rem; /* Ajusta el padding en móviles */
+    }
+
+    .card-title {
+        font-size: 1.1rem; /* Ajusta el tamaño de la fuente para móviles */
+        margin-bottom: 0.3rem; /* Reduce el margen inferior en móviles */
+    }
+
+    .load-button {
+        padding: 0.4rem 0.8rem; /* Ajuste de padding para móviles */
+        font-size: 0.9rem; /* Ajuste de tamaño de la fuente en móviles */
+        margin-top: 0.4rem; /* Ajuste de margen superior para móviles */
+    }
+}
+
+/* Ajustes para pantallas más grandes */
+@media (min-width: 1200px) {
+    .card-body {
+        padding: 1.5rem 2rem; /* Ajusta el padding para pantallas grandes */
+    }
+
+    .card-title {
+        font-size: 1.2rem; /* Aumenta el tamaño de la fuente en pantallas grandes */
+        padding: 0;
+        margin: 0;
+    }
+
+    .load-button {
+        padding: 0.6rem 1.2rem; /* Ajuste de padding para pantallas grandes */
+        font-size: 1.1rem; /* Ajuste de tamaño de fuente en pantallas grandes */
     }
 }
 
