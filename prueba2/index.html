@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
+
 <body class="light-theme">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg gradient-custom" id="navbar">
@@ -23,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link bi-house-door" href="index.html">&nbsp;Inicio</a>
                     </li>
@@ -45,22 +47,8 @@
             </div>
         </div>
     </nav>
-    <!-- Galería de eventos -->
-    <section class="container my-4 wide-frame main-content">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3" id="gallery">
-            <!-- Eventos generados por JavaScript -->
-        </div>
-    </section>
-
-    <!-- Contenedor de iframe con botón de regreso -->
-    <div class="iframe-container" id="iframeContainer">
-        <div id="iframeContent">
-            <button class="btn btn-secondary my-3 bi-arrow-left" id="backButton" onclick="hideIframe()">&nbsp;Volver</button>
-            <iframe src="" id="iframe"></iframe>
-            <div id="loadingSpinner" class="text-center">Cargando...</div>
-        </div>
+    <div class="main-content">
     </div>
-
     <footer class="footer">
         <div class="waves">
           <div class="wave" id="wave1"></div>
@@ -84,11 +72,10 @@
         </div>
     </footer>
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/events.js"></script>
 </body>
 </html>
