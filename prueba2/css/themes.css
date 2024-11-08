@@ -84,7 +84,7 @@
 }
 
 /* Transición suave para cambio de tema */
-body, .navbar, .card, .footer, .iframe-container {
+body, .navbar, .card, .iframe-container {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
