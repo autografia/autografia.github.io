@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const footer = document.getElementById('footer');
 const iframeContent = document.getElementById('iframeContent');
 const iframeContainer = document.getElementById('iframeContainer');
 const iframe = document.getElementById('iframe');
@@ -39,6 +40,7 @@ function loadIframe(folderID) {
     });
     if (window.innerWidth <= 1100) {
         navbar.classList.add('hidden');
+        footer.classList.add('hidden');
     }
     gallery.classList.add('hidden');
     
