@@ -104,6 +104,14 @@ body, .navbar, .card, .footer, .iframe-container {
     animation: themeFade 0.6s ease;
 }
 
+.light-theme footer{
+    background: #ff9a9e;
+}
+
+.dark-theme footer{
+    background: #3586ff;
+}
+
 .light-theme .gradient-custom {
     /* fallback for old browsers */
     background: #ff9a9e;

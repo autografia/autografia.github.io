@@ -5,10 +5,9 @@
 }
 
 .footer {
-  margin-top: auto;
+  margin-top: 18%;
   position: relative;
   width: 100%;
-  background: #3586ff;
   padding: 20px 50px;
   display: flex;
   justify-content: center;
@@ -71,7 +70,17 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background: url("wave_light.png");
+  background-size: 1000px 100px;
+}
+
+.dark-theme .wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("wave_dark.png");
   background-size: 1000px 100px;
 }
 
