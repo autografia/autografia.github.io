@@ -14,50 +14,44 @@ const events = [
     },
     {
         id: '1R_rfHmNFxYJ0ILO9EQ2WZV8lcttpQBor',
-        name: 'Museo Turrón 2023',
+        name: 'Museo Turrón',
         thumbnail: '../fotos/concentración_turron/baja_calidad/DSC_3169.webp',
         additionalImages: ['../fotos/concentración_turron/baja_calidad/DSC_3205.webp', '../fotos/concentración_turron/baja_calidad/DSC_3207.webp', '../fotos/concentración_turron/baja_calidad/DSC_3209.webp']
     },
     {
         id: '16nXnrLSontaTuWYg-cEnGd-NCQjkCeoy',
         name: 'Parole 2023',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4946.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        thumbnail: '../fotos/parole_2023/DSC_5917-Editar.jpg',
+        additionalImages: ['../fotos/parole_2023/DSC_5924-Editar.jpg', '../fotos/parole_2023/DSC_5927-Editar.jpg', '../fotos/parole_2023/DSC_5930.jpg']
     },
     {
         id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
-        name: 'Campello 2023',
+        name: 'Campello',
         thumbnail: '../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp',
         additionalImages: ['../fotos/campello_enero_2023/baja_calidad/DSC_3324-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3319-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3326-min.webp']
     },
     {
         id: '1iuSsfUbP75EQMDuHuDHsz8pZ7kl0eJhA',
         name: 'Agost 2023',
-        thumbnail: '../logos/icono.png',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
-    },
-    {
-        id: '1eUs2dO60oXEemto1lutxIWps_qs9JEca',
-        name: 'Moralet 2022 entrada',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4911.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        thumbnail: '../fotos/agost_2023/DSC_3505.jpg',
+        additionalImages: ['../fotos/agost_2023/DSC_3489.jpg', '../fotos/agost_2023/DSC_3486.jpg', '../fotos/agost_2023/DSC_3481.jpg']
     },
     {
         id: '1mfRnLZcKk7-I45zEFySJTL2lZ24cch1x',
-        name: 'Moralet 2022 normales',
+        name: 'Moralet 2022',
         thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4904.webp', '../fotos/moralet2023/baja_calidad/DSC_4871.webp', '../fotos/moralet2023/baja_calidad/DSC_4651.webp']
     },
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
         name: 'R5 Bimotor',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.jpg',
+        additionalImages: ['../fotos/r5_bimotor/DSC_6237.jpg', '../fotos/r5_bimotor/DSC_6234.jpg', '../fotos/r5_bimotor/DSC_6250.jpg']
     },
     {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
         name: 'Moralet 2023',
         thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4946.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4911.webp', '../fotos/moralet2023/baja_calidad/DSC_4928.webp', '../fotos/moralet2023/baja_calidad/DSC_4818.webp']
     }
 ];
