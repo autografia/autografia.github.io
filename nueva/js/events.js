@@ -10,13 +10,13 @@ const events = [
         id: '1l4r7ORtNdcgr1y09Mmvgm-vB6EyR_Le0',
         name: 'Volrace 2022',
         thumbnail: '../fotos/volrace_gt_2022/baja_calidad/DSC_3043.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        additionalImages: ['../fotos/volrace_gt_2022/baja_calidad/DSC_2787.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2817.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2993.webp']
     },
     {
         id: '1R_rfHmNFxYJ0ILO9EQ2WZV8lcttpQBor',
-        name: 'Turron 2023',
+        name: 'Museo Turrón 2023',
         thumbnail: '../fotos/concentración_turron/baja_calidad/DSC_3169.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        additionalImages: ['../fotos/concentración_turron/baja_calidad/DSC_3205.webp', '../fotos/concentración_turron/baja_calidad/DSC_3207.webp', '../fotos/concentración_turron/baja_calidad/DSC_3209.webp']
     },
     {
         id: '16nXnrLSontaTuWYg-cEnGd-NCQjkCeoy',
@@ -28,7 +28,7 @@ const events = [
         id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
         name: 'Campello 2023',
         thumbnail: '../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        additionalImages: ['../fotos/campello_enero_2023/baja_calidad/DSC_3324-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3319-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3326-min.webp']
     },
     {
         id: '1iuSsfUbP75EQMDuHuDHsz8pZ7kl0eJhA',
