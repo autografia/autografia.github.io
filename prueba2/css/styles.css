@@ -12,6 +12,24 @@
     z-index: 10;
 }
 
+.iconos{
+    width: 3%;
+}
+
+.centrado p{
+	width: 90%;
+	margin: 0 auto;
+	text-align: justify;
+	text-decoration: none;
+}
+
+.centrado2 {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+}
+
 /* Cards de eventos */
 .card img {
     width: 100%;

@@ -81,7 +81,7 @@ html, body {
   	border-radius: 40px 2px;
   	max-height: 200px;
 	box-shadow: 1px 1px 10px 1px rgba(160, 160, 160, 1);
-	border: 2px solid #656464c;
+	border: 2px solid #656464;
 }	  
 .photo:hover img {
 	transform: scale(1.05);
