@@ -38,14 +38,16 @@
 /* Colores de texto */
 .light-theme .navbar, 
 .light-theme .nav-link, 
-.light-theme .footer {
-    color: #2c3e50; /* Color de texto para el tema claro */
+.light-theme .footer,
+.light-theme .p{
+    color: #2c3e50 !important; /* Color de texto para el tema claro */
 }
 
 .dark-theme .navbar,
 .dark-theme .nav-link,
-.dark-theme .footer {
-    color: #ecf0f1; /* Color de texto para el tema oscuro */
+.dark-theme .footer ,
+.dark-theme .p{
+    color: #ecf0f1 !important; /* Color de texto para el tema oscuro */
 }
 
 /* Estilo del logo */
