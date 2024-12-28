@@ -16,3 +16,20 @@ function toggleTheme() {
         themeIcon.classList.add('bi-moon-stars-fill');
     }
 }
+
+function applyPreferredTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme)) {
+        if (!document.body.classList.contains('dark-theme')) {
+            toggleTheme();
+        }
+    } else {
+        if (!document.body.classList.contains('light-theme')) {
+            toggleTheme();
+        }
+    }
+}
+
+applyPreferredTheme();
