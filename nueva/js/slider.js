@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     handle.addEventListener('mousedown', function () {
         isDragging = true;
+        document.body.style.cursor = 'ew-resize';
     });
 
     document.addEventListener('mouseup', function () {
         isDragging = false;
+        document.body.style.cursor = 'default';
     });
 
     document.addEventListener('mousemove', function (e) {
@@ -22,4 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
         handle.style.left = offsetX + 'px';
         afterImage.style.clip = `rect(0, ${offsetX}px, 100%, 0)`;
     });
+
+    // Ensure the handle and after image are positioned correctly on load
+    const initialOffsetX = slider.getBoundingClientRect().width / 2;
+    handle.style.left = initialOffsetX + 'px';
+    afterImage.style.clip = `rect(0, ${initialOffsetX}px, 100%, 0)`;
 });

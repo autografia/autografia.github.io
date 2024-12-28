@@ -8,7 +8,7 @@
 .slider {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  height: auto;
 }
 
 .slider-image {
@@ -19,8 +19,10 @@
   height: auto;
 }
 
-.slider-image-before img {
+.slider-image-before img,
+.slider-image-after img {
   width: 100%;
+  display: block;
 }
 
 .slider-image-after {
