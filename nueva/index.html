@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/twentytwenty.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/twentytwenty.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body class="light-theme">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg gradient-custom" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#home">
@@ -24,9 +25,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-nowrap">
-<!--                    <li class="nav-item">
-                        <a class="nav-link bi-house-door" href="index.html">&nbsp;Inicio</a>
-                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link bi-image" href="events.html">&nbsp;Galería</a>
                     </li>
@@ -45,13 +43,32 @@
             </div>
         </div>
     </nav>
-    <div class="main-content">
-        <!-- Image Comparison Slider -->
-        <div id="container1" class="twentytwenty-container">
-            <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp" alt="Before">
-            <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp" alt="After">
+
+
+    <div class="container mt-4">
+        <!-- Image Comparison Grid -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div id="container2" class="twentytwenty-container">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp" alt="Before">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp" alt="After">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div id="container3" class="twentytwenty-container">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp" alt="Before">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp" alt="After">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div id="container4" class="twentytwenty-container">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3312-min.webp" alt="Before">
+                    <img src="../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp" alt="After">
+                </div>
+            </div>
         </div>
     </div>
+
     <footer class="footer" id="footer">
         <div class="waves">
             <div class="wave" id="wave1"></div>
@@ -61,43 +78,55 @@
         </div>
         <div class="container text-center">
             <ul class="social-icon list-inline mb-3">
-                <li class="list-inline-item"><a class="social-icon__link"
-                        href="https://www.tiktok.com/@autografia_fotografia"><ion-icon
-                            name="logo-tiktok"></ion-icon></a></li>
-                <li class="list-inline-item"><a class="social-icon__link"
-                        href="https://www.instagram.com/autografia_fotografia/"><ion-icon
-                            name="logo-instagram"></ion-icon></a></li>
+                <li class="list-inline-item"><a class="social-icon__link" href="https://www.tiktok.com/@autografia_fotografia"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+                <li class="list-inline-item"><a class="social-icon__link" href="https://www.instagram.com/autografia_fotografia"><ion-icon name="logo-instagram"></ion-icon></a></li>
             </ul>
             <ul class="menu list-inline mb-3">
-                <!--<li class="list-inline-item"><a class="menu__link" href="index.html">Inicio</a></li>-->
                 <li class="list-inline-item"><a class="menu__link" href="events.html">Galería</a></li>
                 <li class="list-inline-item"><a class="menu__link" href="rrss.html">RRSS</a></li>
-                <!--<li class="list-inline-item"><a class="menu__link" href="#">Team</a></li>-->
                 <li class="list-inline-item"><a class="menu__link" href="contact.html">Contacto</a></li>
             </ul>
-            <p class="text-white">&copy;
-                <script>document.write(new Date().getFullYear())</script> Autografia | Todos los derechos reservados.
-            </p>
+            <p class="text-white text-end">&copy;<script>document.write(new Date().getFullYear())</script> Autografia | Todos los derechos reservados.</p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/jquery.twentytwenty.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
     <script>
         $(function(){
-            $("#container1").twentytwenty({
-                default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-                orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
-                before_label: 'Before', // Set a custom before label
-                after_label: 'After', // Set a custom after label
-                no_overlay: false, //Do not show the overlay with before and after
-                move_slider_on_hover: false, // Move slider on mouse hover?
-                move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement. 
-                click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+            $("#container2").twentytwenty({
+                default_offset_pct: 0.5,
+                orientation: 'horizontal',
+                before_label: 'Antes',
+                after_label: 'Despues',
+                no_overlay: false,
+                move_slider_on_hover: false,
+                move_with_handle_only: true,
+                click_to_move: false
+            });
+            $("#container3").twentytwenty({
+                default_offset_pct: 0.5,
+                orientation: 'horizontal',
+                before_label: 'Antes',
+                after_label: 'Despues',
+                no_overlay: false,
+                move_slider_on_hover: false,
+                move_with_handle_only: true,
+                click_to_move: true
+            });
+            $("#container4").twentytwenty({
+                default_offset_pct: 0.5,
+                orientation: 'horizontal',
+                before_label: 'Antes',
+                after_label: 'Despues',
+                no_overlay: false,
+                move_slider_on_hover: true,
+                move_with_handle_only: false,
+                click_to_move: false
             });
         });
     </script>
