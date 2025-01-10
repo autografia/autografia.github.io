@@ -118,68 +118,20 @@
     <script src="js/jquery.event.move.js"></script>
     <script src="js/jquery.twentytwenty.js"></script>
     <script>
-        $(function(){
-            $("#container2").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: false,
-                move_with_handle_only: true,
-                click_to_move: false
-            });
-            $("#container3").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: false,
-                move_with_handle_only: true,
-                click_to_move: true
-            });
-            $("#container4").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: true,
-                move_with_handle_only: false,
-                click_to_move: false
-            });
-            $("#container5").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: false,
-                move_with_handle_only: true,
-                click_to_move: false
-            });
-            $("#container6").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: false,
-                move_with_handle_only: true,
-                click_to_move: true
-            });
-            $("#container7").twentytwenty({
-                default_offset_pct: 0.5,
-                orientation: 'horizontal',
-                before_label: 'Antes',
-                after_label: 'Despues',
-                no_overlay: false,
-                move_slider_on_hover: true,
-                move_with_handle_only: false,
-                click_to_move: false
-            });
+          $(document).ready(function(){
+    $(".twentytwenty-container").each(function(){
+        $(this).twentytwenty({
+            default_offset_pct: 0.5,
+            orientation: 'horizontal',
+            before_label: 'Antes',
+            after_label: 'Después',
+            no_overlay: false,
+            move_slider_on_hover: true,
+            move_with_handle_only: false,
+            click_to_move: false
         });
+    });
+});
     </script>
 </body>
 </html>
