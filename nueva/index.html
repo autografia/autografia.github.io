@@ -119,17 +119,26 @@
     <script src="js/jquery.twentytwenty.js"></script>
     <script>
         $(document).ready(function(){
-            $(".twentytwenty-container").each(function(){
+            function initializeTwentyTwenty() {
+                var isMobile = $(window).width() <= 768; // Consideramos móvil si el ancho es menor o igual a 768px
+                $(".twentytwenty-container").each(function(){
                     $(this).twentytwenty({
                         default_offset_pct: 0.5,
                         orientation: 'horizontal',
                         before_label: 'Antes',
                         after_label: 'Después',
                         no_overlay: false,
-                        move_slider_on_hover: true,
-                        move_with_handle_only: false,
+                        move_slider_on_hover: isMobile, // Activar en móviles para evitar conflictos táctiles
+                        move_with_handle_only: !isMobile, // Desactivar en móviles para mejorar la usabilidad
                         click_to_move: true
                     });
+                });
+            }
+            initializeTwentyTwenty();
+
+            $(window).resize(function(){
+                $(".twentytwenty-container").children().not('img').remove();
+                initializeTwentyTwenty();
             });
         });
     </script>
