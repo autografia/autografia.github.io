@@ -84,6 +84,7 @@
     z-index: 0;
     overflow: hidden;
     position: relative;
+    border-radius: 2%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none; }
@@ -93,7 +94,8 @@
       top: 0;
       width: 100%; /* Asegura que las imágenes se ajusten al contenedor */
       height: auto; /* Mantiene la proporción de las imágenes */
-      display: block; }
+      display: block; 
+    }
     .twentytwenty-container.active .twentytwenty-overlay, .twentytwenty-container.active :hover.twentytwenty-overlay {
       background: rgba(0, 0, 0, 0); }
       .twentytwenty-container.active .twentytwenty-overlay .twentytwenty-before-label,
