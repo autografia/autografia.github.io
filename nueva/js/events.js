@@ -21,8 +21,8 @@ const events = [
     {
         id: '16nXnrLSontaTuWYg-cEnGd-NCQjkCeoy',
         name: 'Parole 2023',
-        thumbnail: '../fotos/parole_2023/DSC_5917-Editar.jpg',
-        additionalImages: ['../fotos/parole_2023/DSC_5924-Editar.jpg', '../fotos/parole_2023/DSC_5927-Editar.jpg', '../fotos/parole_2023/DSC_5930.jpg']
+        thumbnail: '../fotos/parole_2023/DSC_5917-Editar.webp',
+        additionalImages: ['../fotos/parole_2023/DSC_5924-Editar.webp', '../fotos/parole_2023/DSC_5927-Editar.webp', '../fotos/parole_2023/DSC_5930.webp']
     },
     {
         id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
@@ -33,8 +33,8 @@ const events = [
     {
         id: '1iuSsfUbP75EQMDuHuDHsz8pZ7kl0eJhA',
         name: 'Agost 2023',
-        thumbnail: '../fotos/agost_2023/DSC_3505.jpg',
-        additionalImages: ['../fotos/agost_2023/DSC_3489.jpg', '../fotos/agost_2023/DSC_3486.jpg', '../fotos/agost_2023/DSC_3481.jpg']
+        thumbnail: '../fotos/agost_2023/DSC_3505.webp',
+        additionalImages: ['../fotos/agost_2023/DSC_3489.webp', '../fotos/agost_2023/DSC_3486.webp', '../fotos/agost_2023/DSC_3481.webp']
     },
     {
         id: '1mfRnLZcKk7-I45zEFySJTL2lZ24cch1x',
@@ -45,8 +45,8 @@ const events = [
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
         name: 'R5 Bimotor',
-        thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.jpg',
-        additionalImages: ['../fotos/r5_bimotor/DSC_6237.jpg', '../fotos/r5_bimotor/DSC_6234.jpg', '../fotos/r5_bimotor/DSC_6250.jpg']
+        thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
+        additionalImages: ['../fotos/r5_bimotor/DSC_6237.webp', '../fotos/r5_bimotor/DSC_6234.webp', '../fotos/r5_bimotor/DSC_6250.webp']
     },
     {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
