@@ -84,7 +84,9 @@
     z-index: 0;
     overflow: hidden;
     position: relative;
-    border-radius: 2%;
+    transition: transform 0.2s;
+  	border-radius: 40px 2px;
+	  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none; }
