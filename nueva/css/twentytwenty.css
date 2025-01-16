@@ -84,6 +84,9 @@
     z-index: 0;
     overflow: hidden;
     position: relative;
+    transition: transform 0.2s;
+  	border-radius: 40px 2px;
+	  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none; }
@@ -93,7 +96,8 @@
       top: 0;
       width: 100%; /* Asegura que las imágenes se ajusten al contenedor */
       height: auto; /* Mantiene la proporción de las imágenes */
-      display: block; }
+      display: block; 
+    }
     .twentytwenty-container.active .twentytwenty-overlay, .twentytwenty-container.active :hover.twentytwenty-overlay {
       background: rgba(0, 0, 0, 0); }
       .twentytwenty-container.active .twentytwenty-overlay .twentytwenty-before-label,
