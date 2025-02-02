@@ -1,27 +1,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://autografia.github.io/</loc>
-      <lastmod>2023-04-26T09:30:00+00:00</lastmod>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>1.0</priority>
    </url>
       <url>
       <loc>https://autografia.github.io/index.html</loc>
-      <lastmod>2023-04-26T09:30:00+00:00</lastmod>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
+      <priority>1.0</priority>
+   </url>
+   </url>
+      <url>
+      <loc>https://autografia.github.io/galeria.html</loc>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://autografia.github.io/moralet2023.html</loc>
-      <lastmod>2023-07-24T09:30:00+00:00</lastmod>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://autografia.github.io/sanjuan2023.html</loc>
-      <lastmod>2023-07-24T09:30:00+00:00</lastmod>
+      <loc>https://autografia.github.io/sobre_mi.html</loc>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://autografia.github.io/contacto.html</loc>
-      <lastmod>2023-04-26T09:30:00+00:00</lastmod>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://autografia.github.io/rrss.html</loc>
+      <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>0.8/priority>
    </url>
 </urlset>
