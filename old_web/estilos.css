@@ -1,0 +1,388 @@
+
+#random-bar {
+  border: none;
+  height: 30px;
+  background-image: url("logos/icono.ico");
+  background-repeat: space;
+  background-size: auto 100%;
+  margin: 0.5%;
+}
+
+p{
+	margin: 2%
+}
+
+.hr{
+  margin:1%;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+ 
+.centrado {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+  } 
+  
+  
+  
+  
+@media (max-width: 919px) {
+  .mobile-logo {		
+	max-width: 70%;
+	max-height: 15%;
+  }
+}
+
+@media (min-width: 920px) {
+  .desktop-logo {
+	max-width: 20%;
+	max-height: 15%;
+  }
+}
+/* For best practice, move CSS below to an external CSS file. */
+@keyframes fadeinall {
+0% {
+  opacity: 1; }
+97% {
+  opacity: 0; }
+98% {
+  opacity: 0;
+  -webkit-transform: translateY(0);
+  transform: translateY(0); }
+100% {
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  z-index: -1; } 
+}
+  
+.gallery {
+  margin: 2%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 20px;
+}	  
+.photo {
+	position: relative;
+  cursor: pointer;
+}	  
+.photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.2s;
+  	border-radius: 40px 2px;
+  	max-height: 200px;
+	box-shadow: 1px 1px 10px 1px rgba(160, 160, 160, 1);
+	border: 2px solid #656464;
+}	  
+.photo:hover img {
+	transform: scale(1.05);
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  border-left: none;
+  border-right: none;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  display: flex !important;
+  width: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/*Boton cerrar*/
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+/*Boton descargar*/
+.download-button{
+  background-color: #1c1c1c;
+  border-color: #1c1c1c;
+  color: #fefefe;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 15px;  
+}
+
+/*
+.footer-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 40px 0 0 0;
+  border: 1px solid #ddd;
+}
+
+/*
+small{
+  background-color: black;
+  color: white;
+  border-radius: 40px 0;
+  margin: 2%;
+}
+footer{
+  margin: 0 10% 1% 1%;
+}*/
+
+
+.gg-software-download {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 16px;
+  height: 6px;
+  border: 2px solid;
+  border-top: 0;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin-top: 8px
+}
+.gg-software-download::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  left: 2px;
+  bottom: 4px
+}
+.gg-software-download::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+  left: 5px;
+  bottom: 5px
+}
+
+/*.div-fondo{
+  position: absolute;
+  z-index: -1;
+}
+
+.div-fondo:hover{
+  background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 255, 255) 17.8%, rgb(0, 0, 0) 100.2%);
+  filter: blur(15px);  
+}
+
+.div-fondo:active{
+  transform: scale(0.9) rotate(2deg);
+  background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 255, 255) 17.8%, rgb(0, 0, 0) 100.2%);
+  transition: 0.5s;
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 50px;
+}
+}*/
+/* --------------------------------------- */
+/* ----- Contact ----- */
+/* --------------------------------------- */
+
+.contact__info {
+    max-width: var(--container-medium-width);
+}
+
+/* --------------------------------------- */
+/* ----- Footer ----- */
+/* --------------------------------------- */
+
+.footer {
+    text-align: center;
+    padding: var(--gutter-medium) 0 var(--gutter-normal);
+    /*position:absolute;*/
+    position: absolute;
+    bottom:0;
+    width: 100%;
+}
+
+small {
+    float: right;
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-normal) 0;
+    list-style: none;
+}
+
+.footer__social-link-item:not(:last-of-type) {
+    margin-right: var(--gutter-small);
+}
+
+.footer__social-image {
+    height: 4rem;
+}
+
+@media(max-width: 500px) {
+    .footer {
+        padding: var(--gutter-medium) 0;
+    } 
+}
+
+/* --------------------------------------- */
+/* ----- Buttons and Links ----- */
+/* --------------------------------------- */
+
+a {
+    color: var(--white);
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    transition: all .2s;
+    outline: 2px solid transparent;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid var(--pink);
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) a:focus {
+    outline: none;
+}
+
+.link:hover {
+    color: var(--pink);
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4.2rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid  var(--pink);
+    font-weight: 400;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    background: var(--white);
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+    right: 0;
+    background: var(--pink);
+}
+
+.btn--pink {
+    background: var(--pink);
+    transition: all 0.2s;
+}
+
+.btn--pink::after {
+    display: none;
+}
+
+.btn--pink:hover,
+.btn--pink:focus {
+    background: transparent;
+}
+
+.link__text {
+    position: relative;
+    display: inline-block;
+    padding: .6rem;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--pink);
+}
+
+.link__text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    background: var(--white);
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.link__text:focus {
+    outline: none;
+}
+
+.link__text:hover::after,
+.link__text:focus:after {
+    right: 0;
+    background: var(--pink);
+}
+
+.link__text span {
+    padding-left: 1rem;
+    font-family: sans-serif;
+}
+
+.nav-icon {
+  max-width: 24px;
+  height: auto; 
+}
+
+.navbar{
+  background: linear-gradient(to top, #ffffff 25%, #e6e6e6 100%);
+}

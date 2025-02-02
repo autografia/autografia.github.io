@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /privado/
+Disallow: /old_web/
 Sitemap: https://autografia.github.io/sitemap.xml
