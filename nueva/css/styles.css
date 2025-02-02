@@ -3,6 +3,11 @@
     max-width: 1800px;
 }
 
+.img-fluid {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 .hidden {
     display: none !important;
 }
@@ -42,15 +47,15 @@
 }
 
 .card {
-    height: 100%; /* Asegura que las tarjetas sean del mismo tamaño */
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: transparent;
     display: flex;
     flex-direction: column;    
     justify-content: space-between;
     border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
-    border-width: 2px; /* Grosor del borde */
-    border-style: solid; /* Estilo del borde */
+    border-width: 2px;
+    border-style: solid;
 }
 
 .card-title {
@@ -60,8 +65,8 @@
     overflow: hidden; /* Oculta el texto que exceda el límite */
     text-overflow: ellipsis;
     text-align: center;
-    font-size: 1.2rem; /* Usamos rem para que el tamaño sea relativo */
-    line-height: 1.4; /* Ajusta el interlineado relativo */
+    font-size: 1.2rem;
+    line-height: 1.4;
     margin-bottom: 0.5rem;
 }
 
@@ -86,8 +91,8 @@
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s ease;
-    padding: 0.5rem 1rem; /* Reduce el padding relativo */
-    font-size: 1rem; /* Tamaño de fuente relativo */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
 }
 
@@ -116,7 +121,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%; /* Asegura que se mantenga dentro del contenedor */
+    max-width: 100%;
     border: none;
 }
 
@@ -135,44 +140,44 @@
 /*Ajustes para los dispositivos móviles y el iframe*/
 @media (max-width: 768px) {
     .iframe-container {
-        height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
-        overflow-y: auto; /* Permite desplazamiento vertical si el contenido es mayor */
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .iframe-container iframe {
-        height: calc(100vh - 56px); /* Calcula el 100% de la pantalla menos el espacio del botón o cualquier margen */
+        height: calc(100vh - 56px);
     }
     .card-body {
-        padding: 0.8rem 1rem; /* Ajusta el padding en móviles */
+        padding: 0.8rem 1rem;
     }
 
     .card-title {
-        font-size: 1.1rem; /* Ajusta el tamaño de la fuente para móviles */
-        margin-bottom: 0.3rem; /* Reduce el margen inferior en móviles */
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
     }
 
     .load-button {
-        padding: 0.4rem 0.8rem; /* Ajuste de padding para móviles */
-        font-size: 0.9rem; /* Ajuste de tamaño de la fuente en móviles */
-        margin-top: 0.4rem; /* Ajuste de margen superior para móviles */
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+        margin-top: 0.4rem;
     }
 }
 
 /* Ajustes para pantallas más grandes */
 @media (min-width: 1200px) {
     .card-body {
-        padding: 1.5rem 2rem; /* Ajusta el padding para pantallas grandes */
+        padding: 1.5rem 2rem;
     }
 
     .card-title {
-        font-size: 1.2rem; /* Aumenta el tamaño de la fuente en pantallas grandes */
+        font-size: 1.2rem;
         padding: 0;
         margin: 0;
     }
 
     .load-button {
-        padding: 0.6rem 1.2rem; /* Ajuste de padding para pantallas grandes */
-        font-size: 1.1rem; /* Ajuste de tamaño de fuente en pantallas grandes */
+        padding: 0.6rem 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -181,13 +186,13 @@
     /* Alineación de los botones del menú en modo móvil */
     #navbarNav .navbar-nav {
         flex-direction: row;
-        justify-content: space-between; /* Distribuye los botones en los extremos */
-        width: 100%; /* Asegura que ocupen todo el ancho */
+        justify-content: space-between;
+        width: 100%;
     }
     
     #navbarNav .nav-item {
-        flex: 1; /* Cada elemento toma la misma cantidad de espacio */
-        text-align: center; /* Centra el contenido dentro de cada elemento */
+        flex: 1;
+        text-align: center;
     }
 
     /* Alineación específica para el primer, segundo y tercer botón */
