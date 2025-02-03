@@ -5,13 +5,12 @@
       <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>1.0</priority>
    </url>
-      <url>
+   <url>
       <loc>https://autografia.github.io/index.html</loc>
       <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>1.0</priority>
    </url>
-   </url>
-      <url>
+   <url>
       <loc>https://autografia.github.io/galeria.html</loc>
       <lastmod>2025-02-02T09:30:00+00:00</lastmod>
       <priority>1.0</priority>
@@ -29,6 +28,6 @@
    <url>
       <loc>https://autografia.github.io/rrss.html</loc>
       <lastmod>2025-02-02T09:30:00+00:00</lastmod>
-      <priority>0.8/priority>
+      <priority>0.8</priority>
    </url>
 </urlset>
