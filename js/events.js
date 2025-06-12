@@ -3,8 +3,8 @@ const events = [
     {
         id: '1prrH7Yyla5tgAEz6LEJTPGxERwHyhs-8',
         name: 'Moralet 2025',
-        thumbnail: '../fotos/moralet_2025/_DSC9998.webp',
-        additionalImages: ['../fotos/moralet_2025/_DSC0031.webp', '../fotos/moralet_2025/_DSC0076.webp', '../fotos/moralet_2025/_DSC9985.webp']
+        thumbnail: '../fotos/moralet_2025/DSC9998.webp',
+        additionalImages: ['../fotos/moralet_2025/DSC0031.webp', '../fotos/moralet_2025/DSC0076.webp', '../fotos/moralet_2025/DSC9985.webp']
     },
     {
         id: '18jhjvxDmQPz950v4wpaghI78Zfl3DHUt',
