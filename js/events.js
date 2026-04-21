@@ -1,6 +1,12 @@
 // Datos de los eventos
 const events = [
     {
+        id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
+        name: 'ROOW 2025 🇩🇪',
+        thumbnail: '../fotos/volrace_gt_2022/baja_calidad/DSC_3043.webp',
+        additionalImages: ['../fotos/volrace_gt_2022/baja_calidad/DSC_2787.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2817.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2993.webp']
+    },
+    {
         id: '13AvmE6E4rN0vbE2jn8xKCrYkvRgJpseq',
         name: 'Hyundai i20N 🇩🇪',
         thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
