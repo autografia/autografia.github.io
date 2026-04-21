@@ -1,16 +1,22 @@
 // Datos de los eventos
 const events = [
     {
-        id: '10RfZw4ORIMHHEwTDULoxI6u_mU6Ib0Wa',
-        name: 'VW Polo GTI 🇩🇪',
+        id: '13AvmE6E4rN0vbE2jn8xKCrYkvRgJpseq',
+        name: 'Hyundai i20N 🇩🇪',
         thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
         additionalImages: ['../fotos/r5_bimotor/DSC_6237.webp', '../fotos/r5_bimotor/DSC_6234.webp', '../fotos/r5_bimotor/DSC_6250.webp']
     },
     {
+        id: '10RfZw4ORIMHHEwTDULoxI6u_mU6Ib0Wa',
+        name: 'VW Polo GTI 🇩🇪',
+        thumbnail: '../fotos/concentración_turron/baja_calidad/DSC_3169.webp',
+        additionalImages: ['../fotos/concentración_turron/baja_calidad/DSC_3205.webp', '../fotos/concentración_turron/baja_calidad/DSC_3207.webp', '../fotos/concentración_turron/baja_calidad/DSC_3209.webp']
+    },
+    {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
         name: 'Alfa Romeo MiTo QV🍀',
-        thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
-        additionalImages: ['../fotos/r5_bimotor/DSC_6237.webp', '../fotos/r5_bimotor/DSC_6234.webp', '../fotos/r5_bimotor/DSC_6250.webp']
+        thumbnail: '../fotos/agost_2023/DSC_3505.webp',
+        additionalImages: ['../fotos/agost_2023/DSC_3489.webp', '../fotos/agost_2023/DSC_3486.webp', '../fotos/agost_2023/DSC_3481.webp']
     },
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
