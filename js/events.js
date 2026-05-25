@@ -21,8 +21,8 @@ const events = [
     {
         id: '10RfZw4ORIMHHEwTDULoxI6u_mU6Ib0Wa',
         name: 'VW Polo GTI 🇩🇪',
-        thumbnail: '../fotos/concentración_turron/DSC_3169.webp',
-        additionalImages: ['../fotos/concentración_turron/DSC_3205.webp', '../fotos/concentración_turron/DSC_3207.webp', '../fotos/concentración_turron/DSC_3209.webp']
+        thumbnail: '../fotos/concentración_turron/DSC_8892-min.webp',
+        additionalImages: ['../fotos/concentración_turron/DSC_8886-min.webp', '../fotos/concentración_turron/DSC_8884-min.webp', '../fotos/concentración_turron/DSC_8876-min.webp', '../fotos/concentración_turron/DSC_8873-min.webp']
     },
     {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
