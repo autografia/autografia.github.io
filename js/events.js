@@ -35,6 +35,12 @@ const events = [
         name: 'Renault 5 Bimotor 🇫🇷',
         thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
         additionalImages: ['../fotos/r5_bimotor/DSC_6237.webp', '../fotos/r5_bimotor/DSC_6234.webp', '../fotos/r5_bimotor/DSC_6250.webp']
+    },    
+    {
+        id: '1rl4_9iDlHgb3Nbxrufaq9S--G6T9yi1Y',
+        name: 'Bonalba 2023 🚢',
+        thumbnail: '../fotos/bonalba2023/DSC_5759-min.webp',
+        additionalImages: ['../fotos/bonalba2023/DSC_5781-min.webp', '../fotos/bonalba2023/DSC_5758-min.webp', '../fotos/bonalba2023/DSC_5779-min.webp', '../fotos/bonalba2023/DSC_5756-min.webp']
     },
     {
         id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
