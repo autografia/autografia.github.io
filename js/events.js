@@ -43,6 +43,12 @@ const events = [
         additionalImages: ['../fotos/campello_enero_2023/DSC_3324-min.webp', '../fotos/campello_enero_2023/DSC_3319-min.webp', '../fotos/campello_enero_2023/DSC_3326-min.webp']
     },
     {
+        id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
+        name: 'San Juan 2023 🚢',
+        thumbnail: '../fotos/sanjuan2023/DSC_3314-min.webp',
+        additionalImages: ['../fotos/sanjuan2023/DSC_3324-min.webp', '../fotos/sanjuan2023/DSC_3319-min.webp', '../fotos/sanjuan2023/DSC_3326-min.webp']
+    },
+    {
         id: '1prrH7Yyla5tgAEz6LEJTPGxERwHyhs-8',
         name: 'Moralet 2025 ⛰️',
         thumbnail: '../fotos/moralet_2025/DSC9998.webp',
