@@ -1,5 +1,5 @@
 # ===== CAMBIA SOLO ESTO =====
-$RutaFotos="G:\entrada\Editadas"
+$RutaFotos="C:\Users\x\Downloads\x"
 # ============================
 
 $Cantidad=5
