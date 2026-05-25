@@ -45,8 +45,8 @@ const events = [
     {
         id: '18jhjvxDmQPz950v4wpaghI78Zfl3DHUt',
         name: 'Moralet 2024 ⛰️',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4809.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4947.webp', '../fotos/moralet2023/baja_calidad/DSC_4948.webp', '../fotos/moralet2023/baja_calidad/DSC_4950.webp']
+        thumbnail: '../fotos/moralet2023/DSC_4809.webp',
+        additionalImages: ['../fotos/moralet2023/DSC_4947.webp', '../fotos/moralet2023/DSC_4948.webp', '../fotos/moralet2023/DSC_4950.webp']
     },
    {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
