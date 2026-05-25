@@ -3,8 +3,8 @@ const events = [
     {
         id: '13gB73_dwR6pEtg6ScsvNqe04GoTumyOK',
         name: 'Moralet 2026 ⛰️',
-        thumbnail: '../fotos/moralet_2026/_DSC3141-min.webp',
-        additionalImages: ['../fotos/moralet_2026/_DSC3065-min.webp', '../fotos/moralet_2026/_DSC3114-min.webp', '../fotos/moralet_2026/_DSC3121-min.webp', '../fotos/moralet_2026/_DSC3141-min.webp', '../fotos/moralet_2026/_DSC3145-min.webp']
+        thumbnail: '../fotos/moralet_2026/DSC3141-min.webp',
+        additionalImages: ['../fotos/moralet_2026/DSC3065-min.webp', '../fotos/moralet_2026/DSC3114-min.webp', '../fotos/moralet_2026/DSC3121-min.webp', '../fotos/moralet_2026/DSC3141-min.webp', '../fotos/moralet_2026/DSC3145-min.webp']
     },
     {
         id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
@@ -27,8 +27,8 @@ const events = [
     {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
         name: 'Alfa Romeo MiTo QV🍀',
-        thumbnail: '../fotos/mito/_DSC0431-min.webp',
-        additionalImages: ['../fotos/mito/_DSC0417-min.webp', '../fotos/mito/_DSC0443-min.webp', '../fotos/mito/_DSC0418-min.webp', '../fotos/mito/_DSC0424-min.webp']
+        thumbnail: '../fotos/mito/DSC0431-min.webp',
+        additionalImages: ['../fotos/mito/DSC0417-min.webp', '../fotos/mito/DSC0443-min.webp', '../fotos/mito/DSC0418-min.webp', '../fotos/mito/DSC0424-min.webp']
     },
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
