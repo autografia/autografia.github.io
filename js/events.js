@@ -15,14 +15,14 @@ const events = [
     {
         id: '13AvmE6E4rN0vbE2jn8xKCrYkvRgJpseq',
         name: 'Hyundai i20N 🇩🇪',
-        thumbnail: '../fotos/r5_bimotor/DSC_6226-Editar.webp',
-        additionalImages: ['../fotos/r5_bimotor/DSC_6237.webp', '../fotos/r5_bimotor/DSC_6234.webp', '../fotos/r5_bimotor/DSC_6250.webp']
+        thumbnail: '../fotos/i20n/DSC2930-min.webp',
+        additionalImages: ['../fotos/i20n/DSC2937-min.webp', '../fotos/i20n/DSC2942-min.webp', '../fotos/i20n/DSC2944-min.webp', '../fotos/i20n/DSC2913-min.webp']
     },
     {
         id: '10RfZw4ORIMHHEwTDULoxI6u_mU6Ib0Wa',
         name: 'VW Polo GTI 🇩🇪',
-        thumbnail: '../fotos/concentración_turron/DSC_8892-min.webp',
-        additionalImages: ['../fotos/concentración_turron/DSC_8886-min.webp', '../fotos/concentración_turron/DSC_8884-min.webp', '../fotos/concentración_turron/DSC_8876-min.webp', '../fotos/concentración_turron/DSC_8873-min.webp']
+        thumbnail: '../fotos/polo/DSC_8892-min.webp',
+        additionalImages: ['../fotos/polo/DSC_8886-min.webp', '../fotos/polo/DSC_8884-min.webp', '../fotos/polo/DSC_8876-min.webp', '../fotos/polo/DSC_8873-min.webp']
     },
     {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
