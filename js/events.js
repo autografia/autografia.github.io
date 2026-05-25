@@ -27,8 +27,8 @@ const events = [
     {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
         name: 'Alfa Romeo MiTo QV🍀',
-        thumbnail: '../fotos/agost_2023/DSC_3505.webp',
-        additionalImages: ['../fotos/agost_2023/DSC_3489.webp', '../fotos/agost_2023/DSC_3486.webp', '../fotos/agost_2023/DSC_3481.webp']
+        thumbnail: '../fotos/mito/_DSC0431-min.webp',
+        additionalImages: ['../fotos/mito/_DSC0417-min.webp', '../fotos/mito/_DSC0443-min.webp', '../fotos/mito/_DSC0418-min.webp', '../fotos/mito/_DSC0424-min.webp']
     },
     {
         id: '1N8d3ekIVEBwqahrkDUrskilyWCyK1j4F',
