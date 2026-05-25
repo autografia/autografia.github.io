@@ -3,8 +3,8 @@ const events = [
     {
         id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
         name: 'ROOW 2025 🇩🇪',
-        thumbnail: '../fotos/volrace_gt_2022/baja_calidad/DSC_3043.webp',
-        additionalImages: ['../fotos/volrace_gt_2022/baja_calidad/DSC_2787.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2817.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2993.webp']
+        thumbnail: '../fotos/volrace_gt_2022/DSC_3043.webp',
+        additionalImages: ['../fotos/volrace_gt_2022/DSC_2787.webp', '../fotos/volrace_gt_2022/DSC_2817.webp', '../fotos/volrace_gt_2022/DSC_2993.webp']
     },
     {
         id: '13AvmE6E4rN0vbE2jn8xKCrYkvRgJpseq',
@@ -15,8 +15,8 @@ const events = [
     {
         id: '10RfZw4ORIMHHEwTDULoxI6u_mU6Ib0Wa',
         name: 'VW Polo GTI 🇩🇪',
-        thumbnail: '../fotos/concentración_turron/baja_calidad/DSC_3169.webp',
-        additionalImages: ['../fotos/concentración_turron/baja_calidad/DSC_3205.webp', '../fotos/concentración_turron/baja_calidad/DSC_3207.webp', '../fotos/concentración_turron/baja_calidad/DSC_3209.webp']
+        thumbnail: '../fotos/concentración_turron/DSC_3169.webp',
+        additionalImages: ['../fotos/concentración_turron/DSC_3205.webp', '../fotos/concentración_turron/DSC_3207.webp', '../fotos/concentración_turron/DSC_3209.webp']
     },
     {
         id: '1M6H-n2ykN5imWNBCexQ7DeGf-jWjStRN',
@@ -33,8 +33,8 @@ const events = [
     {
         id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
         name: 'Campello 2023 🚢',
-        thumbnail: '../fotos/campello_enero_2023/baja_calidad/DSC_3314-min.webp',
-        additionalImages: ['../fotos/campello_enero_2023/baja_calidad/DSC_3324-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3319-min.webp', '../fotos/campello_enero_2023/baja_calidad/DSC_3326-min.webp']
+        thumbnail: '../fotos/campello_enero_2023/DSC_3314-min.webp',
+        additionalImages: ['../fotos/campello_enero_2023/DSC_3324-min.webp', '../fotos/campello_enero_2023/DSC_3319-min.webp', '../fotos/campello_enero_2023/DSC_3326-min.webp']
     },
     {
         id: '1prrH7Yyla5tgAEz6LEJTPGxERwHyhs-8',
@@ -51,14 +51,14 @@ const events = [
    {
         id: '1VjWYrdKy_FZEZcRjfwqprrhEQcYlAwM4',
         name: 'Moralet 2023 ⛰️',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4946.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4911.webp', '../fotos/moralet2023/baja_calidad/DSC_4928.webp', '../fotos/moralet2023/baja_calidad/DSC_4818.webp']
+        thumbnail: '../fotos/moralet2023/DSC_4946.webp',
+        additionalImages: ['../fotos/moralet2023/DSC_4911.webp', '../fotos/moralet2023/DSC_4928.webp', '../fotos/moralet2023/DSC_4818.webp']
     },
     {
         id: '1mfRnLZcKk7-I45zEFySJTL2lZ24cch1x',
         name: 'Moralet 2022 ⛰️',
-        thumbnail: '../fotos/moralet2023/baja_calidad/DSC_4863.webp',
-        additionalImages: ['../fotos/moralet2023/baja_calidad/DSC_4904.webp', '../fotos/moralet2023/baja_calidad/DSC_4871.webp', '../fotos/moralet2023/baja_calidad/DSC_4651.webp']
+        thumbnail: '../fotos/moralet2023/DSC_4863.webp',
+        additionalImages: ['../fotos/moralet2023/DSC_4904.webp', '../fotos/moralet2023/DSC_4871.webp', '../fotos/moralet2023/DSC_4651.webp']
     },
     {
         id: '1iuSsfUbP75EQMDuHuDHsz8pZ7kl0eJhA',
@@ -69,14 +69,14 @@ const events = [
     {
         id: '1l4r7ORtNdcgr1y09Mmvgm-vB6EyR_Le0',
         name: 'Volrace 2022 🏎',
-        thumbnail: '../fotos/volrace_gt_2022/baja_calidad/DSC_3043.webp',
-        additionalImages: ['../fotos/volrace_gt_2022/baja_calidad/DSC_2787.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2817.webp', '../fotos/volrace_gt_2022/baja_calidad/DSC_2993.webp']
+        thumbnail: '../fotos/volrace_gt_2022/DSC_3043.webp',
+        additionalImages: ['../fotos/volrace_gt_2022/DSC_2787.webp', '../fotos/volrace_gt_2022/DSC_2817.webp', '../fotos/volrace_gt_2022/DSC_2993.webp']
     },
     {
         id: '1R_rfHmNFxYJ0ILO9EQ2WZV8lcttpQBor',
         name: 'Museo Turrón 🍫',
-        thumbnail: '../fotos/concentración_turron/baja_calidad/DSC_3169.webp',
-        additionalImages: ['../fotos/concentración_turron/baja_calidad/DSC_3205.webp', '../fotos/concentración_turron/baja_calidad/DSC_3207.webp', '../fotos/concentración_turron/baja_calidad/DSC_3209.webp']
+        thumbnail: '../fotos/concentración_turron/DSC_3169.webp',
+        additionalImages: ['../fotos/concentración_turron/DSC_3205.webp', '../fotos/concentración_turron/DSC_3207.webp', '../fotos/concentración_turron/DSC_3209.webp']
     },
     {
         id: '16nXnrLSontaTuWYg-cEnGd-NCQjkCeoy',
