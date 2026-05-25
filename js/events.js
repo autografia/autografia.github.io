@@ -4,7 +4,7 @@ const events = [
         id: '13gB73_dwR6pEtg6ScsvNqe04GoTumyOK',
         name: 'Moralet 2026 ⛰️',
         thumbnail: '../fotos/moralet_2026/DSC3141-min.webp',
-        additionalImages: ['../fotos/moralet_2026/DSC3065-min.webp', '../fotos/moralet_2026/DSC3114-min.webp', '../fotos/moralet_2026/DSC3121-min.webp', '../fotos/moralet_2026/DSC3141-min.webp', '../fotos/moralet_2026/DSC3145-min.webp']
+        additionalImages: ['../fotos/moralet_2026/DSC3065-min.webp', '../fotos/moralet_2026/DSC3114-min.webp', '../fotos/moralet_2026/DSC3121-min.webp', '../fotos/moralet_2026/DSC3145-min.webp']
     },
     {
         id: '1Ko2wYCYaBuL-nOJrozoHP5AuqNdmB7gh',        
