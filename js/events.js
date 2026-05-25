@@ -1,6 +1,12 @@
 // Datos de los eventos
 const events = [
     {
+        id: '13gB73_dwR6pEtg6ScsvNqe04GoTumyOK',
+        name: 'Moralet 2026 ⛰️',
+        thumbnail: '../fotos/moralet_2026/DSC_3043.webp',
+        additionalImages: ['../fotos/moralet_2026/_DSC3065-min.webp', '../fotos/moralet_2026/_DSC3114-min.webp', '../fotos/moralet_2026/_DSC3121-min.webp', '../fotos/moralet_2026/_DSC3141-min.webp', '../fotos/moralet_2026/_DSC3145-min.webp']
+    },
+    {
         id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
         name: 'ROOW 2025 🇩🇪',
         thumbnail: '../fotos/volrace_gt_2022/DSC_3043.webp',

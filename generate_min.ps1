@@ -1,14 +1,16 @@
 # ===== CAMBIA SOLO ESTO =====
-$RutaFotos="D:\Fotos\Moralet_2025"
+$RutaFotos="G:\entrada\Editadas"
 # ============================
 
 $Cantidad=5
 $Calidad=65
 $Resolucion="1366x768"
 
-$imagenes = Get-ChildItem $RutaFotos `
--Include *.jpg,*.jpeg,*.png `
--File
+$imagenes = Get-ChildItem $RutaFotos\* `
+    -File |
+    Where-Object {
+        $_.Extension -match "jpg|jpeg|png"
+    }
 
 if($imagenes.Count -lt $Cantidad){
     Write-Host "No hay suficientes fotos"
