@@ -7,6 +7,12 @@ const events = [
         additionalImages: ['../fotos/moralet_2026/DSC3065-min.webp', '../fotos/moralet_2026/DSC3114-min.webp', '../fotos/moralet_2026/DSC3121-min.webp', '../fotos/moralet_2026/DSC3141-min.webp', '../fotos/moralet_2026/DSC3145-min.webp']
     },
     {
+        id: '1Ko2wYCYaBuL-nOJrozoHP5AuqNdmB7gh',        
+        name: 'StormRiders 2026 ⛈️',
+        thumbnail: '../fotos/stormriders/DSC2879-min.webp',
+        additionalImages: ['../fotos/stormriders/DSC2891-min.webp', '../fotos/stormriders/DSC2895-min.webp', '../fotos/stormriders/DSC2873-min.webp', '../fotos/stormriders/DSC2862-min.webp']
+    },
+    {
         id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
         name: 'ROOW 2025 🇩🇪',
         thumbnail: '../fotos/roow/DSC1539-min.webp',
