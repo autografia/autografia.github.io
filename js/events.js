@@ -43,10 +43,10 @@ const events = [
         additionalImages: ['../fotos/campello_enero_2023/DSC_3324-min.webp', '../fotos/campello_enero_2023/DSC_3319-min.webp', '../fotos/campello_enero_2023/DSC_3326-min.webp']
     },
     {
-        id: '1VqhChzPFuS4EsTKncIkJu3SFyB2T5bqG',
+        id: '1EeSrLFb-9p1Bi59ej5eW2KK6jBGaVNK7',
         name: 'San Juan 2023 🚢',
-        thumbnail: '../fotos/sanjuan2023/DSC_3314-min.webp',
-        additionalImages: ['../fotos/sanjuan2023/DSC_3324-min.webp', '../fotos/sanjuan2023/DSC_3319-min.webp', '../fotos/sanjuan2023/DSC_3326-min.webp']
+        thumbnail: '../fotos/sanjuan2023/DSC_3633.webp',
+        additionalImages: ['../fotos/sanjuan2023/DSC_3643.webp', '../fotos/sanjuan2023/DSC_3640.webp', '../fotos/sanjuan2023/DSC_3638.webp', '../fotos/sanjuan2023/DSC_3640.webp']
     },
     {
         id: '1prrH7Yyla5tgAEz6LEJTPGxERwHyhs-8',
