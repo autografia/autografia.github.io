@@ -14,13 +14,13 @@ const events = [
     },
     {
         id: '1NCM_x1WBC1CDQRfhSdX1jXHosJ5S3Ssp',
-        name: 'ROOW 2025 🇩🇪',
+        name: 'ROOW 2025 🏎️',
         thumbnail: '../fotos/roow/DSC1539-min.webp',
         additionalImages: ['../fotos/roow/DSC1544-min.webp', '../fotos/roow/DSC1557-min.webp', '../fotos/roow/DSC1587-min.webp', '../fotos/roow/DSC1610-min.webp']
     },
     {
         id: '13AvmE6E4rN0vbE2jn8xKCrYkvRgJpseq',
-        name: 'Hyundai i20N 🇩🇪',
+        name: 'Hyundai i20N 🇰🇷',
         thumbnail: '../fotos/i20n/DSC2930-min.webp',
         additionalImages: ['../fotos/i20n/DSC2937-min.webp', '../fotos/i20n/DSC2942-min.webp', '../fotos/i20n/DSC2944-min.webp', '../fotos/i20n/DSC2913-min.webp']
     },
