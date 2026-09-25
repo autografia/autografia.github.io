@@ -1,6 +1,12 @@
 // Datos de los eventos
 const events = [
     {
+        id: '1Q6dZRGxkwbbsFxMN3YbyPV-LiIkNoA7c',
+        name: 'Renault Fuego Turbo 🔥',
+        thumbnail: '../fotos/renault_fuego_turbo/DSC3465.webp',
+        additionalImages: ['../fotos/renault_fuego_turbo/DSC3488.webp', '../fotos/renault_fuego_turbo/DSC3495.webp', '../fotos/renault_fuego_turbo/DSC3462.webp', '../fotos/renault_fuego_turbo/DSC3491.webp']
+    },
+    {
         id: '13gB73_dwR6pEtg6ScsvNqe04GoTumyOK',
         name: 'Moralet 2026 ⛰️',
         thumbnail: '../fotos/moralet_2026/DSC3141-min.webp',
