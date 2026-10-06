@@ -7,7 +7,7 @@ const events = [
         additionalImages: ['../fotos/renault_fuego_turbo/DSC3488.webp', '../fotos/renault_fuego_turbo/DSC3495.webp', '../fotos/renault_fuego_turbo/DSC3462.webp', '../fotos/renault_fuego_turbo/DSC3491.webp']
     },
     {
-        id: '13gB73_dwR6pEtg6ScsvNqe04GoTumyOK',
+        id: '17UARhyOlADeAABNXBT4kAN-eM6kFw3k1',
         name: 'Moralet 2026 ⛰️',
         thumbnail: '../fotos/moralet_2026/DSC3141-min.webp',
         additionalImages: ['../fotos/moralet_2026/DSC3065-min.webp', '../fotos/moralet_2026/DSC3114-min.webp', '../fotos/moralet_2026/DSC3121-min.webp', '../fotos/moralet_2026/DSC3145-min.webp']
@@ -66,14 +66,14 @@ const events = [
         thumbnail: '../fotos/sanjuan2023/DSC_3633.webp',
         additionalImages: ['../fotos/sanjuan2023/DSC_3643.webp', '../fotos/sanjuan2023/DSC_3640.webp', '../fotos/sanjuan2023/DSC_3638.webp', '../fotos/sanjuan2023/DSC_3640.webp']
     },
-    {
-        id: '1prrH7Yyla5tgAEz6LEJTPGxERwHyhs-8',
+    { 
+        id: '1odB5k_7tVcSYzZPfrt4SI4fPYO_6etwX',
         name: 'Moralet 2025 ⛰️',
         thumbnail: '../fotos/moralet_2025/DSC9998.webp',
         additionalImages: ['../fotos/moralet_2025/DSC0031.webp', '../fotos/moralet_2025/DSC0076.webp', '../fotos/moralet_2025/DSC9985.webp']
     },
     {
-        id: '18jhjvxDmQPz950v4wpaghI78Zfl3DHUt',
+        id: '1T8Ue_0c2sIL0qtLeteV_9I9hn5K3j1Qw',
         name: 'Moralet 2024 ⛰️',
         thumbnail: '../fotos/moralet2023/DSC_4809.webp',
         additionalImages: ['../fotos/moralet2023/DSC_4947.webp', '../fotos/moralet2023/DSC_4948.webp', '../fotos/moralet2023/DSC_4950.webp']
