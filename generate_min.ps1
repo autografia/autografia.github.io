@@ -1,5 +1,5 @@
 # ===== CAMBIA SOLO ESTO =====
-$RutaFotos="C:\Users\x\Downloads\x"
+$RutaFotos="G:\Cars&coffee\Editadas"
 # ============================
 
 $Cantidad=5
@@ -29,31 +29,49 @@ $eventosEncontrados = [regex]::Matches($contenidoEventos, "name:\s*'([^']*)'")
 $carpetaEvento = $null
 $nombreEvento = $null
 
+$coincidencias = @()
 foreach($segmento in ($RutaFotos -split '[\\/]')) {
+    $nSegmento = Normalizar-Nombre $segmento
+    if($nSegmento.Length -lt 3) { continue }
+
     foreach($eventoEncontrado in $eventosEncontrados) {
         $nombre = $eventoEncontrado.Groups[1].Value
-        if((Normalizar-Nombre $segmento) -eq (Normalizar-Nombre $nombre)) {
-            $carpetaEvento = $segmento
-            $nombreEvento = $nombre
-            break
-        }
-    }
+        $nNombre = Normalizar-Nombre $nombre
 
-    if($carpetaEvento) {
-        break
+        if($nNombre -eq $nSegmento) {
+            $coincidencias += [pscustomobject]@{ Segmento=$segmento; Nombre=$nombre; Prioridad=0 }
+        }
+        elseif($nNombre.StartsWith($nSegmento)) {
+            $coincidencias += [pscustomobject]@{ Segmento=$segmento; Nombre=$nombre; Prioridad=1 }
+        }
     }
 }
 
-if(-not $carpetaEvento) {
+$mejorCoincidencia = $coincidencias | Where-Object { $_.Prioridad -eq 0 } | Select-Object -First 1
+if(-not $mejorCoincidencia) {
+    $mejorCoincidencia = $coincidencias | Select-Object -First 1
+}
+
+if(-not $mejorCoincidencia) {
     Write-Error "No se ha encontrado un evento para la carpeta de $RutaFotos"
     exit 1
 }
 
+$carpetaEvento = $mejorCoincidencia.Segmento
+$nombreEvento = $mejorCoincidencia.Nombre
+Write-Host "Evento detectado: $nombreEvento (carpeta origen: $carpetaEvento)"
+
+$nCarpetaEvento = Normalizar-Nombre $carpetaEvento
+
 $carpetaWeb = Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot "fotos") -Directory -ErrorAction SilentlyContinue |
-    Where-Object {
-        (Normalizar-Nombre $_.Name) -eq (Normalizar-Nombre $carpetaEvento)
-    } |
+    Where-Object { (Normalizar-Nombre $_.Name) -eq $nCarpetaEvento } |
     Select-Object -First 1 -ExpandProperty Name
+
+if(-not $carpetaWeb) {
+    $carpetaWeb = Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot "fotos") -Directory -ErrorAction SilentlyContinue |
+        Where-Object { (Normalizar-Nombre $_.Name).StartsWith($nCarpetaEvento) } |
+        Select-Object -First 1 -ExpandProperty Name
+}
 
 if(-not $carpetaWeb) {
     $carpetaWeb = $carpetaEvento.ToLowerInvariant()

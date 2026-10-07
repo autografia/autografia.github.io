@@ -1,6 +1,12 @@
 // Datos de los eventos
 const events = [
     {
+        id: '1lRrUJLc6Rvli0wXyBfFzgG3dGNBLfxBZ',
+        name: 'Cars & Coffee Murcia 2025 🚗',
+        thumbnail: '../fotos/cars&coffee2025/DSC9951.webp',
+        additionalImages: ['../fotos/cars&coffee2025/DSC9974.webp', '../fotos/cars&coffee2025/DSC9887.webp', '../fotos/cars&coffee2025/DSC9893.webp', '../fotos/cars&coffee2025/DSC9969.webp']
+    },
+    {
         id: '1Q6dZRGxkwbbsFxMN3YbyPV-LiIkNoA7c',
         name: 'Renault Fuego Turbo 🔥',
         thumbnail: '../fotos/renault_fuego_turbo/DSC3465.webp',
