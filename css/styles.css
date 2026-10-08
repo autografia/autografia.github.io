@@ -18,6 +18,29 @@
     z-index: 10;
 }
 
+/* El logo queda centrado y sin hueco dentro de su contenedor,
+   sea el grande (banner) o el simple (cuadrado) */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex-shrink: 0; /* el menú abierto no debe comprimir el logo */
+}
+
+.navbar-brand .logo {
+    display: block;
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease; /* fundido al cambiar de logo */
+}
+
+/* Mientras se intercambia el logo (menú móvil) se desvanece */
+.logo-cambiando {
+    opacity: 0;
+}
+
 .iconos{
     width: 3%;
 }
@@ -141,11 +164,13 @@
 @media (max-width: 768px) {
     .iframe-container {
         height: 100vh;
+        height: 100dvh; /* viewport dinámico (barra del navegador móvil) */
         overflow-y: auto;
     }
 
     .iframe-container iframe {
         height: calc(100vh - 56px);
+        height: calc(100dvh - 56px);
     }
     .card-body {
         padding: 0.8rem 1rem;
@@ -182,37 +207,354 @@
 }
 
 /*Ajuste para menu en moviles*/
-@media (max-width: 992px) {
-    /* Alineación de los botones del menú en modo móvil */
+@media (max-width: 991.98px) {
+    /* El menú desplegable aparece AL LADO del botón hamburguesa
+       (entre el logo y el botón), en vez de debajo */
+    .navbar .container-fluid {
+        flex-wrap: nowrap; /* una sola fila: logo + menú + hamburguesa */
+        align-items: center;
+    }
+
+    #navbarNav {
+        order: 1; /* después del logo, antes de la hamburguesa */
+        flex-basis: 0; /* el ancho sale del reparto, no del contenido: sin doble
+                          cálculo al abrir (evita que la barra salte de altura) */
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 0;
+        transition: none; /* sin animación de altura propia del colapso */
+    }
+
+    #navbarNav.collapse.show {
+        display: flex; /* al abrir, se muestra como fila al lado del botón */
+    }
+
+    /* Al abrir el menú el ancho del logo pasa a 40px DE INMEDIATO (clase
+       puesta en el clic): si esperara al fundido (160ms) el logo grande
+       seguiría ocupando 222px y el menú se quedaría sin sitio (salto de
+       altura). El grande se recorta mientras se funde (object-fit: contain). */
+    #navbar.menu-abierto .navbar-brand {
+        width: 40px;
+        height: 40px;
+    }
+
+    #navbar.menu-abierto .navbar-brand .logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .navbar-toggler {
+        order: 2;
+        margin-left: 0.5rem;
+    }
+
+    /* La hamburguesa rota suavemente al abrir/cerrar */
+    .navbar-toggler .navbar-toggler-icon {
+        transition: transform 0.25s ease;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        transform: rotate(90deg);
+    }
+
+    /* Los botones del menú entran escalonados al pulsar la hamburguesa */
+    #navbarNav .nav-item {
+        flex: 0 1 auto;
+        text-align: center;
+        opacity: 0;
+    }
+
+    #navbarNav.show {
+        animation: aparecerMenu 0.28s ease;
+        align-items: center; /* el menú queda verticalmente en medio */
+    }
+
+    #navbarNav.show .nav-item {
+        animation: subirItem 0.3s ease forwards;
+    }
+
+    #navbarNav.show .nav-item:nth-child(1) { animation-delay: 0.04s; }
+    #navbarNav.show .nav-item:nth-child(2) { animation-delay: 0.09s; }
+    #navbarNav.show .nav-item:nth-child(3) { animation-delay: 0.14s; }
+    #navbarNav.show .nav-item:nth-child(4) { animation-delay: 0.19s; }
+    #navbarNav.show .nav-item:nth-child(5) { animation-delay: 0.24s; }
+    #navbarNav.show .nav-item:nth-child(6) { animation-delay: 0.29s; }
+
+    /* Botones del menú en fila con aire entre ellos; si no caben,
+       fluyen a una segunda fila. Cada fila aprovecha todo el ancho
+       disponible (sin huecos a la izquierda) */
     #navbarNav .navbar-nav {
         flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 0.3rem 0.6rem;
+        margin: 0;
+        width: 100%; /* el menú aprovecha todo el hueco entre logo y botón */
+        align-content: center; /* si sobra hueco vertical, las filas van al centro */
+        align-items: center;
     }
-    
+
     #navbarNav .nav-item {
-        flex: 1;
+        flex: 0 1 auto;
         text-align: center;
     }
 
-    /* Alineación específica para el primer, segundo y tercer botón */
-    #navbarNav .nav-item:nth-child(1) {
-        text-align: left;
+    /* Separación interior en los enlaces para que no se toquen las letras */
+    #navbarNav .nav-link {
+        padding: 0.4rem 0.45rem;
+        line-height: 1.2;
+        font-size: 0.95rem;
     }
 
-    #navbarNav .nav-item:nth-child(2) {
-        text-align: left;
+    /* El botón del tema (luna/sol) con la misma separación */
+    #navbarNav .btn.btn-link {
+        padding: 0.4rem 0.45rem;
+    }
+}
+
+/* Animaciones del menú móvil y del logo */
+@keyframes aparecerMenu {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes subirItem {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Rejilla de fotos del álbum + cabecera
+   ============================================================ */
+/* La cabecera sticky arranca justo bajo la navbar: anular el margen
+   superior del contenedor (my-4, con !important de Bootstrap) */
+#photoPanel.container {
+    margin-top: 0 !important;
+}
+
+.album-header {
+    position: sticky;
+    top: var(--nav-h, 0px); /* por debajo de la navbar */
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* el título se recorta con "..." en vez de saltar de línea */
+    gap: 0.75rem;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Los botones no se encogen: el que se ajusta es el título */
+.album-header .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.album-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* En móvil el botón de Drive se muestra solo con el icono, para dejar
+   más hueco a las fotos; el texto queda reservado para pantallas grandes. */
+@media (max-width: 575.98px) {
+    #openDrive .drive-label {
+        display: none;
+    }
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* móvil: 2 fotos por fila, más grandes */
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.photo-item {
+    position: relative;
+    aspect-ratio: 1 / 1; /* cuadrada en móvil */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    cursor: zoom-in;
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.75rem 0.1rem 0.75rem 0.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.5s ease;
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.photo-item:focus-visible {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+
+
+@media (min-width: 576px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
     }
 
-    #navbarNav .nav-item:nth-child(3) {
-        text-align: center;
+    .photo-item {
+        aspect-ratio: 3 / 2; /* apaisada en pantallas medianas */
+    }
+}
+
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .photo-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .photo-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* ============================================================
+   Lightbox (visor de fotos a pantalla completa)
+   ============================================================ */
+#photoLightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(10, 10, 10, 0.94);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    touch-action: pan-y; /* deja pasar el swipe horizontal */
+}
+
+#photoLightbox.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#photoLightbox .lb-img {
+    max-width: 100%;
+    max-height: 100vh;
+    max-height: 100dvh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lb-btn {
+    position: absolute;
+    z-index: 1001;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lb-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.08);
+}
+
+.lb-close {
+    top: 0.75rem;
+    right: 0.75rem;
+}
+
+.lb-prev {
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lb-next {
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lb-prev:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lb-next:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lb-counter {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem 0.9rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+    .lb-prev,
+    .lb-next {
+        top: auto;
+        bottom: 0.75rem;
+        transform: none;
     }
 
-    #navbarNav .nav-item:nth-child(4) {
-        text-align: right;
+    .lb-prev:hover,
+    .lb-next:hover {
+        transform: scale(1.08);
     }
 
-    #navbarNav .nav-item:nth-child(5) {
-        text-align: right;
+    .lb-counter {
+        bottom: 0.85rem;
+        font-size: 0.8rem;
     }
 }

@@ -86,8 +86,30 @@
 }
 
 /* Transición suave para cambio de tema */
-body, .navbar, .card, .iframe-container {
-    transition: background-color 0.5s ease, color 0.5s ease;
+body, .navbar, .card, .iframe-container, .album-header, .photo-item {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Cabecera del álbum: fondo opaco por tema (queda fija bajo la navbar) */
+.light-theme .album-header {
+    background-color: #fff8f1;
+    border-bottom-color: #d44838;
+    color: #2c3e50;
+}
+
+.dark-theme .album-header {
+    background-color: #2c3e50;
+    border-bottom-color: #3498db;
+    color: #ecf0f1;
+}
+
+/* Borde de las fotos de la rejilla por tema */
+.light-theme .photo-item {
+    border-color: #d44838;
+}
+
+.dark-theme .photo-item {
+    border-color: #3498db;
 }
 
 /* Animación de cambio de tema */
@@ -115,23 +137,13 @@ body, .navbar, .card, .iframe-container {
 }
 
 .light-theme .gradient-custom {
-    /* fallback for old browsers */
     background: #ff9a9e;
-  
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(255,154,158,0.5), rgba(250,208,196,0.5));
-  
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(255,154,158,0.5), rgba(250,208,196,0.5))
+    background: -webkit-linear-gradient(to right, rgb(255,154,158), rgb(250,208,196));
+    background: linear-gradient(to right, rgb(255,154,158), rgb(250,208,196));
   }
 
 .dark-theme .gradient-custom {
-        /* fallback for old browsers */
         background: #89f7fe;
-      
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right, rgba(102,166,255,0.5), rgba(137,247,254,0.5));
-      
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, rgba(102,166,255,0.5), rgba(137,247,254,0.5))
+        background: -webkit-linear-gradient(to right, rgb(102,166,255), rgb(137,247,254));
+        background: linear-gradient(to right, rgb(102,166,255), rgb(137,247,254))
       }
