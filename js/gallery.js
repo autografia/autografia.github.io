@@ -17,6 +17,13 @@ let carouselInterval = null;
 let scrollGuardado = 0;
 let albumAbierto = false;
 
+// Estado del carrusel móvil
+let mobileCarouselState = new Map(); // card -> { pos, touchTimer, observer }
+
+// Configuración carrusel móvil (ahora SOLO por swipe, sin auto-play)
+let prioritizedCard = null;                // Tarjeta con prioridad exclusiva por toque
+let priorityTimeout = null;                // Timer para volver a modo normal
+
 const puedeHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 function idsDeEvento(index) {
@@ -25,12 +32,15 @@ function idsDeEvento(index) {
     return drivePhotos[evento.id].split(',').filter(Boolean);
 }
 
-// ---- Carrusel de miniaturas al pasar el ratón (solo dispositivos con ratón) ----
-let carouselCard = null;
+// ============================================================
+// Carrusel: Swipe (móvil) + Arrastre (desktop) + Click en flechas + Hover (desktop)
+// ============================================================
+const SWIPE_THRESHOLD = 50;           // px mínimos para considerar swipe/drag
+const RESUME_DELAY = 2000;            // ms antes de liberar prioridad tras soltar
+const HOVER_DELAY = 300;              // ms antes de activar carrusel por hover
+const DRAG_FEEDBACK_FACTOR = 0.15;    // factor de movimiento visual durante arrastre
 
 function startCarousel(card) {
-    if (!puedeHover()) return;
-    if (carouselCard === card && carouselInterval) return; // ya está girando esta tarjeta
     const index = Number(card.getAttribute('data-index'));
     const images = events[index].additionalImages;
     if (!images || images.length < 2) return;
@@ -40,24 +50,180 @@ function startCarousel(card) {
         imgElement.setAttribute('data-original-src', imgElement.src);
     }
 
-    stopCarousel();
+    // Si ya hay un carrusel en esta tarjeta, no hacer nada
+    if (mobileCarouselState.has(card)) return;
+
     let pos = 0;
-    carouselCard = card;
-    carouselInterval = setInterval(() => {
-        pos = (pos + 1) % images.length;
+    let startX = null;
+    let isDragging = false;
+    let hoverTimer = null;
+    let isHoverActive = false;
+
+    const cycle = (direction) => {
+        // direction: 1 = siguiente, -1 = anterior
+        pos = (pos + direction + images.length) % images.length;
         imgElement.src = images[pos];
-    }, 1000);
+    };
+
+    const stop = () => {
+        imgElement.src = imgElement.getAttribute('data-original-src');
+        imgElement.style.transform = '';
+        imgElement.style.transition = '';
+        // Remover listeners
+        card.removeEventListener('pointerdown', onPointerDown);
+        card.removeEventListener('pointermove', onPointerMove);
+        card.removeEventListener('pointerup', onPointerUp);
+        card.removeEventListener('pointerleave', onPointerUp);
+        card.removeEventListener('pointercancel', onPointerUp);
+        card.removeEventListener('mouseenter', onMouseEnter);
+        card.removeEventListener('mouseleave', onMouseLeave);
+        // Remover click en flechas
+        const arrows = card.querySelectorAll('.swipe-arrow');
+        arrows.forEach(arrow => arrow.removeEventListener('click', onArrowClick));
+        mobileCarouselState.delete(card);
+    };
+
+    // Click en flechas (next/prev)
+    const onArrowClick = (e) => {
+        e.stopPropagation(); // Evitar que se abra el álbum
+        const isNext = e.currentTarget.classList.contains('next');
+        cycle(isNext ? 1 : -1);
+    };
+
+    // Hover en desktop para activar carrusel automático
+    const onMouseEnter = () => {
+        if (isHoverActive) return;
+        hoverTimer = setTimeout(() => {
+            isHoverActive = true;
+            startHoverCarousel();
+        }, HOVER_DELAY);
+    };
+
+    const onMouseLeave = () => {
+        if (hoverTimer) clearTimeout(hoverTimer);
+        if (isHoverActive) {
+            isHoverActive = false;
+            stopHoverCarousel();
+        }
+    };
+
+    let hoverInterval = null;
+    const startHoverCarousel = () => {
+        if (hoverInterval) return;
+        hoverInterval = setInterval(() => cycle(1), 1000);
+    };
+    const stopHoverCarousel = () => {
+        if (hoverInterval) clearInterval(hoverInterval);
+        hoverInterval = null;
+    };
+
+    const onPointerDown = (e) => {
+        // Ignorar si el click fue en una flecha (se maneja aparte)
+        if (e.target.closest('.swipe-arrow')) return;
+        
+        // Parar hover carousel si está activo
+        if (isHoverActive) {
+            stopHoverCarousel();
+            isHoverActive = false;
+        }
+        
+        // Ganar prioridad exclusiva
+        if (prioritizedCard !== card) {
+            mobileCarouselState.forEach((_, otherCard) => {
+                if (otherCard !== card) stopCarousel(otherCard);
+            });
+            prioritizedCard = card;
+            if (priorityTimeout) clearTimeout(priorityTimeout);
+        }
+        startX = e.clientX;
+        isDragging = true;
+        // Preparar feedback visual
+        imgElement.style.transition = 'transform 0.1s ease-out';
+        // Capturar puntero para seguir recibiendo eventos aunque salga de la tarjeta
+        card.setPointerCapture(e.pointerId);
+    };
+
+    const onPointerMove = (e) => {
+        if (!isDragging || startX === null) return;
+        const delta = e.clientX - startX;
+        // Feedback visual: mover imagen ligeramente en dirección del arrastre
+        const moveX = delta * DRAG_FEEDBACK_FACTOR;
+        imgElement.style.transform = `translateX(${moveX}px)`;
+    };
+
+    const onPointerUp = (e) => {
+        if (!isDragging || startX === null) return;
+        isDragging = false;
+        const delta = e.clientX - startX;
+        startX = null;
+        card.releasePointerCapture(e.pointerId);
+
+        // Restaurar posición con animación suave
+        imgElement.style.transition = 'transform 0.2s ease-out';
+        imgElement.style.transform = 'translateX(0)';
+
+        if (Math.abs(delta) >= SWIPE_THRESHOLD) {
+            // Swipe/drag detectado: avanzar/retroceder
+            cycle(delta < 0 ? 1 : -1); // arrastrar izquierda = siguiente
+        }
+        // Mantener prioridad un tiempo tras soltar
+        if (priorityTimeout) clearTimeout(priorityTimeout);
+        priorityTimeout = setTimeout(() => {
+            prioritizedCard = null;
+        }, RESUME_DELAY);
+    };
+
+    // Registrar listeners de pointer (funciona para mouse + touch + pen)
+    card.addEventListener('pointerdown', onPointerDown);
+    card.addEventListener('pointermove', onPointerMove);
+    card.addEventListener('pointerup', onPointerUp);
+    card.addEventListener('pointerleave', onPointerUp);
+    card.addEventListener('pointercancel', onPointerUp);
+
+    // Hover listeners (solo desktop con ratón fino)
+    card.addEventListener('mouseenter', onMouseEnter);
+    card.addEventListener('mouseleave', onMouseLeave);
+
+    // Click en flechas
+    const arrows = card.querySelectorAll('.swipe-arrow');
+    arrows.forEach(arrow => arrow.addEventListener('click', onArrowClick));
+
+    mobileCarouselState.set(card, { pos, stop });
 }
 
-function stopCarousel() {
-    carouselCard = null;
-    if (!carouselInterval) return;
-    clearInterval(carouselInterval);
-    carouselInterval = null;
+// Observer para activar/desactivar carrusel según visibilidad
+function initCarouselObserver() {
+    if (!('IntersectionObserver' in window)) return; // fallback silencioso
 
-    document.querySelectorAll('.card img[data-original-src]').forEach(img => {
-        img.src = img.getAttribute('data-original-src');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const card = entry.target;
+            if (entry.isIntersecting) {
+                startCarousel(card);
+            } else {
+                stopCarousel(card);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0]
     });
+
+    // Observar todas las tarjetas actuales y futuras
+    document.querySelectorAll('.card[data-index]').forEach(card => observer.observe(card));
+
+    window.__carouselObserver = observer;
+}
+
+function stopCarousel(card) {
+    const state = mobileCarouselState.get(card);
+    if (!state) return;
+    state.stop();
+    if (prioritizedCard === card) {
+        prioritizedCard = null;
+        if (priorityTimeout) clearTimeout(priorityTimeout);
+    }
 }
 
 // ---- Altura de la cabecera del álbum (para el sticky bajo/a la navbar) ----
@@ -93,7 +259,10 @@ function openAlbum(index) {
         return;
     }
 
-    stopCarousel();
+    // Detener carrusel de la tarjeta clicada
+    const card = document.querySelector(`.card[data-index="${index}"]`);
+    if (card) stopCarousel(card);
+    
     scrollGuardado = window.scrollY;
     albumAbierto = true;
     actualizarNavHeight();
@@ -157,9 +326,19 @@ function renderGaleria() {
     events.forEach((event, index) => {
         const col = document.createElement('div');
         col.className = 'col-6 col-md-4 col-lg-2';
+        const hasAdditional = event.additionalImages && event.additionalImages.length > 0;
         col.innerHTML = `
             <div class="card event-container" data-index="${index}">
-                <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}" loading="lazy">
+                <div class="card-img-wrapper">
+                    <img src="${event.thumbnail}" class="card-img-top" alt="${event.name}" loading="lazy">
+                    ${hasAdditional ? `
+                        <div class="swipe-indicator" aria-hidden="true">
+                            <div class="swipe-arrow next"></div>
+                            <div class="swipe-dot"></div>
+                            <div class="swipe-arrow prev"></div>
+                        </div>
+                    ` : ''}
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">${event.name}</h5>
                     <button class="btn btn-primary load-button bi-camera-fill" type="button">&nbsp;Ver Fotos</button>
@@ -184,15 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
         openAlbum(Number(card.getAttribute('data-index')));
     });
 
-    // Carrusel de miniaturas al pasar el ratón (solo si hay ratón)
-    eventosContainer.addEventListener('mouseenter', (event) => {
-        const card = event.target.closest('.card');
-        if (card) startCarousel(card);
-    }, true);
-    eventosContainer.addEventListener('mouseleave', (event) => {
-        const card = event.target.closest('.card');
-        if (card && !card.contains(event.relatedTarget)) stopCarousel();
-    }, true);
+    // Inicializar carrusel (IntersectionObserver) - el hover se gestiona internamente
+    initCarouselObserver();
 
     backButtonPanel.addEventListener('click', closeAlbum);
 

@@ -27,6 +27,7 @@
             <button class="lb-btn lb-close bi-x-lg" type="button" aria-label="Cerrar"></button>
             <button class="lb-btn lb-prev bi-chevron-left" type="button" aria-label="Foto anterior"></button>
             <button class="lb-btn lb-next bi-chevron-right" type="button" aria-label="Foto siguiente"></button>
+            <button class="lb-btn lb-download bi-download" type="button" aria-label="Descargar foto"></button>
             <img class="lb-img" alt="Foto del álbum">
             <div class="lb-counter" aria-live="polite"></div>
         `;
@@ -38,18 +39,20 @@
         overlay.querySelector('.lb-close').addEventListener('click', cerrar);
         overlay.querySelector('.lb-prev').addEventListener('click', anterior);
         overlay.querySelector('.lb-next').addEventListener('click', siguiente);
+        overlay.querySelector('.lb-download').addEventListener('click', descargarFotoActual);
 
         // Clic fuera de la imagen -> cerrar
         overlay.addEventListener('click', (e) => {
             if (e.target === overlay) cerrar();
         });
 
-        // Teclado: ← / → / Esc (solo mientras el visor está abierto)
+        // Teclado: ← / → / Esc / D (descargar)
         document.addEventListener('keydown', (e) => {
             if (!overlay || !overlay.classList.contains('open')) return;
             if (e.key === 'Escape') { cerrar(); }
             else if (e.key === 'ArrowLeft') { e.preventDefault(); anterior(); }
             else if (e.key === 'ArrowRight') { e.preventDefault(); siguiente(); }
+            else if (e.key === 'd' || e.key === 'D') { e.preventDefault(); descargarFotoActual(); }
         });
 
         // Deslizar el dedo en móvil
@@ -89,6 +92,38 @@
     function siguiente() {
         posicion = (posicion + 1) % fotos.length;
         mostrar();
+    }
+
+    function descargarFotoActual() {
+        if (!fotos.length) return;
+        const id = fotos[posicion];
+        const url = urlFoto(id, WIDTH_LIGHTBOX);
+        
+        // Intentar descarga directa via fetch + Blob (funciona si CORS lo permite)
+        fetch(url, { mode: 'cors', credentials: 'omit' })
+            .then(response => {
+                if (!response.ok) throw new Error('Network error');
+                return response.blob();
+            })
+            .then(blob => {
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = `autografia-${id}.jpg`;
+                a.rel = 'noopener';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                // Liberar URL objeto tras un breve delay para asegurar la descarga
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            })
+            .catch(() => {
+                // Fallback: abrir en nueva pestaña para "Guardar como..."
+                const win = window.open(url, '_blank', 'noopener,noreferrer');
+                if (win) {
+                    win.document.title = `autografia-${id}.jpg`;
+                }
+            });
     }
 
     function abrir(ids, indice) {
